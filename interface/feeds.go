@@ -16,16 +16,16 @@ var (
 
 //Feed -- Gui component for the feed as presented in the list
 type Feed struct {
-	name 		string
-	index 		int
-	episodes 	string
-	title 		string
+	name     string
+	index    int
+	episodes string
+	title    string
 }
 
 //NewFeed -- Creates a new Feed gui component
 func NewFeed(name string, index int, episodes, title string) *Feed {
 	FeedList = append(FeedList, name)
-	return &Feed{name:name, index:index, episodes:episodes, title:title}
+	return &Feed{name: name, index: index, episodes: episodes, title: title}
 }
 
 func (f *Feed) format() string {
@@ -41,17 +41,17 @@ func (f *Feed) format() string {
 	return index + episodes + title
 }
 
-func (f *Feed) location (g *gocui.Gui) (x, y, w, h int) {
+func (f *Feed) location(g *gocui.Gui) (x, y, w, h int) {
 	maxX, _ := g.Size()
 	x = -1
-	y = 2 * f.index - 1
+	y = 2*f.index - 1
 	w = maxX
 	h = y + 2
 	return
 }
 
 //Layout -- Tells gocui.Gui how to display this component
-func (f *Feed) Layout (g *gocui.Gui) (error) {
+func (f *Feed) Layout(g *gocui.Gui) error {
 	maxX, _ := g.Size()
 	x, y, w, h := f.location(g)
 	v, err := g.SetView(f.name, x, y, w, h)
@@ -67,7 +67,7 @@ func (f *Feed) Layout (g *gocui.Gui) (error) {
 			g.SetViewOnTop(v.Name())
 			v.Highlight = true
 		}
-		content, err := rightPadExactLength(f.format()," ", maxX)
+		content, err := rightPadExactLength(f.format(), " ", maxX)
 		if err != nil {
 			return err
 		}
