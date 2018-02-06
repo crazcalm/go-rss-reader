@@ -52,6 +52,10 @@ the file exist, which includes
 - making sure that the file path is not a directory
 */
 func CheckFile(file string) (err error) {
+	if strings.EqualFold(file, "") {
+		return fmt.Errorf("file cannot be an empty string")
+	}
+
 	fileInfo, err := os.Stat(file)
 
 	//File does not exist

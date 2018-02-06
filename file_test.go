@@ -100,27 +100,30 @@ the file exist, which includes
 func TestCheckFile(t *testing.T) {
 	file := filepath.Join("test_data", "one_rss")
 	dir := filepath.Join("test_data")
+	notAFile := filepath.Join("test_data", "not_a_file")
 
 	tests := []struct {
 		File      string
 		ExpectErr bool
 		Err       string
 	}{
-		{"", true, "does not exist"},
-		{dir, true, "not a file"},
+		{"", true, "file cannot be an empty string"},
+		{dir, true, "test_data is not a file"},
 		{file, false, "none"},
+		{notAFile, true, "Error when reading file"},
 	}
 
 	for _, test := range tests {
 		err := CheckFile(test.File)
 
-		//Check Error Case
-		if test.ExpectErr {
-			if !strings.Contains(err.Error(), test.Err) {
-				t.Errorf("Error %s does not contain %s", err.Error(), test.Err)
+		//Check error case
+		if err != nil && test.ExpectErr {
+			if !strings.EqualFold(err.Error(), test.Err) {
+				t.Errorf("Error %s != %s", err.Error(), test.Err)
 			}
+
 			//Error case is working as expected
-			return
+			continue
 		}
 
 		//Got an unexpected Error
