@@ -110,7 +110,7 @@ func TestCheckFile(t *testing.T) {
 		{"", true, "file cannot be an empty string"},
 		{dir, true, "test_data is not a file"},
 		{file, false, "none"},
-		{notAFile, true, "Error when reading file"},
+		{notAFile, true, "file test_data/not_a_file does not exist"},
 	}
 
 	for _, test := range tests {
@@ -126,12 +126,20 @@ func TestCheckFile(t *testing.T) {
 			continue
 		}
 
+		//Check expected error but did not get one case
+		if err == nil && test.ExpectErr {
+			t.Errorf("Expected err %s, but got nothing", test.Err)
+		}
+
+		//Check for unexpected error
+		if err != nil && !test.ExpectErr {
+			t.Errorf("Unexpected err %s", err.Error())
+		}
+
 		//Got an unexpected Error
 		if err != nil {
 			t.Errorf("Got an unexpected error: %s", err.Error())
 		}
-
-		return
 	}
 
 }
