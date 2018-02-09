@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/crazcalm/go_read_rss/interface"
+	"github.com/crazcalm/go-rss-reader/interface"
 	"github.com/jroimartin/gocui"
 )
 
