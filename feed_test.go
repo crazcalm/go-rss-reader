@@ -1,7 +1,10 @@
 package rss
 
 import (
-	"ioutil"
+	"bytes"
+	"fmt"
+	"io/ioutil"
+	"log"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -10,30 +13,30 @@ import (
 )
 
 const (
-	alertXML = "alerts.xml"
-	linuxXML = "LinuxJournalSecurity.xml"
-	nprXML = "npr.xml"
-	snXML = "sn.xml"
+	alertXML        = "alerts.xml"
+	linuxXML        = "LinuxJournalSecurity.xml"
+	nprXML          = "npr.xml"
+	snXML           = "sn.xml"
 	thoughtWorksXML = "thoughtworks.xml"
-	xkcdXML = "xkcd.xml"
+	xkcdXML         = "xkcd.xml"
 )
 
 var (
 	URLs = map[string]string{
-		alertXML: "https://www.us-cert.gov/ncas/alerts.xml",
-		linuxXML: "http://feeds.feedburner.com/LinuxJournalSecurity",
-		nprXML: "https://www.npr.org/rss/rss.php?id=1001",
-		snXML: "http://www.leoville.tv/podcasts/sn.xml",
+		alertXML:        "https://www.us-cert.gov/ncas/alerts.xml",
+		linuxXML:        "http://feeds.feedburner.com/LinuxJournalSecurity",
+		nprXML:          "https://www.npr.org/rss/rss.php?id=1001",
+		snXML:           "http://www.leoville.tv/podcasts/sn.xml",
 		thoughtWorksXML: "http://feeds.soundcloud.com/users/soundcloud:users:94605026/sounds.rss",
-		xkcdXML: "https://www.xkcd.com/rss.xml",
+		xkcdXML:         "https://www.xkcd.com/rss.xml",
 	}
 	Tags = map[string][]string{
-		alertXML: []string{"security"},
-		linuxXML: []string{"security"},
-		nprXML: []string{"news"},
-		snXML: []string{"security", "favorite", "audio"},
+		alertXML:        []string{"security"},
+		linuxXML:        []string{"security"},
+		nprXML:          []string{"news"},
+		snXML:           []string{"security", "favorite", "audio"},
 		thoughtWorksXML: []string{"audio"},
-		xkcdXML: []string{"comic"},
+		xkcdXML:         []string{"comic"},
 	}
 )
 
@@ -55,31 +58,56 @@ func checkForInternet() bool {
 //getTestFeed -- Used to fetch locally stored raw rss file
 //and turn them into gofeed.Feed so that I can use them in my tests
 func getTestFeed(name string) *gofeed.Feed {
-	path := filepath.Join("test_data", "raw_rss", name)
+	path := filepath.Join("test_data", "rss_raw", name)
 	file, err := ioutil.ReadFile(path)
 	if err != nil {
 		log.Fatal(fmt.Errorf("(Test File Error) Occured when reading %s: %s", path, err.Error()))
 	}
-	
+
 	feedParser := gofeed.NewParser()
-	feed, err := feedParser.Parse(file)
+	feed, err := feedParser.Parse(bytes.NewReader(file))
 	if err != nil {
 		log.Fatal(fmt.Errorf("(Test file Error) Occured when parsing %s: %s", path, err.Error()))
 	}
 	return feed
 }
 
-func TestTitle(t *testing.T) {
-	tests := []struct{
-		Feed *Feed
-		ExpectedTitle string
+func TestEpisodeTotal(t *testing.T) {
+	var noData gofeed.Feed
+
+	tests := []struct {
+		Feed          *Feed
+		ExpectedCount int
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}},
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
+		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{&Feed{"NO URL", []string{}, &noData}, 0},
 	}
 
 	for _, test := range tests {
-		if !strings.EqualFold(test.Feed.Title(), test.ExpectedTitle){
-			//write error
+		if test.Feed.EpisodeTotal() != test.ExpectedCount {
+			t.Errorf("Expected %s to have %d episodes, but got %d", test.Feed.URL, test.ExpectedCount, test.Feed.EpisodeTotal())
+		}
+	}
+}
+
+func TestTitle(t *testing.T) {
+	var noData gofeed.Feed
+
+	tests := []struct {
+		Feed          *Feed
+		ExpectedTitle string
+	}{
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, "Security Now (MP3)"},
+		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, "US-CERT Alerts"},
+		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, "xkcd.com"},
+		{&Feed{"NO URL", []string{}, &noData}, "No URL"},
+	}
+
+	for _, test := range tests {
+		if !strings.EqualFold(test.Feed.Title(), test.ExpectedTitle) {
+			t.Errorf("Expected %s, but got %s", test.ExpectedTitle, test.Feed.Title())
 		}
 	}
 }

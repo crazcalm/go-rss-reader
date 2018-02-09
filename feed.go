@@ -2,6 +2,7 @@ package rss
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/mmcdole/gofeed"
 )
@@ -26,10 +27,13 @@ func NewFeed(fileData FileData) (*Feed, error) {
 //Title -- returns the title of the feed. If there is no title,
 //Then it returns the url of the feed.
 func (f *Feed) Title() string {
-	return ""
+	if !strings.EqualFold(f.Data.Title, "") {
+		return f.Data.Title
+	}
+	return f.URL
 }
 
 //EpisodeTotal -- Returns the total num of episodes for the feed
 func (f *Feed) EpisodeTotal() int {
-	return 0
+	return len(f.Data.Items)
 }

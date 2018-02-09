@@ -1,7 +1,7 @@
 package rss
 
 import (
-	"github.com/crazcalm/go_read_rss/interface"
+	"github.com/crazcalm/go-rss-reader/interface"
 )
 
 //Feeds -- A slice of feeds
@@ -20,6 +20,6 @@ func NewFeeds(fileData []FileData) (feeds Feeds) {
 }
 
 //GuiData -- Data needs to create the gui interface for feeds
-func (f Feeds)GuiData()(data []gui.Feed){
+func (f Feeds) GuiData() (data []gui.Feed) {
 	return
 }
