@@ -6,9 +6,6 @@ import (
 	"github.com/mmcdole/gofeed"
 )
 
-//Feeds -- A slice of feeds
-type Feeds []*Feed
-
 //Feed -- Data structure used to hold a feed
 type Feed struct {
 	URL  string
@@ -26,14 +23,13 @@ func NewFeed(fileData FileData) (*Feed, error) {
 	return &Feed{URL: fileData.URL, Tags: fileData.Tags, Data: data}, nil
 }
 
-//NewFeeds -- Used to create a slice of Feeds
-func NewFeeds(fileData []FileData) (feeds Feeds) {
-	for _, d := range fileData {
-		feed, err := NewFeed(d)
-		if err != nil {
-			continue
-		}
-		feeds = append(feeds, feed)
-	}
-	return feeds
+//Title -- returns the title of the feed. If there is no title,
+//Then it returns the url of the feed.
+func (f *Feed) Title() string {
+	return ""
+}
+
+//EpisodeTotal -- Returns the total num of episodes for the feed
+func (f *Feed) EpisodeTotal() int {
+	return 0
 }

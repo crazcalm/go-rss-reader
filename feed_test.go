@@ -1,8 +1,40 @@
 package rss
 
 import (
+	"ioutil"
+	"path/filepath"
 	"strings"
 	"testing"
+
+	"github.com/mmcdole/gofeed"
+)
+
+const (
+	alertXML = "alerts.xml"
+	linuxXML = "LinuxJournalSecurity.xml"
+	nprXML = "npr.xml"
+	snXML = "sn.xml"
+	thoughtWorksXML = "thoughtworks.xml"
+	xkcdXML = "xkcd.xml"
+)
+
+var (
+	URLs = map[string]string{
+		alertXML: "https://www.us-cert.gov/ncas/alerts.xml",
+		linuxXML: "http://feeds.feedburner.com/LinuxJournalSecurity",
+		nprXML: "https://www.npr.org/rss/rss.php?id=1001",
+		snXML: "http://www.leoville.tv/podcasts/sn.xml",
+		thoughtWorksXML: "http://feeds.soundcloud.com/users/soundcloud:users:94605026/sounds.rss",
+		xkcdXML: "https://www.xkcd.com/rss.xml",
+	}
+	Tags = map[string][]string{
+		alertXML: []string{"security"},
+		linuxXML: []string{"security"},
+		nprXML: []string{"news"},
+		snXML: []string{"security", "favorite", "audio"},
+		thoughtWorksXML: []string{"audio"},
+		xkcdXML: []string{"comic"},
+	}
 )
 
 func checkForInternet() bool {
@@ -20,27 +52,34 @@ func checkForInternet() bool {
 	return true
 }
 
-func TestNewFeeds(t *testing.T) {
-	//FileData variables
-	goodData := FileData{"http://www.leoville.tv/podcasts/sn.xml", []string{"security", "favorite", "audio"}}
-	badData := FileData{"http://www.linux-magazine.com/rs/feed/lmi_full", []string{"error"}}
-	noData := FileData{"", []string{}}
+//getTestFeed -- Used to fetch locally stored raw rss file
+//and turn them into gofeed.Feed so that I can use them in my tests
+func getTestFeed(name string) *gofeed.Feed {
+	path := filepath.Join("test_data", "raw_rss", name)
+	file, err := ioutil.ReadFile(path)
+	if err != nil {
+		log.Fatal(fmt.Errorf("(Test File Error) Occured when reading %s: %s", path, err.Error()))
+	}
+	
+	feedParser := gofeed.NewParser()
+	feed, err := feedParser.Parse(file)
+	if err != nil {
+		log.Fatal(fmt.Errorf("(Test file Error) Occured when parsing %s: %s", path, err.Error()))
+	}
+	return feed
+}
 
-	tests := []struct {
-		Data        []FileData
-		ExpectedNum int
+func TestTitle(t *testing.T) {
+	tests := []struct{
+		Feed *Feed
+		ExpectedTitle string
 	}{
-		{[]FileData{}, 0},
-		{[]FileData{goodData, goodData, goodData}, 3},
-		{[]FileData{goodData, badData, goodData}, 2},
-		{[]FileData{goodData, badData, noData}, 1},
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}},
 	}
 
 	for _, test := range tests {
-		feeds := NewFeeds(test.Data)
-
-		if len(feeds) != test.ExpectedNum {
-			t.Errorf("Expected %d feed(s), but got %d feed(s)", test.ExpectedNum, len(feeds))
+		if !strings.EqualFold(test.Feed.Title(), test.ExpectedTitle){
+			//write error
 		}
 	}
 }
@@ -95,5 +134,3 @@ func TestNewFeed(t *testing.T) {
 		}
 	}
 }
-
-//func TestTotalEpisodes(t *testing.T){}
