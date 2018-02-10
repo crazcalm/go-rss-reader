@@ -21,7 +21,7 @@ func NewFeeds(fileData []FileData) (feeds Feeds) {
 	return feeds
 }
 
-//GuiData -- Data needs to create the gui interface for feeds
+//GuiData -- The data needed to create the gui interface for feeds
 func (f Feeds) GuiData() (data []gui.Feed) {
 	for _, item := range f {
 		data = append(data, gui.Feed{fmt.Sprintf("(%d/%d)", item.EpisodeTotal(), item.EpisodeTotal()), item.Title()})

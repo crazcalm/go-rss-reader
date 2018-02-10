@@ -72,6 +72,37 @@ func getTestFeed(name string) *gofeed.Feed {
 	return feed
 }
 
+func TestGuiItemsData(t *testing.T) {
+	var noData gofeed.Feed
+
+	tests := []struct {
+		Feed          *Feed
+		ExpectedTitle []string
+		ExpectedDate  []string
+	}{
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, []string{"SN 649: Meltdown & Spectre Emerge", "SN 648: Post Spectre?", "SN 647: The Dark Caracal", "SN 646: The InSpectre", "SN 645: The Speculation Meltdown", "SN 644: NSA Fingerprints", "SN 643: The Story of Bitcoin", "SN 642: BGP", "SN 641: The iOS Security Trade-off", "SN 640: More News & Feedback"}, []string{"Feb 06", "Jan 30", "Jan 23", "Jan 16", "Jan 09", "Jan 02", "Dec 26", "Dec 19", "Dec 12", "Dec 05"}},
+		{&Feed{"NO URL", []string{}, &noData}, []string{}, []string{}},
+	}
+
+	for _, test := range tests {
+		data := test.Feed.GuiItemsData()
+
+		if len(data) != len(test.ExpectedTitle) || len(data) != len(test.ExpectedDate) {
+			t.Errorf("%s does not have the expected number of episodes. Expected %d, but got %d", test.Feed.Title(), len(test.ExpectedDate), len(data))
+		}
+
+		for index, item := range data {
+			if !strings.EqualFold(item.Title, test.ExpectedTitle[index]) {
+				t.Errorf("For feed %s, expected %s episode title, but got %s", test.Feed.Title(), test.ExpectedTitle[index], item.Title)
+			}
+
+			if !strings.EqualFold(item.Date, test.ExpectedDate[index]) {
+				t.Errorf("For feed %s, expected %s episode date, but got %s", test.Feed.Title(), test.ExpectedDate[index], item.Date)
+			}
+		}
+	}
+}
+
 func TestEpisodeTotal(t *testing.T) {
 	var noData gofeed.Feed
 

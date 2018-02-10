@@ -4,9 +4,10 @@ import (
 	"log"
 	"path/filepath"
 
+	"github.com/jroimartin/gocui"
+
 	"github.com/crazcalm/go-rss-reader"
 	"github.com/crazcalm/go-rss-reader/interface"
-	"github.com/jroimartin/gocui"
 )
 
 func main() {
@@ -22,15 +23,23 @@ func main() {
 	//Create feeds
 	feeds := rss.NewFeeds(fileData)
 
-	//Feed Gui info
-	feedData := feeds.GuiData()
+	//Episode data for one feed
+	episodeData := feeds[0].GuiItemsData()
+
+	/*
+		//Episodes
+		ep1 := gui.Episode{"Jan 01", "title"}
+		ep2 := gui.Episode{"Feb 23", "title"}
+		ep3 := gui.Episode{"Mar 15", "title"}
+		ep4 := gui.Episode{"Sep 17", "title"}
+	*/
 
 	//Components
-	headerGui := gui.NewHeader("title", "Content goes here!")
-	footerGui := gui.NewFooter("footer", "Footer Content is here!")
-	feedsGui := gui.NewFeeds("feeds", feedData)
+	header := gui.NewHeader("title", "Content goes here!")
+	footer := gui.NewFooter("footer", "Footer Content is here!")
+	episodes := gui.NewEpisodes("episodes", episodeData)
 
-	g.SetManager(headerGui, footerGui, feedsGui)
+	g.SetManager(header, footer, episodes)
 
 	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
 		log.Panicln(err)
