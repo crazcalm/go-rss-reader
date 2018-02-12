@@ -20,8 +20,5 @@ func main() {
 	fmt.Printf("num of items = %d\n", len(feed.Items))
 	fmt.Println(feed)
 
-	for _, item := range feed.Items {
-		_, month, day := item.PublishedParsed.Date()
-		fmt.Printf("Month %d, Day %d\n", month, day)
-	}
+	fmt.Printf("\n\nDescription:\n%s", feed.Items[0].Description)
 }
