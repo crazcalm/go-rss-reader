@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"path/filepath"
+	"os"
+	//"strconv"
 	"strings"
 	"testing"
 
@@ -55,14 +56,20 @@ func checkForInternet() bool {
 	return true
 }
 
+func getTestFile(path []string) []byte {
+	pathString := strings.Join(path, string(os.PathSeparator))
+	file, err := ioutil.ReadFile(pathString)
+	if err != nil {
+		log.Fatal(fmt.Errorf("(Test File Error) Occured when reading %s: %s", pathString, err.Error()))
+	}
+	return file
+}
+
 //getTestFeed -- Used to fetch locally stored raw rss file
 //and turn them into gofeed.Feed so that I can use them in my tests
 func getTestFeed(name string) *gofeed.Feed {
-	path := filepath.Join("test_data", "rss_raw", name)
-	file, err := ioutil.ReadFile(path)
-	if err != nil {
-		log.Fatal(fmt.Errorf("(Test File Error) Occured when reading %s: %s", path, err.Error()))
-	}
+	path := []string{"test_data", "rss_raw", name}
+	file := getTestFile(path)
 
 	feedParser := gofeed.NewParser()
 	feed, err := feedParser.Parse(bytes.NewReader(file))
@@ -192,4 +199,63 @@ func TestNewFeed(t *testing.T) {
 			continue
 		}
 	}
+}
+
+func TestGetEpisode(t *testing.T) {
+	tests := []struct {
+		Feed          *Feed
+		EpisodeNum    int
+		ExpectedTitle string
+		ExpectError   bool
+	}{
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, "SN 649: Meltdown & Spectre Emerge", false},
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 5, "SN 644: NSA Fingerprints", false},
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 12, "None", true},
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, -3, "None", true},
+	}
+
+	for _, test := range tests {
+		episode, err := test.Feed.GetEpisode(test.EpisodeNum)
+
+		if err == nil && test.ExpectError {
+			t.Errorf("Expected an error, but none was received.")
+		}
+
+		if err != nil && !test.ExpectError {
+			t.Errorf("Got an unexpected err: %s", err.Error())
+		}
+
+		//We expected and error and we got an error.
+		//Test case passed
+		if err != nil && test.ExpectError {
+			continue
+		}
+
+		if !strings.EqualFold(episode.Data.Title, test.ExpectedTitle) {
+			t.Errorf("Expected the title to be %s, but got %s instead.", test.ExpectedTitle, episode.Data.Title)
+		}
+
+	}
+}
+
+func TestGetEpisodes(t *testing.T) {
+	var noData gofeed.Feed
+
+	tests := []struct {
+		Name        string
+		Feed        *Feed
+		ExpectedNum int
+	}{
+		{"snXML", &Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
+		{"alertXML", &Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{"xkcdXML", &Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{"No Url", &Feed{"NO URL", []string{}, &noData}, 0},
+	}
+
+	for _, test := range tests {
+		if len(test.Feed.GetEpisodes()) != test.ExpectedNum {
+			t.Errorf("For %s we expected %d episodes but got %d instead.", test.Name, test.ExpectedNum, len(test.Feed.GetEpisodes()))
+		}
+	}
+
 }

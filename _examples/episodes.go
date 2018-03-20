@@ -26,14 +26,6 @@ func main() {
 	//Episode data for one feed
 	episodeData := feeds[0].GuiItemsData()
 
-	/*
-		//Episodes
-		ep1 := gui.Episode{"Jan 01", "title"}
-		ep2 := gui.Episode{"Feb 23", "title"}
-		ep3 := gui.Episode{"Mar 15", "title"}
-		ep4 := gui.Episode{"Sep 17", "title"}
-	*/
-
 	//Components
 	header := gui.NewHeader("title", "Content goes here!")
 	footer := gui.NewFooter("footer", "Footer Content is here!")

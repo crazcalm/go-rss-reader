@@ -73,3 +73,28 @@ func (f *Feed) GuiItemsData() (data []gui.Episode) {
 
 	return
 }
+
+//GetEpisode -- Gets one episode [Counting starts from 0]
+func (f Feed) GetEpisode(num int) (*Episode, error) {
+	episode := &Episode{"", &gofeed.Person{}, &gofeed.Item{}}
+	err := fmt.Errorf("No episode found")
+
+	if num < 0 {
+		return episode, err
+	} else if num >= len(f.Data.Items) {
+		return episode, err
+	}
+
+	return &Episode{f.Title(), f.Data.Author, f.Data.Items[num]}, nil
+}
+
+//GetEpisodes -- Gets all episodes
+func (f Feed) GetEpisodes() []*Episode {
+	var episodes []*Episode
+
+	for _, item := range f.Data.Items {
+		episodes = append(episodes, &Episode{f.Title(), f.Data.Author, item})
+	}
+
+	return episodes
+}
