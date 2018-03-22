@@ -26,7 +26,7 @@ func TestHeader(t *testing.T) {
 	for _, test := range tests {
 		episode, err := test.Feed.GetEpisode(test.EpisodeNum)
 		if err != nil {
-			log.Fatal("Human error that should not happen: %s", err.Error())
+			log.Fatalf("Human error that should not happen: %s", err.Error())
 		}
 		header := episode.Header()
 		expected := string(getTestFile(test.AnswerPath))
