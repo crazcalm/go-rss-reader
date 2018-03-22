@@ -22,7 +22,7 @@ const (
 
 func main() {
 	fp := gofeed.NewParser()
-	feed, err := fp.ParseURL(snXML)
+	feed, err := fp.ParseURL(alertsXML)
 	if err != nil {
 		log.Fatal(err)
 	}

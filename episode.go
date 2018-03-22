@@ -16,28 +16,38 @@ type Episode struct {
 
 //Header -- Returns a string header information important for each episode.
 func (e Episode) Header() string {
+	var author string
 	result := fmt.Sprintf("Feed: %s\n", e.Feed)
 
 	if !strings.EqualFold(e.Data.Title, "") {
 		result += fmt.Sprintf("Title: %s\n", e.Data.Title)
 	}
 
-	if !strings.EqualFold(e.Data.Author.Email, "") {
-		author := e.Data.Author.Email
+	if e.Author != nil {
 
-		if !strings.EqualFold(e.Data.Author.Name, "") {
-			author = fmt.Sprintf("%s (%s)", author, e.Data.Author.Name)
-		}
-		result += fmt.Sprintf("Author: %s\n", author)
-	} else if !strings.EqualFold(e.Author.Email, "") {
-		author := e.Author.Email
+		if !strings.EqualFold(e.Author.Email, "") {
+			author = e.Author.Email
 
-		if !strings.EqualFold(e.Author.Name, "") {
-			author = fmt.Sprintf("%s (%s)", author, e.Author.Name)
+			if !strings.EqualFold(e.Author.Name, "") {
+				author = fmt.Sprintf("%s (%s)", author, e.Author.Name)
+			}
+
+			result += fmt.Sprintf("Author: %s\n", author)
 		}
 
-		result += fmt.Sprintf("Author: %s\n", author)
+	} else if e.Data.Author != nil {
+		if !strings.EqualFold(e.Data.Author.Email, "") {
+			author = e.Data.Author.Email
 
+			if !strings.EqualFold(e.Data.Author.Name, "") {
+				author = fmt.Sprintf("%s (%s)", author, e.Data.Author.Name)
+			}
+			result += fmt.Sprintf("Author: %s\n", author)
+
+		} else if !strings.EqualFold(e.Data.Author.Name, "") {
+			author = e.Data.Author.Name
+			result += fmt.Sprintf("Author: %s\n", author)
+		}
 	}
 
 	if !strings.EqualFold(e.Data.Link, "") {

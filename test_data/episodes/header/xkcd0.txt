@@ -1,0 +1,4 @@
+Feed: xkcd.com
+Title: Backpack Decisions
+Link: https://xkcd.com/1952/
+Date: Wed, 07 Feb 2018 05:00:00 -0000

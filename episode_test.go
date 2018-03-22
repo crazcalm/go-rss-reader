@@ -19,9 +19,8 @@ func TestHeader(t *testing.T) {
 		AnswerPath []string
 	}{
 		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "header", "sn0.txt"}},
-		//{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
-		//{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
-		//{&Feed{"NO URL", []string{}, &noData}, 0},
+		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 0, []string{"test_data", "episodes", "header", "alerts0.txt"}},
+		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "header", "xkcd0.txt"}},
 	}
 
 	for _, test := range tests {
