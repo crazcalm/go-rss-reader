@@ -97,7 +97,7 @@ func (e Episode) Content() (string, []string, error) {
 
 	content, links, err := htmltotext.Translate(strings.NewReader(data))
 	if err != nil {
-		return data, links, fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data")
+		return data, links, fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
 	}
 	linksFormated := e.links(links)
 
