@@ -1,3 +1,10 @@
+Feed: Security Now (MP3)
+Title: SN 649: Meltdown & Spectre Emerge
+Author: leo@twit.tv (Leo Laporte)
+Link: https://twit.tv/shows/security-now/episodes/649
+Date: Tue, 06 Feb 2018 16:56:36 PST
+Podcast Download URL: http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0649/sn0649.mp3 (type: audio/mpeg)
+
 This week we observe that the Net Neutrality battle is actually FAR from lost, ComputerWorld's Woody Leonard enumerates a crazy January of updates, "EternalBlue" is turning out to be far more eternal than we'd wish, will Flash EVER die? A new 0-day Flash exploit in the wild, what happens when you combine Shodan with Metasploit?, Firefox 59 takes another privacy enhancing step forward, a questionable means of sneaking data between systems, another fun SpinRite report from the field, some closing the loop feedback from our listeners, and a look at the early emergence of Meltdown and Spectre exploits appearing in the wild.
 
 We invite you to read our show notes[1]. 

@@ -101,7 +101,7 @@ func (e Episode) Content() (string, []string, error) {
 	}
 	linksFormated := e.links(links)
 
-	return fmt.Sprintf("%s\n\n%s", strings.TrimSpace(content), linksFormated), links, nil
+	return fmt.Sprintf("%s\n%s\n\n%s", e.Header(), strings.TrimSpace(content), linksFormated), links, nil
 }
 
 //Links -- A slice of the links presented in the episode

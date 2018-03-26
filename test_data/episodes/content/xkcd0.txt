@@ -1,3 +1,8 @@
+Feed: xkcd.com
+Title: Backpack Decisions
+Link: https://xkcd.com/1952/
+Date: Wed, 07 Feb 2018 05:00:00 -0000
+
 [image 1: "This one is perfect in every way, except that for some reason it's woven from a tungsten mesh, so it weighs 85 pounds and I'll need to carry it around on a hand cart." "That seems like a bad--" "BUT IT HAS THE PERFECT POCKET ARRANGEMENT!"]
 
 Links:
