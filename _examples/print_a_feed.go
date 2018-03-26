@@ -27,14 +27,14 @@ func main() {
 		log.Fatal(err)
 	}
 	//fmt.Printf("num of items = %d\n", len(feed.Items))
-	fmt.Println(feed)
+	//fmt.Println(feed)
 
-	fmt.Printf("\n\nDescription:\n%s", feed.Items[5].Description)
-	fmt.Printf("\n\nContent:\n%s", feed.Items[5].Content)
+	//fmt.Printf("\n\nDescription:\n%s", feed.Items[5].Description)
+	//fmt.Printf("\n\nContent:\n%s", feed.Items[5].Content)
 
-	//fmt.Println(feed.Items[1].Description)
+	fmt.Println(feed.Items[1].Description)
 
-	result, links, err := htmltotext.Translate(strings.NewReader(feed.Items[5].Content))
+	result, links, err := htmltotext.Translate(strings.NewReader(feed.Items[1].Description))
 	if err != nil {
 		log.Fatal(err)
 	}

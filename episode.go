@@ -5,6 +5,8 @@ import (
 	"strings"
 
 	"github.com/mmcdole/gofeed"
+
+	"github.com/crazcalm/html-to-text"
 )
 
 //Episode -- Data structure used to handle each new episode of a feed
@@ -81,26 +83,36 @@ func (e Episode) Header() string {
 		}
 	}
 
-	/*
-		itemType, ok := content[0].Attrs["type"]
-		if !ok {
-			log.Fatalf("Content has no attribute type")
-		}
-
-		url, ok := content[0].Attrs["url"]
-		if !ok {
-			log.Fatalf("Content has no attribute url")
-	*/
-
 	return result
 }
 
 //Content -- Formats the body/content of each episode
-func (e Episode) Content() string {
-	return ""
+func (e Episode) Content() (string, []string, error) {
+	var data string
+	if !strings.EqualFold(e.Data.Content, "") {
+		data = e.Data.Content
+	} else {
+		data = e.Data.Description
+	}
+
+	content, links, err := htmltotext.Translate(strings.NewReader(data))
+	if err != nil {
+		return data, links, fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data")
+	}
+	linksFormated := e.links(links)
+
+	return fmt.Sprintf("%s\n\n%s", strings.TrimSpace(content), linksFormated), links, nil
 }
 
 //Links -- A slice of the links presented in the episode
-func (e Episode) Links() []string {
-	return []string{}
+func (e Episode) links(links []string) string {
+	var result string
+	if len(links) != 0 {
+		result += fmt.Sprintf("Links:")
+	}
+
+	for index, link := range links {
+		result += fmt.Sprintf("\n[%d]: %s", index+1, link)
+	}
+	return result
 }

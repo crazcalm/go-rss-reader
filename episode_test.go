@@ -38,6 +38,37 @@ func TestHeader(t *testing.T) {
 
 }
 
-func TestContent(t *testing.T) {}
+func TestContent(t *testing.T) {
+	tests := []struct {
+		Feed        *Feed
+		EpisodeNum  int
+		AnswerPath  []string
+		ExpectedErr bool
+	}{
+		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "content", "sn0.txt"}, false},
+		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "content", "xkcd0.txt"}, false},
+	}
+
+	for _, test := range tests {
+		episode, err := test.Feed.GetEpisode(test.EpisodeNum)
+		if err != nil {
+			log.Fatalf("Human error that should not happen: %s", err.Error())
+		}
+		content, _, err := episode.Content()
+		expected := string(getTestFile(test.AnswerPath))
+
+		if test.ExpectedErr && err == nil {
+			t.Errorf("Expected an error, but none was received")
+		}
+
+		if !test.ExpectedErr && err != nil {
+			t.Errorf("Received an unexpected error: %s", err.Error())
+		}
+
+		if !strings.EqualFold(content, expected) {
+			t.Errorf("Expected: \n%s\n\nGot:\n%s\n", expected, content)
+		}
+	}
+}
 
 func TestLinks(t *testing.T) {}
