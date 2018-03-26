@@ -103,6 +103,9 @@ func (f Feed) GetEpisodes() []*Episode {
 
 //EpisodesInit -- Episodes Init for the Gui
 func EpisodesInit(g *gocui.Gui, feedIndex int) error {
+	if len(FeedsData) < feedIndex {
+		return fmt.Errorf("Index out of range for FeedsData")
+	}
 	feed := FeedsData[feedIndex]
 
 	//Episode data for one feed

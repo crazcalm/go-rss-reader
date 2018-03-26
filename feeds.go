@@ -44,7 +44,7 @@ func FeedsInit(g *gocui.Gui) error {
 	fileData := ExtractFileContent(filepath.Join("test_data", "urls"))
 
 	//Create feeds
-	FeedsData := NewFeeds(fileData)
+	FeedsData = NewFeeds(fileData)
 
 	//Feed Gui info
 	feedData := FeedsData.GuiData()
@@ -66,6 +66,10 @@ func FeedsInit(g *gocui.Gui) error {
 
 	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
 		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectFeed); err != nil {
+		log.Panic(err)
 	}
 
 	return nil
