@@ -46,6 +46,7 @@ func (p *Pager) Layout(g *gocui.Gui) error {
 
 		//view settings
 		v.Frame = false
+		v.Wrap = true
 
 		//Setting this view on top
 		_, err = g.SetCurrentView(v.Name())
