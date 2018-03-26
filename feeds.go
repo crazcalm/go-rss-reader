@@ -2,8 +2,17 @@ package rss
 
 import (
 	"fmt"
+	"log"
+	"path/filepath"
+
+	"github.com/jroimartin/gocui"
 
 	"github.com/crazcalm/go-rss-reader/interface"
+)
+
+var (
+	//FeedsData -- Global container for the Feeds
+	FeedsData Feeds
 )
 
 //Feeds -- A slice of feeds
@@ -27,4 +36,37 @@ func (f Feeds) GuiData() (data []gui.Feed) {
 		data = append(data, gui.Feed{fmt.Sprintf("(%d/%d)", item.EpisodeTotal(), item.EpisodeTotal()), item.Title()})
 	}
 	return
+}
+
+//FeedsInit -- Feeds Init for the Gui
+func FeedsInit(g *gocui.Gui) error {
+	//Get info from file
+	fileData := ExtractFileContent(filepath.Join("test_data", "urls"))
+
+	//Create feeds
+	FeedsData := NewFeeds(fileData)
+
+	//Feed Gui info
+	feedData := FeedsData.GuiData()
+
+	//Components
+	headerGui := gui.NewHeader("title", "Content goes here!")
+	footerGui := gui.NewFooter("footer", "Footer Content is here!")
+	feedsGui := gui.NewFeeds("feeds", feedData)
+
+	g.SetManager(headerGui, footerGui, feedsGui)
+
+	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
+		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyArrowUp, gocui.ModNone, gui.CursorUp); err != nil {
+		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
+		log.Panicln(err)
+	}
+
+	return nil
 }

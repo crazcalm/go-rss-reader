@@ -2,9 +2,11 @@ package rss
 
 import (
 	"fmt"
+	"log"
 	"strings"
 	"time"
 
+	"github.com/jroimartin/gocui"
 	"github.com/mmcdole/gofeed"
 
 	"github.com/crazcalm/go-rss-reader/interface"
@@ -97,4 +99,33 @@ func (f Feed) GetEpisodes() []*Episode {
 	}
 
 	return episodes
+}
+
+//EpisodesInit -- Episodes Init for the Gui
+func EpisodesInit(g *gocui.Gui, feedIndex int) error {
+	feed := FeedsData[feedIndex]
+
+	//Episode data for one feed
+	episodeData := feed.GuiItemsData()
+
+	//Components
+	header := gui.NewHeader("title", "Content goes here!")
+	footer := gui.NewFooter("footer", "Footer Content is here!")
+	episodes := gui.NewEpisodes("episodes", episodeData)
+
+	g.SetManager(header, footer, episodes)
+
+	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
+		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyArrowUp, gocui.ModNone, gui.CursorUp); err != nil {
+		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
+		log.Panicln(err)
+	}
+
+	return nil
 }
