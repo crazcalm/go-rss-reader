@@ -97,15 +97,15 @@ func (e Episode) Header() string {
 //Content -- Formats the body/content of each episode
 func (e Episode) Content() (string, []string, error) {
 	var data string
-	if !strings.EqualFold(e.Data.Content, "") {
-		data = e.Data.Content
-	} else {
+	if !strings.EqualFold(e.Data.Description, "") {
 		data = e.Data.Description
+	} else {
+		data = e.Data.Content
 	}
 
 	content, links, err := htmltotext.Translate(strings.NewReader(data))
 	if err != nil {
-		return data, links, fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
+		return data, links, nil //fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
 	}
 	linksFormated := e.links(links)
 

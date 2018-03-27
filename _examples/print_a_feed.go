@@ -22,7 +22,7 @@ const (
 
 func main() {
 	fp := gofeed.NewParser()
-	feed, err := fp.ParseURL(alertsXML)
+	feed, err := fp.ParseURL(linuxXML)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -32,9 +32,9 @@ func main() {
 	//fmt.Printf("\n\nDescription:\n%s", feed.Items[5].Description)
 	//fmt.Printf("\n\nContent:\n%s", feed.Items[5].Content)
 
-	fmt.Println(feed.Items[1].Description)
+	fmt.Println(feed.Items[1].Content)
 
-	result, links, err := htmltotext.Translate(strings.NewReader(feed.Items[1].Description))
+	result, links, err := htmltotext.Translate(strings.NewReader(feed.Items[1].Content))
 	if err != nil {
 		log.Fatal(err)
 	}
