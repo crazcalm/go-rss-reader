@@ -12,6 +12,11 @@ import (
 	"github.com/crazcalm/go-rss-reader/interface"
 )
 
+var (
+	//CurrentFeedIndex -- Global container for the current Feed index
+	CurrentFeedIndex int
+)
+
 //Feed -- Data structure used to hold a feed
 type Feed struct {
 	URL  string
@@ -102,11 +107,12 @@ func (f Feed) GetEpisodes() []*Episode {
 }
 
 //EpisodesInit -- Episodes Init for the Gui
-func EpisodesInit(g *gocui.Gui, feedIndex int) error {
-	if len(FeedsData) < feedIndex {
+func EpisodesInit(g *gocui.Gui) error {
+	if len(FeedsData) < CurrentFeedIndex {
 		return fmt.Errorf("Index out of range for FeedsData")
 	}
-	feed := FeedsData[feedIndex]
+
+	feed := FeedsData[CurrentFeedIndex]
 
 	//Episode data for one feed
 	episodeData := feed.GuiItemsData()
@@ -128,6 +134,10 @@ func EpisodesInit(g *gocui.Gui, feedIndex int) error {
 
 	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
 		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectEpisode); err != nil {
+		log.Panic(err)
 	}
 
 	return nil

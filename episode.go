@@ -12,6 +12,11 @@ import (
 	"github.com/crazcalm/html-to-text"
 )
 
+var (
+	//CurrentEpisodeIndex -- Global container for the current episode index
+	CurrentEpisodeIndex int
+)
+
 //Episode -- Data structure used to handle each new episode of a feed
 type Episode struct {
 	Feed   string
@@ -121,9 +126,9 @@ func (e Episode) links(links []string) string {
 }
 
 //EpisodeContentInit -- Initializes the Episode content for the Gui
-func EpisodeContentInit(g *gocui.Gui, feedIndex int, episodeIndex int) error {
-	feed := FeedsData[feedIndex]
-	episode, err := feed.GetEpisode(episodeIndex)
+func EpisodeContentInit(g *gocui.Gui) error {
+	feed := FeedsData[CurrentFeedIndex]
+	episode, err := feed.GetEpisode(CurrentEpisodeIndex)
 	if err != nil {
 		log.Fatal(err)
 	}

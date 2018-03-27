@@ -22,7 +22,10 @@ func main() {
 	//Create feeds
 	rss.FeedsData = rss.NewFeeds(fileData)
 
-	rss.EpisodesInit(g, 0)
+	//Set Global Current Feed Index
+	rss.CurrentFeedIndex = 0
+
+	rss.EpisodesInit(g)
 
 	if err := g.MainLoop(); err != nil && err != gocui.ErrQuit {
 		log.Panicln(err)

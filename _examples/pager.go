@@ -23,7 +23,11 @@ func main() {
 	//Create feeds
 	rss.FeedsData = rss.NewFeeds(fileData)
 
-	err = rss.EpisodeContentInit(g, 0, 0)
+	//Set Global Current Feed Index and Current Episode Index
+	rss.CurrentFeedIndex = 0
+	rss.CurrentEpisodeIndex = 0
+
+	err = rss.EpisodeContentInit(g)
 	if err != nil {
 		log.Fatal(err)
 	}
