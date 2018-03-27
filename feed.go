@@ -137,7 +137,11 @@ func EpisodesInit(g *gocui.Gui) error {
 	}
 
 	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectEpisode); err != nil {
-		log.Panic(err)
+		log.Panicln(err)
+	}
+
+	if err := g.SetKeybinding("", gocui.KeyCtrlB, gocui.ModNone, QuitEpisodes); err != nil {
+		log.Panicln(err)
 	}
 
 	return nil

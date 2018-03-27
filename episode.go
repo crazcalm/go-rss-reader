@@ -159,5 +159,9 @@ func EpisodeContentInit(g *gocui.Gui) error {
 		log.Panicln(err)
 	}
 
+	if err := g.SetKeybinding("pager", gocui.KeyCtrlB, gocui.ModNone, QuitPager); err != nil {
+		log.Panicln(err)
+	}
+
 	return nil
 }

@@ -7,6 +7,29 @@ import (
 	"github.com/jroimartin/gocui"
 )
 
+//QuitPager -- Callback used to quit the pager view and return to the Episodes view
+func QuitPager(g *gocui.Gui, v *gocui.View) error {
+	if v != nil {
+		err := EpisodesInit(g)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+//QuitEpisodes -- Callback used to quit the Episodes view and return to the feeds view
+func QuitEpisodes(g *gocui.Gui, v *gocui.View) error {
+	if v != nil {
+		err := FeedsInit(g)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 //SelectEpisode -- Callback used to select an episode
 func SelectEpisode(g *gocui.Gui, v *gocui.View) error {
 	if v != nil {
