@@ -24,8 +24,8 @@ func TestExist(t *testing.T) {
 	}
 }
 
-func TestInit(t *testing.T) {
-	file := "./testing/init_test_file.db"
+func TestCreate(t *testing.T) {
+	file := "./testing/create_test_file.db"
 
 	//Need to create the test db file
 	_, err := os.Create(file)
@@ -33,6 +33,18 @@ func TestInit(t *testing.T) {
 		t.Errorf("Unexpected error when create the database: %s", err.Error())
 	}
 
+	if !Exist(file) {
+		t.Errorf("File: %s does not exist", file)
+	}
+
+	err = os.Remove(file)
+	if err != nil {
+		t.Errorf("Error while removing file (%s): %s", file, err.Error())
+	}
+}
+
+func TestInit(t *testing.T) {
+	file := "./testing/init_test_file.db"
 	dbPath := fmt.Sprintf("file:%s?_foreign_keys=1", file)
 
 	tests := []struct {
@@ -50,10 +62,5 @@ func TestInit(t *testing.T) {
 		if err != nil {
 			t.Errorf("Unexpected err: %s", err.Error())
 		}
-	}
-	//Remove db
-	err = os.Remove(file)
-	if err != nil {
-		t.Errorf("Error while removing file (%s): %s", dbPath, err.Error())
 	}
 }
