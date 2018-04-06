@@ -181,9 +181,10 @@ func FeedHasTag(db *sql.DB, feedID, tagID int64) bool {
 	row := db.QueryRow(query, feedID, tagID)
 	err := row.Scan(&id)
 	if err != nil {
-		log.Fatal(err)
-	}
-	if id != 0 {
+		if err != sql.ErrNoRows {
+			log.Fatalf("Error happened when trying to check if feed_id (%d) has tag_id (%d): %s", feedID, tagID, err.Error())
+		}
+	} else {
 		result = true
 	}
 	return result

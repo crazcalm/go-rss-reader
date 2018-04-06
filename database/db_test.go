@@ -13,20 +13,64 @@ func createTestDB(file string) *sql.DB {
 
 	db, err := Init(testDB, true)
 	if err != nil {
-		log.Fatal("Error when trying to create the database")
+		log.Fatalf("Error when trying to create the database (%s): %s", file, err.Error())
 	}
 	return db
 }
 
-func TestFeedExist(t *testing.T) {
+func TestAddTagToFeed(t *testing.T) {
+	file := "./testing/add_tag_to_feed.db"
+	db := createTestDB(file)
 
-}
+	feedID, err := AddFeedURL(db, "url1")
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database")
+	}
 
-func TestTagExist(t *testing.T) {
+	tagID, err := AddTag(db, "tag1")
+	if err != nil {
+		t.Errorf("Error happened when adding a tag to the database")
+	}
 
-}
+	tests := []struct {
+		FeedID    int64
+		TagID     int64
+		ExpectErr bool
+		Count     int64
+	}{
+		{feedID, tagID, false, 1},
+		{feedID, tagID, true, 1},
+	}
 
-func TestFeedHasTag(t *testing.T) {
+	for _, test := range tests {
+		_, err := AddTagToFeed(db, test.FeedID, test.TagID)
+
+		if err != nil && !test.ExpectErr {
+			t.Errorf("Unexpected error: %s", err.Error())
+		}
+
+		if err == nil && test.ExpectErr {
+			t.Errorf("Expected an error, but none was received")
+		}
+
+		//Case: expected error, received an error
+		if err != nil && test.ExpectErr {
+			continue
+		}
+
+		if err == nil && !test.ExpectErr {
+			var count int64
+			row := db.QueryRow("SELECT COUNT(*) FROM feeds_and_tags")
+			err := row.Scan(&count)
+			if err != nil {
+				t.Errorf("Error happened when trying to obtain count of feeds_and_tags")
+			}
+
+			if count != test.Count {
+				t.Errorf("Expected the count to be %d, but got %d", test.Count, count)
+			}
+		}
+	}
 
 }
 
