@@ -18,6 +18,38 @@ func createTestDB(file string) *sql.DB {
 	return db
 }
 
+func TestFilterFeeds(t *testing.T) {
+	file := "./testing/filter_feeds.db"
+	db := createTestDB(file)
+	var feeds = make(map[int64]string)
+	expected := 3
+
+	for i := 1; i <= 5; i++ {
+		url := fmt.Sprintf("url%d", i)
+		id, err := AddFeedURL(db, url)
+		if err != nil {
+			t.Errorf("Error while inserting feeds into the database: %s", err.Error())
+		}
+		feeds[id] = url
+	}
+
+	var count int
+	for key := range feeds {
+		delete(feeds, key)
+		count++
+		if count == 3 {
+			break
+		}
+	}
+
+	result := FilterFeeds(db, feeds)
+
+	if len(result) != expected {
+		t.Errorf("Expected %d feeds, but got %d feeds", expected, len(result))
+	}
+
+}
+
 func TestDeleteFeed(t *testing.T) {
 	file := "./testing/delete_feed.db"
 	db := createTestDB(file)

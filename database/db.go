@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 
 	_ "github.com/mattn/go-sqlite3" //Sqlite3 driver
 
@@ -112,6 +113,30 @@ func AllActiveFeeds(db *sql.DB) map[int64]string {
 		}
 		result[id] = url
 	}
+	return result
+}
+
+//FilterFeeds -- Takes in a list of feeds and compares them with the feeds listed in the Database.
+//Returns all the feeds that are listed as active in the database but where not in the list.
+func FilterFeeds(db *sql.DB, feeds map[int64]string) map[int64]string {
+	var result = make(map[int64]string)
+	allFeeds := AllActiveFeeds(db)
+
+	for dbKey, dbValue := range allFeeds {
+		found := false
+
+		for feedKey, feedValue := range feeds {
+			if dbKey == feedKey && strings.EqualFold(dbValue, feedValue) {
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			result[dbKey] = dbValue
+		}
+	}
+
 	return result
 }
 
