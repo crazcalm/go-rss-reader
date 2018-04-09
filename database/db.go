@@ -95,6 +95,12 @@ func Init(dsn string, reset bool) (*sql.DB, error) {
 	return db, nil
 }
 
+//DeleteAllTagsFromFeed -- flips the delete flag for all tags associated with a feed
+func DeleteAllTagsFromFeed(db *sql.DB, feedID int64) error {
+	_, err := db.Exec("UPDATE feeds_and_tags SET deleted = 1 WHERE feed_id = $1", feedID)
+	return err
+}
+
 //AllActiveFeeds -- Returns all active feeds
 func AllActiveFeeds(db *sql.DB) map[int64]string {
 	var result = make(map[int64]string)
