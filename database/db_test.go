@@ -18,6 +18,37 @@ func createTestDB(file string) *sql.DB {
 	return db
 }
 
+func TestDeleteFeed(t *testing.T) {
+	file := "./testing/delete_feed.db"
+	db := createTestDB(file)
+	var feedToDelete int64 = 2
+	var expected int64 = 4
+
+	for i := 0; i < 5; i++ {
+		_, err := AddFeedURL(db, fmt.Sprintf("url%d", i))
+		if err != nil {
+			t.Errorf("Error while inserting feeds into the database: %s", err.Error())
+		}
+	}
+
+	err := DeleteFeed(db, feedToDelete)
+	if err != nil {
+		t.Errorf("Error while deleting the feed: %s", err.Error())
+	}
+
+	var count int64
+	row := db.QueryRow("SELECT COUNT(*) FROM feeds WHERE deleted = 0")
+	err = row.Scan(&count)
+	if err != nil {
+		t.Errorf("Error happened when trying to obtain count of feeds: %s", err.Error())
+	}
+
+	if count != expected {
+		t.Errorf("Expected %d feeds, but got %d", expected, count)
+	}
+
+}
+
 func TestAllActiveFeeds(t *testing.T) {
 	file := "./testing/all_active_feeds.db"
 	db := createTestDB(file)

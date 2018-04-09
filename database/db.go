@@ -115,6 +115,12 @@ func AllActiveFeeds(db *sql.DB) map[int64]string {
 	return result
 }
 
+//DeleteFeed -- Flips the delete flag for a feed in the database
+func DeleteFeed(db *sql.DB, feedID int64) error {
+	_, err := db.Exec("UPDATE feeds SET deleted = 1 WHERE id = $1", feedID)
+	return err
+}
+
 //FeedURLExist -- Checks to see if a feed exists
 func FeedURLExist(db *sql.DB, url string) bool {
 	var id int64
