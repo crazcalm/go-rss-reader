@@ -94,6 +94,27 @@ func Init(dsn string, reset bool) (*sql.DB, error) {
 	return db, nil
 }
 
+//AllActiveFeeds -- Returns all active feeds
+func AllActiveFeeds(db *sql.DB) map[int64]string {
+	var result = make(map[int64]string)
+
+	rows, err := db.Query("SELECT id, uri FROM feeds WHERE deleted = 0")
+	if err != nil {
+		log.Fatalf("Error happened when trying to get all active feeds: %s", err)
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var id int64
+		var url string
+		err := rows.Scan(&id, &url)
+		if err != nil {
+			log.Fatalf("Error happened while scanning the rows for the all active feeds function: %s", err.Error())
+		}
+		result[id] = url
+	}
+	return result
+}
+
 //FeedURLExist -- Checks to see if a feed exists
 func FeedURLExist(db *sql.DB, url string) bool {
 	var id int64
@@ -231,7 +252,7 @@ func AddFeedFileData(fileData []rss.FileData) error {
 			if err != nil {
 				log.Fatal(err)
 			}
-		}
+		} // If it does exist, I need to get the feed id
 
 		for _, tag := range fd.Tags {
 			//Need to check if the tag is already in the databse...
@@ -241,7 +262,8 @@ func AddFeedFileData(fileData []rss.FileData) error {
 				if err != nil {
 					log.Fatal(err)
 				}
-			}
+			} //  If it does exist, I need to get the tag id
+
 			//Need to check if the feed and tag are in the feeds_and_tag database
 			if !FeedHasTag(db, feedID, tagID) {
 				_, err := AddTagToFeed(db, feedID, tagID)

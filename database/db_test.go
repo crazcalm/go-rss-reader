@@ -18,6 +18,35 @@ func createTestDB(file string) *sql.DB {
 	return db
 }
 
+func TestAllActiveFeeds(t *testing.T) {
+	file := "./testing/all_active_feeds.db"
+	db := createTestDB(file)
+	var expected int64 = 5
+
+	for i := 0; i < 5; i++ {
+		_, err := AddFeedURL(db, fmt.Sprintf("url%d", i))
+		if err != nil {
+			t.Errorf("Error while inserting feeds into the database: %s", err.Error())
+		}
+	}
+
+	_, err := db.Exec("INSERT INTO feeds (uri, deleted) VALUES ($1, $2)", "deletedURL", 1)
+	if err != nil {
+		t.Errorf("Error during test setup: %s", err.Error())
+	}
+
+	var count int64
+	row := db.QueryRow("SELECT COUNT(*) FROM feeds WHERE deleted = 0")
+	err = row.Scan(&count)
+	if err != nil {
+		t.Errorf("Error happened when trying to obtain count of feeds: %s", err.Error())
+	}
+
+	if count != expected {
+		t.Errorf("Expected %d feeds, but got %d", expected, count)
+	}
+}
+
 func TestAddTagToFeed(t *testing.T) {
 	file := "./testing/add_tag_to_feed.db"
 	db := createTestDB(file)
