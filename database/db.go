@@ -230,6 +230,13 @@ func AddTag(db *sql.DB, tag string) (int64, error) {
 	return result, nil
 }
 
+//DeleteTagFromFeed -- Deletes a tag from a feed
+func DeleteTagFromFeed(db *sql.DB, feedID, tagID int64) error {
+	_, error := db.Exec("UPDATE feeds_and_tags SET deleted = 1 WHERE feed_id = $1 AND tag_id = $2", feedID, tagID)
+
+	return error
+}
+
 //FeedHasTag -- Checks to see if a feed has a specific tag
 func FeedHasTag(db *sql.DB, feedID, tagID int64) bool {
 	var id int64

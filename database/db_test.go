@@ -19,6 +19,70 @@ func createTestDB(file string) *sql.DB {
 	return db
 }
 
+func TestDeleteTagFromFeed(t *testing.T) {
+	file := "./testing/delete_tag_from_feed.db"
+	db := createTestDB(file)
+
+	var feedID int64
+	feedURL := "delete_tag_from_feed.com"
+	var tags = make(map[int64]string)
+	numOfTags := 5
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error when adding feed to thedatabase: %s", err.Error())
+	}
+
+	for i := 1; i < numOfTags; i++ {
+		tag := fmt.Sprintf("tag%d", i)
+		tagID, err := AddTag(db, tag) // Adding tag to the database
+		if err != nil {
+			t.Errorf("Error happened while adding a tag: %s", err.Error())
+		}
+
+		_, err = AddTagToFeed(db, feedID, tagID)
+		if err != nil {
+			t.Errorf("Error occured while adding tag (%s) to feed: %s", tag, err.Error())
+		}
+
+		//Addind tag to the list
+		tags[tagID] = tag
+	}
+
+	//Actual Test
+	var count int
+
+	for key := range tags {
+		err := DeleteTagFromFeed(db, feedID, key)
+		if err != nil {
+			t.Errorf("Error occured while trying to delete a tag from the database: %s", err.Error())
+		}
+		delete(tags, key)
+		count++
+
+		if count >= 2 {
+			break
+		}
+	}
+
+	dbTags := AllActiveFeedTags(db, feedID)
+
+	for keyID, value := range tags {
+		result := false
+
+		for dbID, dbValue := range dbTags {
+			if dbID == keyID && strings.EqualFold(value, dbValue) {
+				result = true
+			}
+		}
+
+		if !result {
+			t.Errorf("Expected feed to have tag (%s), but it was not found", value)
+		}
+	}
+
+}
+
 func TestAllActiveFeedTags(t *testing.T) {
 	file := "./testing/all_active_feed_tags.db"
 	db := createTestDB(file)
@@ -35,7 +99,7 @@ func TestAllActiveFeedTags(t *testing.T) {
 	}
 
 	for i := 1; i < numOfTags; i++ {
-		tag := fmt.Sprintf("tag%s", i)
+		tag := fmt.Sprintf("tag%d", i)
 		tagID, err := AddTag(db, tag) // Adding tag to the database
 		if err != nil {
 			t.Errorf("Error happaned while adding a tag: %s", err.Error())
@@ -53,7 +117,6 @@ func TestAllActiveFeedTags(t *testing.T) {
 	}
 
 	//Actual test part
-
 	dbTags := AllActiveFeedTags(db, feedID)
 
 	for keyID, value := range tagsAddedToFeed {
