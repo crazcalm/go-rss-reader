@@ -58,6 +58,29 @@ func DeleteFeed(db *sql.DB, feedID int64) error {
 	return err
 }
 
+//IsFeedDeleted -- Checks to see if the feed is currently marked as deleted
+func IsFeedDeleted(db *sql.DB, feedID int64) bool {
+	var result bool
+	var deleted int64
+
+	row := db.QueryRow("SELECT deleted FROM feeds WHERE id = $1", feedID)
+	err := row.Scan(&deleted)
+	if err != nil {
+		if err != sql.ErrNoRows {
+			log.Fatalf("Feed (%d) does not exist: %s", feedID, err.Error())
+		} else {
+			log.Fatalf("Error happened while trying check the value of the delete flag for feed (%d): %s", feedID, err.Error())
+		}
+	}
+
+	if deleted == 1 {
+		result = true
+	} else {
+		result = false
+	}
+	return result
+}
+
 //FeedURLExist -- Checks to see if a feed exists
 func FeedURLExist(db *sql.DB, url string) bool {
 	var id int64

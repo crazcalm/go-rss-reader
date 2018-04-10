@@ -34,6 +34,41 @@ func TestAllActiveFeeds(t *testing.T) {
 	}
 }
 
+func TestIsFeedDeleted(t *testing.T) {
+	file := "./testing/is_feed_deleted.db"
+	db := createTestDB(file)
+
+	feedID1, err := AddFeedURL(db, "url1")
+	if err != nil {
+		t.Errorf("Error while adding feed to test database: %s", err.Error())
+	}
+
+	feedID2, err := AddFeedURL(db, "url2")
+	if err != nil {
+		t.Errorf("Error while adding feed to test database: %s", err.Error())
+	}
+
+	err = DeleteFeed(db, feedID2)
+	if err != nil {
+		t.Errorf("Error while trying to delete a feed: %s", err.Error())
+	}
+
+	tests := []struct {
+		FeedID   int64
+		Expected bool
+	}{
+		{feedID1, false},
+		{feedID2, true},
+	}
+
+	for _, test := range tests {
+		result := IsFeedDeleted(db, test.FeedID)
+		if test.Expected != result {
+			t.Errorf("IsFeedDeleted test expected %t, but got %t", test.Expected, result)
+		}
+	}
+}
+
 func TestAddFeedURL(t *testing.T) {
 	file := "./testing/add_feed_url.db"
 	db := createTestDB(file)
