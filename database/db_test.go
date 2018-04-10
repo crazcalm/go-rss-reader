@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"testing"
 )
 
@@ -52,9 +53,20 @@ func TestAllActiveFeedTags(t *testing.T) {
 	}
 
 	//Actual test part
+
+	dbTags := AllActiveFeedTags(db, feedID)
+
 	for keyID, value := range tagsAddedToFeed {
-		if !FeedHasTag(db, feedID, keyID) {
-			t.Errorf("Feed(%d) is missing tag (%s)", feedID, value)
+		result := false
+
+		for dbID, dbValue := range dbTags {
+			if dbID == keyID && strings.EqualFold(value, dbValue) {
+				result = true
+			}
+		}
+
+		if !result {
+			t.Errorf("Expected feed to have tag (%s), but it was not found", value)
 		}
 	}
 }
