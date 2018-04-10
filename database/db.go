@@ -248,6 +248,32 @@ func FeedHasTag(db *sql.DB, feedID, tagID int64) bool {
 	return result
 }
 
+//AllActiveFeedTags -- Returns all of the active tags associated with a feed
+func AllActiveFeedTags(db *sql.DB, feedID int64) map[int64]string {
+	var result = make(map[int64]string)
+
+	query := `SELECT tags.id, tags.name FROM feeds
+	INNER JOIN feeds_and_tags ON feeds.id = feeds_and_tags.feed_id
+	INNER JOIN tags ON tags.id = feeds_and_tags.tag_id
+	WHERE feeds.id = $1`
+
+	rows, err := db.Query(query, feedID)
+	if err != nil {
+		log.Fatalf("Error happened while trying to get all tags for feed id (%d): %s", feedID, err.Error())
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var id int64
+		var name string
+		err := rows.Scan(&id, &name)
+		if err != nil {
+			log.Fatalf("Error happened while scanning the rows for the all active feed tags function: %s", err.Error())
+		}
+		result[id] = name
+	}
+	return result
+}
+
 //AddTagToFeed -- Adds a Tag to a feed via the feeds_and_tags table
 func AddTagToFeed(db *sql.DB, feedID, tagID int64) (int64, error) {
 	var result int64

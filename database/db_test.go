@@ -18,6 +18,47 @@ func createTestDB(file string) *sql.DB {
 	return db
 }
 
+func TestAllActiveFeedTags(t *testing.T) {
+	file := "./testing/all_active_feed_tags.db"
+	db := createTestDB(file)
+
+	//Variables
+	numOfTags := 5
+	var feedID int64
+	feedURL := "all_active_feed_tags.com"
+	var tagsAddedToFeed = make(map[int64]string)
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error when adding feed to the database: %s", err.Error())
+	}
+
+	for i := 1; i < numOfTags; i++ {
+		tag := fmt.Sprintf("tag%s", i)
+		tagID, err := AddTag(db, tag) // Adding tag to the database
+		if err != nil {
+			t.Errorf("Error happaned while adding a tag: %s", err.Error())
+		}
+
+		if i > 2 {
+			_, err := AddTagToFeed(db, feedID, tagID)
+			if err != nil {
+				t.Errorf("Error happened while adding tag (%s) to a feed: %s", tag, err.Error())
+			}
+
+			//Adding tag to list
+			tagsAddedToFeed[tagID] = tag
+		}
+	}
+
+	//Actual test part
+	for keyID, value := range tagsAddedToFeed {
+		if !FeedHasTag(db, feedID, keyID) {
+			t.Errorf("Feed(%d) is missing tag (%s)", feedID, value)
+		}
+	}
+}
+
 func TestDeleteAllTagsFromFeed(t *testing.T) {
 	file := "./testing/delete_all_tags_from_feed.db"
 	db := createTestDB(file)
@@ -35,7 +76,7 @@ func TestDeleteAllTagsFromFeed(t *testing.T) {
 		tag := fmt.Sprintf("tag%d", i)
 		tagID, err := AddTag(db, tag) // Adding tag to the database
 		if err != nil {
-			t.Errorf("Error happened when adding a tag: %s", err.Error())
+			t.Errorf("Error happened while adding a tag: %s", err.Error())
 		}
 		tagIDs = append(tagIDs, tagID)
 
