@@ -6,18 +6,80 @@ import (
 	"testing"
 )
 
+func TestFilterFeedTags(t *testing.T) {
+	file := "./testing/filter_feed_tags.db"
+	db := createTestDB(file)
+
+	var feedID int64
+	feedURL := "filter_feed_tags.com"
+	var allTags = make(map[int64]string)
+	var passedInTags = make(map[int64]string)
+	var diffTags = make(map[int64]string)
+	tagCount := 5
+	passedInTagCount := 2 // must be less than tagCount
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database")
+	}
+
+	for i := 1; i < tagCount; i++ {
+		tag := fmt.Sprintf("tag%d", i)
+		tagID, err := AddTag(db, tag)
+		if err != nil {
+			t.Errorf("Error happened while adding a tag the the database: %s", err.Error())
+		}
+
+		//Add tags to feed
+		_, err = AddTagToFeed(db, feedID, tagID)
+		if err != nil {
+			t.Errorf("Error happened while adding a tag to a feed: %s", err.Error())
+		}
+
+		//Track all tags
+		allTags[tagID] = tag
+
+		//Passed in tags and diff tags
+		if i < passedInTagCount {
+			passedInTags[tagID] = tag
+		} else {
+			diffTags[tagID] = tag
+		}
+	}
+
+	//Actual test
+	results := FilterFeedTags(db, feedID, passedInTags)
+
+	if len(results) != len(diffTags) {
+		t.Errorf("Expected a total of %d tags, but got %d", len(diffTags), len(results))
+	}
+
+	for key, value := range diffTags {
+		exist := false
+		for resultKey, resultValue := range results {
+			if key == resultKey && strings.EqualFold(value, resultValue) {
+				exist = true
+			}
+		}
+
+		if !exist {
+			t.Errorf("Expected tag (%s) to be in the results, but it was not found", value)
+		}
+	}
+}
+
 func TestAddTagToFeed(t *testing.T) {
 	file := "./testing/add_tag_to_feed.db"
 	db := createTestDB(file)
 
 	feedID, err := AddFeedURL(db, "url1")
 	if err != nil {
-		t.Errorf("Error happened when adding a feed to the database")
+		t.Errorf("Error happened while adding a feed to the database: %s", err.Error())
 	}
 
 	tagID, err := AddTag(db, "tag1")
 	if err != nil {
-		t.Errorf("Error happened when adding a tag to the database")
+		t.Errorf("Error happened while adding a tag to the database: %s", err.Error())
 	}
 
 	tests := []struct {

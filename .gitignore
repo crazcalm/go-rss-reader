@@ -17,3 +17,17 @@
 ## Personal
 # Test database
 */test.db
+
+
+# Database Package tests
+# Note: Must keep at least one database so that the testing directory exist in Travis CI and the tests pass
+database/testing/add_feed_url.db
+database/testing/add_tag.db
+database/testing/add_tag_to_feed.db
+database/testing/all_active_feed_tags.db
+database/testing/all_active_feeds.db
+database/testing/delete_all_tags_from_feed.db
+database/testing/delete_feed.db
+database/testing/delete_tag_from_feed.db
+database/testing/filter_feeds.db
+database/testing/filter_feed_tags.db

@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"strings"
 )
 
 //DeleteAllTagsFromFeed -- flips the delete flag for all tags associated with a feed
@@ -60,6 +61,30 @@ func AllActiveFeedTags(db *sql.DB, feedID int64) map[int64]string {
 		}
 		result[id] = name
 	}
+	return result
+}
+
+//FilterFeedTags -- Takes in a map of feed tags and compares them with the tags listed in the database for that feed.
+//Returns all the tags for that feed that are listed as active in the database but where not passed in.
+func FilterFeedTags(db *sql.DB, feedID int64, tags map[int64]string) map[int64]string {
+	var result = make(map[int64]string)
+	DBTags := AllActiveFeedTags(db, feedID)
+
+	for dbKey, dbValue := range DBTags {
+		found := false
+
+		for feedKey, feedValue := range tags {
+			if dbKey == feedKey && strings.EqualFold(dbValue, feedValue) {
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			result[dbKey] = dbValue
+		}
+	}
+
 	return result
 }
 
