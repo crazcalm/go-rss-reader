@@ -5,6 +5,26 @@ import (
 	"testing"
 )
 
+func TestGetFeedID(t *testing.T) {
+	file := "./testing/get_feed_id.db"
+	db := createTestDB(file)
+	feedURL := "get_feed_id.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	result, err := GetFeedID(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while trying to get the feed id for a url: %s", err.Error())
+	}
+
+	if feedID != result {
+		t.Errorf("Expected the feed id to be %d, but got %d", feedID, result)
+	}
+}
+
 func TestAllActiveFeeds(t *testing.T) {
 	file := "./testing/all_active_feeds.db"
 	db := createTestDB(file)

@@ -7,6 +7,17 @@ import (
 	"strings"
 )
 
+//GetFeedID -- Given a url, it returns the feed id
+func GetFeedID(db *sql.DB, url string) (int64, error) {
+	var id int64
+	row := db.QueryRow("SELECT id FROM feeds WHERE uri = $1", url)
+	err := row.Scan(&id)
+	if err != nil {
+		return id, fmt.Errorf("Error occured while trying to find the feed id for url (%s): %s", url, err.Error())
+	}
+	return id, nil
+}
+
 //AllActiveFeeds -- Returns all active feeds
 func AllActiveFeeds(db *sql.DB) map[int64]string {
 	var result = make(map[int64]string)

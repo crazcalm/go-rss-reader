@@ -4,6 +4,26 @@ import (
 	"testing"
 )
 
+func TestGetTagID(t *testing.T) {
+	file := "./testing/get_tag_id.db"
+	db := createTestDB(file)
+	tagName := "tag_name"
+
+	tagID, err := AddTag(db, tagName)
+	if err != nil {
+		t.Errorf("Error while inserting a tag into the database: %s", err.Error())
+	}
+
+	result, err := GetTagID(db, tagName)
+	if err != nil {
+		t.Errorf("Error while trying to get the tag id for a name: %s", err.Error())
+	}
+
+	if tagID != result {
+		t.Errorf("Expected the tag id to be %d, but got %d", tagID, result)
+	}
+}
+
 func TestAddTag(t *testing.T) {
 	file := "./testing/add_tag.db"
 	db := createTestDB(file)

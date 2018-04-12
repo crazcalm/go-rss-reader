@@ -33,3 +33,5 @@ database/testing/filter_feeds.db
 database/testing/filter_feed_tags.db
 database/testing/is_feed_deleted.db
 database/testing/undelete_feed.db
+database/testing/get_feed_id.db
+database/testing/get_tag_id.db

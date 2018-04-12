@@ -6,6 +6,17 @@ import (
 	"log"
 )
 
+//GetTagID -- Given a tag name, returns the tag id
+func GetTagID(db *sql.DB, name string) (int64, error) {
+	var id int64
+	row := db.QueryRow("SELECT id FROM tags WHERE name = $1", name)
+	err := row.Scan(&id)
+	if err != nil {
+		return id, fmt.Errorf("Error occured while trying to find the tag id for tag name (%s): %s", name, err.Error())
+	}
+	return id, nil
+}
+
 //TagExist -- Checks to see if a tag exists
 func TagExist(db *sql.DB, tag string) bool {
 	var id int64
