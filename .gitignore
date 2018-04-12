@@ -35,3 +35,6 @@ database/testing/is_feed_deleted.db
 database/testing/undelete_feed.db
 database/testing/get_feed_id.db
 database/testing/get_tag_id.db
+database/testing/get_feed_tag_id.db
+database/testing/is_feed_tag_deleted.db
+database/testing/undelete_feed_tag.db

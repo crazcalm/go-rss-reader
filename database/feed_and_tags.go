@@ -7,6 +7,46 @@ import (
 	"strings"
 )
 
+//UndeleteFeedTag -- Flips the delete flag off for a feed tag in the database
+func UndeleteFeedTag(db *sql.DB, feedTagID int64) error {
+	_, err := db.Exec("UPDATE feeds_and_tags SET deleted = 0 WHERE id = $1", feedTagID)
+	return err
+}
+
+//GetFeedTagID -- gets the id for a feed tag
+func GetFeedTagID(db *sql.DB, feedID, tagID int64) (int64, error) {
+	var id int64
+	row := db.QueryRow("SELECT id FROM feeds_and_tags WHERE feed_id = $1 AND tag_id = $2", feedID, tagID)
+	err := row.Scan(&id)
+	if err != nil {
+		return id, fmt.Errorf("Error happened while trying to get the feed tag id for feed id (%d) and tag id (%d): %s", feedID, tagID, err.Error())
+	}
+	return id, nil
+}
+
+//IsFeedTagDeleted -- Checks to see if the feed tag is currently marked as deleted
+func IsFeedTagDeleted(db *sql.DB, feedTagID int64) bool {
+	var result bool
+	var deleted int64
+
+	row := db.QueryRow("SELECT deleted FROM feeds_and_tags WHERE id = $1", feedTagID)
+	err := row.Scan(&deleted)
+	if err != nil {
+		if err != sql.ErrNoRows {
+			log.Fatalf("Feed tag (%d) does not exist: %s", feedTagID, err.Error())
+		} else {
+			log.Fatalf("Error happened while trying check the value of the delete flag for feed tag (%d): %s", feedTagID, err.Error())
+		}
+	}
+
+	if deleted == 1 {
+		result = true
+	} else {
+		result = false
+	}
+	return result
+}
+
 //DeleteAllTagsFromFeed -- flips the delete flag for all tags associated with a feed
 func DeleteAllTagsFromFeed(db *sql.DB, feedID int64) error {
 	_, err := db.Exec("UPDATE feeds_and_tags SET deleted = 1 WHERE feed_id = $1", feedID)
@@ -24,7 +64,7 @@ func DeleteTagFromFeed(db *sql.DB, feedID, tagID int64) error {
 func FeedHasTag(db *sql.DB, feedID, tagID int64) bool {
 	var id int64
 	var result bool
-	query := "SELECT id FROM feeds_and_tags WHERE feed_id = $1 AND tag_id = $2"
+	query := "SELECT id FROM feeds_and_tags WHERE feed_id = $1 AND tag_id = $2 AND deleted != 1"
 
 	row := db.QueryRow(query, feedID, tagID)
 	err := row.Scan(&id)

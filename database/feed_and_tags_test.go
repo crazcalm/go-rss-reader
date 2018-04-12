@@ -6,6 +6,155 @@ import (
 	"testing"
 )
 
+func TestUndeleteFeedTag(t *testing.T) {
+	file := "./testing/undelete_feed_tag.db"
+	db := createTestDB(file)
+
+	feedID, err := AddFeedURL(db, "feed.com")
+	if err != nil {
+		t.Errorf("Error happened while adding a feed to the database: %s", err.Error())
+	}
+
+	tagID, err := AddTag(db, "tag")
+	if err != nil {
+		t.Errorf("Error happened while adding a tag to the database: %s", err.Error())
+	}
+
+	feedTagID, err := AddTagToFeed(db, feedID, tagID)
+	if err != nil {
+		t.Errorf("Error happened while adding a feed tag to the database: %s", err.Error())
+	}
+
+	if !FeedHasTag(db, feedID, tagID) {
+		t.Errorf("Unexpected failure(1): See FeedHasTag func")
+	}
+
+	err = DeleteTagFromFeed(db, feedID, tagID)
+	if err != nil {
+		t.Errorf("Unexpected Failure: See DeleteTagFromFeed funct")
+	}
+
+	if FeedHasTag(db, feedID, tagID) {
+		t.Errorf("Unexpected failure(2): See FeedHasTag func")
+	}
+
+	//Actual test
+	err = UndeleteFeedTag(db, feedTagID)
+	if err != nil {
+		t.Errorf("Error happened while trying to undelete feed tag (%d): %s", feedTagID, err.Error())
+	}
+
+	if !FeedHasTag(db, feedID, tagID) {
+		t.Errorf("Expected feed (%d) to have tag (%d). Check UndeleteFeedTag func", feedID, tagID)
+	}
+}
+
+func TestGetFeedTagID(t *testing.T) {
+	file := "./testing/get_feed_tag_id.db"
+	db := createTestDB(file)
+
+	feedID, err := AddFeedURL(db, "feed1.com")
+	if err != nil {
+		t.Errorf("Error happened while adding a feed to the database: %s", err.Error())
+	}
+
+	tagID1, err := AddTag(db, "tag1")
+	if err != nil {
+		t.Errorf("Error happened while adding a tag to the database: %s", err.Error())
+	}
+
+	feedTagID, err := AddTagToFeed(db, feedID, tagID1)
+	if err != nil {
+		t.Errorf("Error happened while adding a feed tag to the database: %s", err.Error())
+	}
+
+	tagID2, err := AddTag(db, "tag2")
+	if err != nil {
+		t.Errorf("Error happened while adding a tag to the database: %s", err.Error())
+	}
+
+	tests := []struct {
+		FeedID    int64
+		TagID     int64
+		FeedTagID int64
+		ExpectErr bool
+	}{
+		{tagID1, feedID, feedTagID, false},
+		{tagID2, feedID, feedTagID, true},
+	}
+
+	for _, test := range tests {
+		id, err := GetFeedTagID(db, test.FeedID, test.TagID)
+
+		if test.ExpectErr && err != nil {
+			continue
+		}
+
+		if test.ExpectErr && err == nil {
+			t.Errorf("Expected an error, but none was received")
+		}
+
+		if !test.ExpectErr && err != nil {
+			t.Errorf("Unexpected error: %s", err.Error())
+		}
+
+		if !test.ExpectErr && err == nil {
+			if id != test.FeedTagID {
+				t.Errorf("Expected id %d, but got %d", test.FeedTagID, id)
+			}
+		}
+	}
+}
+
+func TestIsFeedTagDeleted(t *testing.T) {
+	file := "./testing/is_feed_tag_deleted.db"
+	db := createTestDB(file)
+
+	tests := []struct {
+		FeedURL string
+		Tag     string
+		Deleted bool
+	}{
+		{"feed1.com", "tag1", false},
+		{"feed2.com", "tag2", true},
+	}
+
+	for _, test := range tests {
+		feedID, err := AddFeedURL(db, test.FeedURL)
+		if err != nil {
+			t.Errorf("Error happened while adding a feed to the database")
+		}
+
+		tagID, err := AddTag(db, test.Tag)
+		if err != nil {
+			t.Errorf("Error happened while adding a tag to the database")
+		}
+
+		feedTagID, err := AddTagToFeed(db, feedID, tagID)
+		if err != nil {
+			t.Errorf("Error happened while adding a feed tag to the database")
+		}
+
+		if !FeedHasTag(db, feedID, tagID) {
+			t.Errorf("Unexpected failure. Check FeedHasTag func")
+		}
+
+		if test.Deleted {
+			err = DeleteTagFromFeed(db, feedID, tagID)
+			if err != nil {
+				t.Errorf("Unexpected failure. Check DeleteTagFromFeed func")
+			}
+
+		}
+		//Actual test
+		result := IsFeedTagDeleted(db, feedTagID)
+		if test.Deleted != result {
+			t.Errorf("Expected %t, but got %t", test.Deleted, result)
+		}
+	}
+
+}
+
 func TestFilterFeedTags(t *testing.T) {
 	file := "./testing/filter_feed_tags.db"
 	db := createTestDB(file)
@@ -223,7 +372,7 @@ func TestDeleteAllTagsFromFeed(t *testing.T) {
 	}
 
 	for index, tagID := range tagIDs {
-		if !FeedHasTag(db, feedID, tagID) {
+		if FeedHasTag(db, feedID, tagID) {
 			t.Errorf("Feed not expected to have tag: %s", tags[index])
 		}
 	}
