@@ -52,9 +52,15 @@ func FilterFeeds(db *sql.DB, feeds map[int64]string) map[int64]string {
 	return result
 }
 
-//DeleteFeed -- Flips the delete flag for a feed in the database
+//DeleteFeed -- Flips the delete flag on for a feed in the database
 func DeleteFeed(db *sql.DB, feedID int64) error {
 	_, err := db.Exec("UPDATE feeds SET deleted = 1 WHERE id = $1", feedID)
+	return err
+}
+
+//UndeleteFeed -- Flips the delete flag off for a feed in the database
+func UndeleteFeed(db *sql.DB, feedID int64) error {
+	_, err := db.Exec("UPDATE feeds SET deleted = 0 WHERE id = $1", feedID)
 	return err
 }
 

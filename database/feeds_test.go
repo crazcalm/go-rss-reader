@@ -113,6 +113,53 @@ func TestAddFeedURL(t *testing.T) {
 	}
 }
 
+func TestUndeleteFeed(t *testing.T) {
+	file := "./testing/undelete_feed.db"
+	db := createTestDB(file)
+	var feed int64 = 2
+	var expected int64 = 4 // 5 feeds were created, but one was deleted
+
+	for i := 0; i < 5; i++ {
+		_, err := AddFeedURL(db, fmt.Sprintf("url%d", i))
+		if err != nil {
+			t.Errorf("Error while inserting feeds into the database: %s", err.Error())
+		}
+	}
+
+	err := DeleteFeed(db, feed)
+	if err != nil {
+		t.Errorf("Error while deleting the feed: %s", err.Error())
+	}
+
+	var count int64
+	row := db.QueryRow("SELECT COUNT(*) FROM feeds WHERE deleted = 0")
+	err = row.Scan(&count)
+	if err != nil {
+		t.Errorf("Error happened when trying to obtain count of feeds: %s", err.Error())
+	}
+
+	if count != expected {
+		t.Errorf("Expected %d feeds, but got %d", expected, count)
+	}
+
+	expected++ // Undeleted the previously deleted feed
+	err = UndeleteFeed(db, feed)
+	if err != nil {
+		t.Errorf("Error happened while undeleting a feed: %s", err.Error())
+	}
+
+	row = db.QueryRow("SELECT COUNT(*) FROM feeds WHERE deleted = 0")
+	err = row.Scan(&count)
+	if err != nil {
+		t.Errorf("Error happened when trying to obtain count of feeds: %s", err.Error())
+	}
+
+	if count != expected {
+		t.Errorf("Expected %d feeds, but got %d", expected, count)
+	}
+
+}
+
 func TestDeleteFeed(t *testing.T) {
 	file := "./testing/delete_feed.db"
 	db := createTestDB(file)
