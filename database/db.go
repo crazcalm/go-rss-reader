@@ -15,12 +15,14 @@ import (
 const (
 	driver            = "sqlite3"
 	foreignKeySupport = "?_foreign_keys=1"
-	//TestDB -- testing database
-	TestDB = "file:test.db?_foreign_keys=1"
+	//TestDBPath -- path to test database
+	TestDBPath = "test.db"
 )
 
 var (
 	sqlFiles = [...]string{"sql/authors.sql", "sql/tags.sql", "sql/feeds.sql", "sql/episodes.sql", "sql/feeds_and_tags.sql"}
+	//TestDB -- testing database
+	TestDB = fmt.Sprintf("file:test.db?_foreign_keys=1", TestDBPath)
 )
 
 func createTables(db *sql.DB) error {
@@ -135,6 +137,7 @@ func AddFeedFileData(fileData []rss.FileData) error {
 
 		//This section ensures all the tags are in the database
 		var tagsPerFeed = make(map[int64]string) // Container for all the tags associated with this feed
+		var feedTagID int64
 		for _, tag := range fd.Tags {
 			//Need to check if the tag is already in the databse...
 			if TagExist(db, tag) {
@@ -157,24 +160,38 @@ func AddFeedFileData(fileData []rss.FileData) error {
 
 			//Need to check if the feed and tag are in the feeds_and_tag database
 			if FeedHasTag(db, feedID, tagID) {
-				//TODO: Contintue writing function!
-
-				_, err := GetFeedTagID(db, feedID, tagID)
+				feedTagID, err = GetFeedTagID(db, feedID, tagID)
 				if err != nil {
 					log.Fatal(err)
 				}
-			} else {
 
+				if IsFeedTagDeleted(db, feedTagID) {
+					err := UndeleteFeedTag(db, feedTagID)
+					if err != nil {
+						log.Fatal(err)
+					}
+				}
+
+			} else {
+				//Need to add feed tag to the database
 				_, err = AddTagToFeed(db, feedID, tagID)
 				if err != nil {
 					log.Fatal(err)
 				}
 			}
-		}
 
-		//Need to add new tags to the database
-		//Need to delete old tags that are no longer associated with the feed
-		// TODO: I also need to do the same thing for feeds...
+			//This section ensures that the tags associated with the feeds are accurate.
+			//We do this by comparing the tags we have from the file with the active
+			//tags in the database. We will then delete all of the feed tags that are active
+			//in the database that are not represented in the file.
+			filteredTags := FilterFeedTags(db, feedID, tagsPerFeed)
+			for dbTagID := range filteredTags {
+				err = DeleteTagFromFeed(db, feedID, dbTagID)
+				if err != nil {
+					log.Fatal(err)
+				}
+			}
+		}
 	}
 
 	//This section compares the feeds from the file and compares them
