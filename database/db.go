@@ -22,7 +22,7 @@ const (
 var (
 	sqlFiles = [...]string{"sql/authors.sql", "sql/tags.sql", "sql/feeds.sql", "sql/episodes.sql", "sql/feeds_and_tags.sql"}
 	//TestDB -- testing database
-	TestDB = fmt.Sprintf("file:test.db?_foreign_keys=1", TestDBPath)
+	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", TestDBPath)
 )
 
 func createTables(db *sql.DB) error {
