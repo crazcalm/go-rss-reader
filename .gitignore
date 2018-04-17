@@ -38,3 +38,11 @@ database/testing/get_tag_id.db
 database/testing/get_feed_tag_id.db
 database/testing/is_feed_tag_deleted.db
 database/testing/undelete_feed_tag.db
+database/testing/add_author.db
+database/testing/get_author.db
+database/testing/get_feed_author_id.db
+database/testing/get_feed_raw_data.db
+database/testing/get_feed_title.db
+database/testing/update_feed_author.db
+database/testing/update_feed_raw_data.db
+database/testing/update_feed_title.db

@@ -7,6 +7,57 @@ import (
 	"strings"
 )
 
+//GetFeedAuthorID -- returns the feed's author ID
+func GetFeedAuthorID(db *sql.DB, feedID int64) (int64, error) {
+	var authorID int64
+	row := db.QueryRow("SELECT author_id FROM feeds WHERE id = $1", feedID)
+	err := row.Scan(&authorID)
+	if err != nil {
+		return authorID, fmt.Errorf("Error occured while trying to find the author_id for feed id (%d): %s", feedID, err.Error())
+	}
+	return authorID, nil
+}
+
+//UpdateFeedAuthor -- Updates the feed's author
+func UpdateFeedAuthor(db *sql.DB, feedID, authorID int64) error {
+	_, err := db.Exec("UPDATE feeds SET author_id = $2 WHERE id = $1", feedID, authorID)
+	return err
+}
+
+//GetFeedRawData -- returns the feed's raw data
+func GetFeedRawData(db *sql.DB, feedID int64) (string, error) {
+	var rawData string
+	row := db.QueryRow("SELECT raw_data FROM feeds WHERE id = $1", feedID)
+	err := row.Scan(&rawData)
+	if err != nil {
+		return rawData, fmt.Errorf("Error occured while trying to find the raw_data for feed id (%d): %s", feedID, err.Error())
+	}
+	return rawData, nil
+}
+
+//UpdateFeedRawData -- Updates the feed's raw data
+func UpdateFeedRawData(db *sql.DB, feedID int64, rawData string) error {
+	_, err := db.Exec("UPDATE feeds SET raw_data = $1 WHERE id = $2", rawData, feedID)
+	return err
+}
+
+//GetFeedTitle -- returns the feed title
+func GetFeedTitle(db *sql.DB, feedID int64) (string, error) {
+	var title string
+	row := db.QueryRow("SELECT title FROM feeds WHERE id = $1", feedID)
+	err := row.Scan(&title)
+	if err != nil {
+		return title, fmt.Errorf("Error occured while trying to find the feed title for id (%d): %s", feedID, err.Error())
+	}
+	return title, nil
+}
+
+//UpdateFeedTitle -- Updates the feed title
+func UpdateFeedTitle(db *sql.DB, feedID int64, title string) error {
+	_, err := db.Exec("UPDATE feeds SET title = $1 WHERE id = $2", title, feedID)
+	return err
+}
+
 //GetFeedID -- Given a url, it returns the feed id
 func GetFeedID(db *sql.DB, url string) (int64, error) {
 	var id int64

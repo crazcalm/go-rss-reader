@@ -2,8 +2,157 @@ package database
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
+
+func TestGetFeedRawData(t *testing.T) {
+	file := "./testing/get_feed_raw_data.db"
+	db := createTestDB(file)
+	feedURL := "get_feed_raw_data.com"
+	rawData := "Feed Raw Data"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	err = UpdateFeedRawData(db, feedID, rawData)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the raw_data for a feed: %s", err.Error())
+	}
+
+	//Actual test
+	dbRawData, err := GetFeedRawData(db, feedID)
+	if err != nil {
+		t.Errorf("Failed to get the raw_data of a feed: %s", err.Error())
+	}
+
+	if !strings.EqualFold(rawData, dbRawData) {
+		t.Errorf("Expected the raw data to be %s, but get %s", rawData, dbRawData)
+	}
+
+}
+
+func TestUpdateFeedRawData(t *testing.T) {
+	file := "./testing/update_feed_raw_data.db"
+	db := createTestDB(file)
+	feedURL := "update_feed_raw_data.com"
+	rawData := "Feed Raw Data"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	//Actual test
+	err = UpdateFeedRawData(db, feedID, rawData)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the raw_data for a feed: %s", err.Error())
+	}
+}
+
+func TestGetFeedTitle(t *testing.T) {
+	file := "./testing/get_feed_title.db"
+	db := createTestDB(file)
+	feedURL := "get_feed_title.com"
+	title := "Feed Title"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	err = UpdateFeedTitle(db, feedID, title)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the title for a feed: %s", err.Error())
+	}
+
+	//Actual test
+	dbTitle, err := GetFeedTitle(db, feedID)
+	if err != nil {
+		t.Errorf("Failed to get feed title from database: %s", err.Error())
+	}
+
+	if !strings.EqualFold(title, dbTitle) {
+		t.Errorf("Expected feed title to be %s, but got %s", title, dbTitle)
+	}
+}
+
+func TestUpdateFeedTitle(t *testing.T) {
+	file := "./testing/update_feed_title.db"
+	db := createTestDB(file)
+	feedURL := "update_feed_title.com"
+	title := "Feed Title"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	//Actual test
+	err = UpdateFeedTitle(db, feedID, title)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the title for a feed: %s", err.Error())
+	}
+}
+
+func TestGetFeedAuthorID(t *testing.T) {
+	file := "./testing/get_feed_author_id.db"
+	db := createTestDB(file)
+
+	authorName := "John Doe"
+	authorEmail := "john.doe@gmail.com"
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add author: %s", err.Error())
+	}
+
+	feedURL := "update_feed_author.com"
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	err = UpdateFeedAuthor(db, feedID, authorID)
+	if err != nil {
+		t.Errorf("Failed to update the author of a feed: %s", err.Error())
+	}
+
+	//Actual test
+	dbID, err := GetFeedAuthorID(db, feedID)
+	if err != nil {
+		t.Errorf("Failed to get the author id associate with a feed: %s", err.Error())
+	}
+
+	if dbID != authorID {
+		t.Errorf("Expected authorID to be %d, but got %d", authorID, dbID)
+	}
+}
+
+func TestUpdateFeedAuthor(t *testing.T) {
+	file := "./testing/update_feed_author.db"
+	db := createTestDB(file)
+
+	authorName := "John Doe"
+	authorEmail := "john.doe@gmail.com"
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add author: %s", err.Error())
+	}
+
+	feedURL := "update_feed_author.com"
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	//Acutal test
+	err = UpdateFeedAuthor(db, feedID, authorID)
+	if err != nil {
+		t.Errorf("Failed to update the author of a feed: %s", err.Error())
+	}
+}
 
 func TestGetFeedID(t *testing.T) {
 	file := "./testing/get_feed_id.db"
