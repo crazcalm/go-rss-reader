@@ -46,3 +46,6 @@ database/testing/get_feed_title.db
 database/testing/update_feed_author.db
 database/testing/update_feed_raw_data.db
 database/testing/update_feed_title.db
+database/testing/add_epiode.db
+database/testing/get_episode.db
+database/testing/mark_episode_as_seen.db
