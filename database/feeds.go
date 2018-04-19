@@ -7,6 +7,16 @@ import (
 	"strings"
 )
 
+//GetFeedURL -- returnd the feed's url
+func GetFeedURL(db *sql.DB, feedID int64) (url string, err error) {
+	row := db.QueryRow("SELECT uri FROM feeds WHERE id = $1", feedID)
+	err = row.Scan(&url)
+	if err != nil {
+		return url, fmt.Errorf("Error occured while trying to find the url for feed id (%d): %s", feedID, err.Error())
+	}
+	return url, nil
+}
+
 //GetFeedAuthorID -- returns the feed's author ID
 func GetFeedAuthorID(db *sql.DB, feedID int64) (int64, error) {
 	var authorID int64

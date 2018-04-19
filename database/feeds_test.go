@@ -52,6 +52,26 @@ func TestUpdateFeedRawData(t *testing.T) {
 	}
 }
 
+func TestGetFeedURL(t *testing.T) {
+	file := "./testing/get_feed_url.db"
+	db := createTestDB(file)
+	feedURL := "get_feed_url.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	dbURL, err := GetFeedURL(db, feedID)
+	if err != nil {
+		t.Errorf("Failed while trying to get the url for a feed: %s", err.Error())
+	}
+
+	if !strings.EqualFold(feedURL, dbURL) {
+		t.Errorf("Expected the url to be %s, but got %s", feedURL, dbURL)
+	}
+}
+
 func TestGetFeedTitle(t *testing.T) {
 	file := "./testing/get_feed_title.db"
 	db := createTestDB(file)
