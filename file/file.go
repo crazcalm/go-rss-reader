@@ -1,4 +1,4 @@
-package rss
+package file
 
 import (
 	"fmt"
@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-//FileData -- Container to keep the url and tags of a feed
-type FileData struct {
+//Data -- Container to keep the url and tags of a feed
+type Data struct {
 	URL  string
 	Tags []string
 }
@@ -18,7 +18,7 @@ type FileData struct {
 ExtractFileContent is responsible for extracting the
 content from the rss url file. It does not validate this data.
 */
-func ExtractFileContent(f string) (results []FileData) {
+func ExtractFileContent(f string) (results []Data) {
 	b, err := ioutil.ReadFile(f)
 	if err != nil {
 		log.Fatalf("Error when reading file: %s", err.Error())
@@ -36,9 +36,9 @@ func ExtractFileContent(f string) (results []FileData) {
 		//Collect urls and tags
 		items := strings.Split(l, " ")
 		if len(items) == 1 {
-			results = append(results, FileData{items[0], []string{}})
+			results = append(results, Data{items[0], []string{}})
 		} else if len(items) > 1 {
-			results = append(results, FileData{items[0], items[1:]})
+			results = append(results, Data{items[0], items[1:]})
 		}
 	}
 	return results
