@@ -1,37 +1,86 @@
-package rss
+package database
 
 import (
+	"database/sql"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"net/http"
 	"strings"
 	"time"
 
-	"github.com/jroimartin/gocui"
 	"github.com/mmcdole/gofeed"
 
+	"github.com/crazcalm/go-rss-reader/file"
 	"github.com/crazcalm/go-rss-reader/interface"
-)
-
-var (
-	//CurrentFeedIndex -- Global container for the current Feed index
-	CurrentFeedIndex int
 )
 
 //Feed -- Data structure used to hold a feed
 type Feed struct {
+	ID   int64
 	URL  string
 	Tags []string
 	Data *gofeed.Feed
 }
 
-//NewFeed -- Used to create a new Feed
-func NewFeed(fileData FileData) (*Feed, error) {
+//GetFeedDataFromSite -- gets the feed data from the feed url and returns it
+func GetFeedDataFromSite(url string) (string, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return "", fmt.Errorf("Error trying to get the raw feed data from %s: %s", url, err.Error())
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return "", err
+	}
+	return string(body), nil
+}
+
+//NewFeed -- Used to create a new Feed. Id the id is equal to -1, then
+//all of the database interactions will not happen
+func NewFeed(id int64, fileData file.Data) (*Feed, error) {
+	var db *sql.DB
+	var err error
+	if id != -1 {
+		//Initialize database
+		db, err = Init(TestDB, false)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	//Parse the feed
 	fp := gofeed.NewParser()
 	data, err := fp.ParseURL(fileData.URL)
 	if err != nil {
-		return &Feed{URL: fileData.URL, Tags: fileData.Tags, Data: data}, fmt.Errorf("Error occured while trying to parse feed")
+		return &Feed{ID: id, URL: fileData.URL, Tags: fileData.Tags, Data: data}, fmt.Errorf("Error occured while trying to parse feed")
 	}
-	return &Feed{URL: fileData.URL, Tags: fileData.Tags, Data: data}, nil
+
+	//Initalize a feed
+	feed := &Feed{ID: id, URL: fileData.URL, Tags: fileData.Tags, Data: data}
+
+	if id != -1 {
+
+		//get raw data for feed
+		rawData, err := GetFeedDataFromSite(feed.URL)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		//Add the feed data to the database
+		err = UpdateFeedRawData(db, feed.ID, rawData)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		err = UpdateFeedTitle(db, feed.ID, feed.Title())
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	return feed, nil
 }
 
 //Title -- returns the title of the feed. If there is no title,
@@ -104,45 +153,4 @@ func (f Feed) GetEpisodes() []*Episode {
 	}
 
 	return episodes
-}
-
-//EpisodesInit -- Episodes Init for the Gui
-func EpisodesInit(g *gocui.Gui) error {
-	if len(FeedsData) < CurrentFeedIndex {
-		return fmt.Errorf("Index out of range for FeedsData")
-	}
-
-	feed := FeedsData[CurrentFeedIndex]
-
-	//Episode data for one feed
-	episodeData := feed.GuiItemsData()
-
-	//Components
-	header := gui.NewHeader("title", "Content goes here!")
-	footer := gui.NewFooter("footer", "Footer Content is here!")
-	episodes := gui.NewEpisodes("episodes", episodeData)
-
-	g.SetManager(header, footer, episodes)
-
-	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("", gocui.KeyArrowUp, gocui.ModNone, gui.CursorUp); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectEpisode); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("", gocui.KeyCtrlB, gocui.ModNone, QuitEpisodes); err != nil {
-		log.Panicln(err)
-	}
-
-	return nil
 }

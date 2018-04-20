@@ -6,10 +6,11 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 
 	_ "github.com/mattn/go-sqlite3" //Sqlite3 driver
 
-	"github.com/crazcalm/go-rss-reader"
+	"github.com/crazcalm/go-rss-reader/file"
 )
 
 const (
@@ -20,7 +21,7 @@ const (
 )
 
 var (
-	sqlFiles = [...]string{"sql/authors.sql", "sql/tags.sql", "sql/feeds.sql", "sql/episodes.sql", "sql/feeds_and_tags.sql"}
+	sqlFiles = [...]string{filepath.Join("sql", "authors.sql"), "sql/tags.sql", "sql/feeds.sql", "sql/episodes.sql", "sql/feeds_and_tags.sql"}
 	//TestDB -- testing database
 	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", TestDBPath)
 )
@@ -97,12 +98,14 @@ func Init(dsn string, reset bool) (*sql.DB, error) {
 }
 
 //AddFeedFileData -- Adds Feed File Data to the database
-func AddFeedFileData(fileData []rss.FileData) error {
+func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 	var feedID int64
 	var tagID int64
 	var feedsFromFile = make(map[int64]string)
+	var feedIDAndFileData = make(map[int64]file.Data)
 
 	db, err := Init(TestDB, false)
+	defer db.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -133,6 +136,7 @@ func AddFeedFileData(fileData []rss.FileData) error {
 			}
 
 			feedsFromFile[feedID] = fd.URL
+			feedIDAndFileData[feedID] = fd
 		}
 
 		//This section ensures all the tags are in the database
@@ -206,5 +210,5 @@ func AddFeedFileData(fileData []rss.FileData) error {
 		}
 	}
 
-	return nil
+	return feedIDAndFileData, nil
 }

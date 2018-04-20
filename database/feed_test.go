@@ -1,4 +1,4 @@
-package rss
+package database
 
 import (
 	"bytes"
@@ -11,6 +11,8 @@ import (
 	"testing"
 
 	"github.com/mmcdole/gofeed"
+
+	"github.com/crazcalm/go-rss-reader/file"
 )
 
 const (
@@ -87,8 +89,8 @@ func TestGuiItemsData(t *testing.T) {
 		ExpectedTitle []string
 		ExpectedDate  []string
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, []string{"SN 649: Meltdown & Spectre Emerge", "SN 648: Post Spectre?", "SN 647: The Dark Caracal", "SN 646: The InSpectre", "SN 645: The Speculation Meltdown", "SN 644: NSA Fingerprints", "SN 643: The Story of Bitcoin", "SN 642: BGP", "SN 641: The iOS Security Trade-off", "SN 640: More News & Feedback"}, []string{"Feb 06", "Jan 30", "Jan 23", "Jan 16", "Jan 09", "Jan 02", "Dec 26", "Dec 19", "Dec 12", "Dec 05"}},
-		{&Feed{"NO URL", []string{}, &noData}, []string{}, []string{}},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, []string{"SN 649: Meltdown & Spectre Emerge", "SN 648: Post Spectre?", "SN 647: The Dark Caracal", "SN 646: The InSpectre", "SN 645: The Speculation Meltdown", "SN 644: NSA Fingerprints", "SN 643: The Story of Bitcoin", "SN 642: BGP", "SN 641: The iOS Security Trade-off", "SN 640: More News & Feedback"}, []string{"Feb 06", "Jan 30", "Jan 23", "Jan 16", "Jan 09", "Jan 02", "Dec 26", "Dec 19", "Dec 12", "Dec 05"}},
+		{&Feed{2, "NO URL", []string{}, &noData}, []string{}, []string{}},
 	}
 
 	for _, test := range tests {
@@ -117,10 +119,10 @@ func TestEpisodeTotal(t *testing.T) {
 		Feed          *Feed
 		ExpectedCount int
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
-		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
-		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
-		{&Feed{"NO URL", []string{}, &noData}, 0},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
+		{&Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{&Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{&Feed{4, "NO URL", []string{}, &noData}, 0},
 	}
 
 	for _, test := range tests {
@@ -137,10 +139,10 @@ func TestTitle(t *testing.T) {
 		Feed          *Feed
 		ExpectedTitle string
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, "Security Now (MP3)"},
-		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, "US-CERT Alerts"},
-		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, "xkcd.com"},
-		{&Feed{"NO URL", []string{}, &noData}, "No URL"},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, "Security Now (MP3)"},
+		{&Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, "US-CERT Alerts"},
+		{&Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, "xkcd.com"},
+		{&Feed{4, "NO URL", []string{}, &noData}, "No URL"},
 	}
 
 	for _, test := range tests {
@@ -152,15 +154,15 @@ func TestTitle(t *testing.T) {
 
 func TestNewFeed(t *testing.T) {
 	//FileData variables
-	goodData := FileData{"http://www.leoville.tv/podcasts/sn.xml", []string{"security", "favorite", "audio"}}
-	badData := FileData{"http://www.linux-magazine.com/rs/feed/lmi_full", []string{"error"}}
-	noData := FileData{"", []string{}}
+	goodData := file.Data{"http://www.leoville.tv/podcasts/sn.xml", []string{"security", "favorite", "audio"}}
+	badData := file.Data{"http://www.linux-magazine.com/rs/feed/lmi_full", []string{"error"}}
+	noData := file.Data{"", []string{}}
 
 	//Error
 	errorStr := "Error occured while trying to parse feed"
 
 	tests := []struct {
-		Data      FileData
+		Data      file.Data
 		ExpectErr bool
 		Err       string
 		Title     string
@@ -171,7 +173,7 @@ func TestNewFeed(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		feed, err := NewFeed(test.Data)
+		feed, err := NewFeed(-1, test.Data)
 
 		//Case: Received and error while expecting an error
 		if err != nil && test.ExpectErr {
@@ -201,17 +203,17 @@ func TestNewFeed(t *testing.T) {
 	}
 }
 
-func TestGetEpisode(t *testing.T) {
+func TestGetEpisodeFeed(t *testing.T) {
 	tests := []struct {
 		Feed          *Feed
 		EpisodeNum    int
 		ExpectedTitle string
 		ExpectError   bool
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, "SN 649: Meltdown & Spectre Emerge", false},
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 5, "SN 644: NSA Fingerprints", false},
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 12, "None", true},
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, -3, "None", true},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, "SN 649: Meltdown & Spectre Emerge", false},
+		{&Feed{2, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 5, "SN 644: NSA Fingerprints", false},
+		{&Feed{3, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 12, "None", true},
+		{&Feed{4, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, -3, "None", true},
 	}
 
 	for _, test := range tests {
@@ -246,10 +248,10 @@ func TestGetEpisodes(t *testing.T) {
 		Feed        *Feed
 		ExpectedNum int
 	}{
-		{"snXML", &Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
-		{"alertXML", &Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
-		{"xkcdXML", &Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
-		{"No Url", &Feed{"NO URL", []string{}, &noData}, 0},
+		{"snXML", &Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
+		{"alertXML", &Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{"xkcdXML", &Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{"No Url", &Feed{4, "NO URL", []string{}, &noData}, 0},
 	}
 
 	for _, test := range tests {

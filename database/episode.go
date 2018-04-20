@@ -1,20 +1,12 @@
-package rss
+package database
 
 import (
 	"fmt"
-	"log"
 	"strings"
 
-	"github.com/jroimartin/gocui"
 	"github.com/mmcdole/gofeed"
 
-	"github.com/crazcalm/go-rss-reader/interface"
 	"github.com/crazcalm/html-to-text"
-)
-
-var (
-	//CurrentEpisodeIndex -- Global container for the current episode index
-	CurrentEpisodeIndex int
 )
 
 //Episode -- Data structure used to handle each new episode of a feed
@@ -123,45 +115,4 @@ func (e Episode) links(links []string) string {
 		result += fmt.Sprintf("\n[%d]: %s", index+1, link)
 	}
 	return result
-}
-
-//EpisodeContentInit -- Initializes the Episode content for the Gui
-func EpisodeContentInit(g *gocui.Gui) error {
-	feed := FeedsData[CurrentFeedIndex]
-	episode, err := feed.GetEpisode(CurrentEpisodeIndex)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	content, _, err := episode.Content()
-	if err != nil {
-		log.Panicln(err)
-	}
-
-	//Components
-	header := gui.NewHeader("title", "Content goes here")
-	footer := gui.NewFooter("footer", "Content goes here")
-	pager := gui.NewPager("pager", content)
-
-	//Display components
-	g.SetManager(header, footer, pager)
-
-	//keybindings
-	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("pager", gocui.KeyArrowUp, gocui.ModNone, gui.PagerUp); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("pager", gocui.KeyArrowDown, gocui.ModNone, gui.PagerDown); err != nil {
-		log.Panicln(err)
-	}
-
-	if err := g.SetKeybinding("pager", gocui.KeyCtrlB, gocui.ModNone, QuitPager); err != nil {
-		log.Panicln(err)
-	}
-
-	return nil
 }

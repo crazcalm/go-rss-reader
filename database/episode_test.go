@@ -1,4 +1,4 @@
-package rss
+package database
 
 import (
 	"log"
@@ -18,9 +18,9 @@ func TestHeader(t *testing.T) {
 		EpisodeNum int
 		AnswerPath []string
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "header", "sn0.txt"}},
-		{&Feed{URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 0, []string{"test_data", "episodes", "header", "alerts0.txt"}},
-		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "header", "xkcd0.txt"}},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "header", "sn0.txt"}},
+		{&Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 0, []string{"test_data", "episodes", "header", "alerts0.txt"}},
+		{&Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "header", "xkcd0.txt"}},
 	}
 
 	for _, test := range tests {
@@ -45,8 +45,8 @@ func TestContent(t *testing.T) {
 		AnswerPath  []string
 		ExpectedErr bool
 	}{
-		{&Feed{URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "content", "sn0.txt"}, false},
-		{&Feed{URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "content", "xkcd0.txt"}, false},
+		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, []string{"test_data", "episodes", "content", "sn0.txt"}, false},
+		{&Feed{2, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 0, []string{"test_data", "episodes", "content", "xkcd0.txt"}, false},
 	}
 
 	for _, test := range tests {
