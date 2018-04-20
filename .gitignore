@@ -16,6 +16,7 @@
 
 ## Personal
 # Test database
+test.db
 */test.db
 
 
@@ -51,3 +52,4 @@ database/testing/get_episode.db
 database/testing/mark_episode_as_seen.db
 database/testing/get_feed_episode_ids.db
 database/testing/get_feed_episode_seen_ratio.db
+database/testing/get_feed_url.db

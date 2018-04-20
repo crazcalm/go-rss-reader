@@ -43,6 +43,7 @@ func (f *Feeds) format(g *gocui.Gui) (result string) {
 
 		title := leftPad(feed.Title, " ", 1)
 
+		//TODO: Change so that if it is too long, we cut off the end
 		line, err := rightPadExactLength(index+episodes+title, " ", maxX)
 		if err != nil {
 			log.Fatal(err)
