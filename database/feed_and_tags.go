@@ -75,6 +75,8 @@ func FeedHasTag(db *sql.DB, feedID, tagID int64) bool {
 	} else {
 		result = true
 	}
+
+	//fmt.Printf("FeedHasTag(feed_id = %d, tag_id = %d) -- %t: err: %s", feedID, tagID, result, err.Error())
 	return result
 }
 

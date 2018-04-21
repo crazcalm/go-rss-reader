@@ -104,6 +104,8 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 	var feedsFromFile = make(map[int64]string)
 	var feedIDAndFileData = make(map[int64]file.Data)
 
+	//fmt.Println("AddFeedFileData: Start")
+
 	db, err := Init(TestDB, false)
 	defer db.Close()
 	if err != nil {
@@ -112,12 +114,17 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 
 	//This section ensures that all feeds are in the database
 	for _, fd := range fileData {
+
+		//fmt.Printf("AddFeedFileData: Checking feed url %s\n", fd.URL)
+
 		//Need to check if the feed is already in the database...
 		if FeedURLExist(db, fd.URL) {
-			feedID, err := GetFeedID(db, fd.URL)
+			feedID, err = GetFeedID(db, fd.URL)
 			if err != nil {
 				log.Fatal(err)
 			}
+
+			//fmt.Printf("AddFeedFileData: %s was found in the database with id %d\n", fd.URL, feedID)
 
 			//Need to make sure that the feed is not deleted
 			if IsFeedDeleted(db, feedID) {
@@ -136,19 +143,26 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 			}
 
 			feedsFromFile[feedID] = fd.URL
-			feedIDAndFileData[feedID] = fd
 		}
+
+		//Used to keep track of all feeds
+		feedIDAndFileData[feedID] = fd
 
 		//This section ensures all the tags are in the database
 		var tagsPerFeed = make(map[int64]string) // Container for all the tags associated with this feed
 		var feedTagID int64
 		for _, tag := range fd.Tags {
+
+			//fmt.Printf("AddFeedFileData: Checking tag %s\n", tag)
+
 			//Need to check if the tag is already in the databse...
 			if TagExist(db, tag) {
 				tagID, err = GetTagID(db, tag)
 				if err != nil {
 					log.Fatal(err)
 				}
+
+				//fmt.Printf("AddFeedFileData: tag %s was found in the database with id %d\n", tag, tagID)
 
 			} else {
 				//If the tag does not exist
@@ -162,12 +176,19 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 			//Add tag to the list
 			tagsPerFeed[tagID] = tag
 
+			//fmt.Println("AddFeedFileData: About to check feed tag association")
+
 			//Need to check if the feed and tag are in the feeds_and_tag database
 			if FeedHasTag(db, feedID, tagID) {
+
+				//fmt.Println("AddFeedFileData: A feed tag exists!")
+
 				feedTagID, err = GetFeedTagID(db, feedID, tagID)
 				if err != nil {
 					log.Fatal(err)
 				}
+
+				//fmt.Printf("AddFeedFileData: feed id %d and tag id have a feed tag of %d\n", feedID, tagID, feedTagID)
 
 				if IsFeedTagDeleted(db, feedTagID) {
 					err := UndeleteFeedTag(db, feedTagID)
@@ -177,6 +198,9 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 				}
 
 			} else {
+
+				//fmt.Println("Tag must be added to the feed")
+
 				//Need to add feed tag to the database
 				_, err = AddTagToFeed(db, feedID, tagID)
 				if err != nil {
@@ -209,6 +233,8 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 			log.Fatal(err)
 		}
 	}
+
+	//fmt.Println("AddFeedFileData: End")
 
 	return feedIDAndFileData, nil
 }

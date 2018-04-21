@@ -83,30 +83,31 @@ func getTestFeed(name string) *gofeed.Feed {
 
 func TestGuiItemsData(t *testing.T) {
 	var noData gofeed.Feed
+	feedTitle := "Title"
 
 	tests := []struct {
 		Feed          *Feed
 		ExpectedTitle []string
 		ExpectedDate  []string
 	}{
-		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, []string{"SN 649: Meltdown & Spectre Emerge", "SN 648: Post Spectre?", "SN 647: The Dark Caracal", "SN 646: The InSpectre", "SN 645: The Speculation Meltdown", "SN 644: NSA Fingerprints", "SN 643: The Story of Bitcoin", "SN 642: BGP", "SN 641: The iOS Security Trade-off", "SN 640: More News & Feedback"}, []string{"Feb 06", "Jan 30", "Jan 23", "Jan 16", "Jan 09", "Jan 02", "Dec 26", "Dec 19", "Dec 12", "Dec 05"}},
-		{&Feed{2, "NO URL", []string{}, &noData}, []string{}, []string{}},
+		{&Feed{1, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, []string{"SN 649: Meltdown & Spectre Emerge", "SN 648: Post Spectre?", "SN 647: The Dark Caracal", "SN 646: The InSpectre", "SN 645: The Speculation Meltdown", "SN 644: NSA Fingerprints", "SN 643: The Story of Bitcoin", "SN 642: BGP", "SN 641: The iOS Security Trade-off", "SN 640: More News & Feedback"}, []string{"Feb 06", "Jan 30", "Jan 23", "Jan 16", "Jan 09", "Jan 02", "Dec 26", "Dec 19", "Dec 12", "Dec 05"}},
+		{&Feed{2, "NO URL", feedTitle, []string{}, &noData}, []string{}, []string{}},
 	}
 
 	for _, test := range tests {
 		data := test.Feed.GuiItemsData()
 
 		if len(data) != len(test.ExpectedTitle) || len(data) != len(test.ExpectedDate) {
-			t.Errorf("%s does not have the expected number of episodes. Expected %d, but got %d", test.Feed.Title(), len(test.ExpectedDate), len(data))
+			t.Errorf("%s does not have the expected number of episodes. Expected %d, but got %d", test.Feed.Title, len(test.ExpectedDate), len(data))
 		}
 
 		for index, item := range data {
 			if !strings.EqualFold(item.Title, test.ExpectedTitle[index]) {
-				t.Errorf("For feed %s, expected %s episode title, but got %s", test.Feed.Title(), test.ExpectedTitle[index], item.Title)
+				t.Errorf("For feed %s, expected %s episode title, but got %s", test.Feed.Title, test.ExpectedTitle[index], item.Title)
 			}
 
 			if !strings.EqualFold(item.Date, test.ExpectedDate[index]) {
-				t.Errorf("For feed %s, expected %s episode date, but got %s", test.Feed.Title(), test.ExpectedDate[index], item.Date)
+				t.Errorf("For feed %s, expected %s episode date, but got %s", test.Feed.Title, test.ExpectedDate[index], item.Date)
 			}
 		}
 	}
@@ -114,40 +115,21 @@ func TestGuiItemsData(t *testing.T) {
 
 func TestEpisodeTotal(t *testing.T) {
 	var noData gofeed.Feed
+	feedTitle := "Title"
 
 	tests := []struct {
 		Feed          *Feed
 		ExpectedCount int
 	}{
-		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
-		{&Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
-		{&Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
-		{&Feed{4, "NO URL", []string{}, &noData}, 0},
+		{&Feed{1, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, 10},
+		{&Feed{2, URLs[alertXML], feedTitle, Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{&Feed{3, URLs[xkcdXML], feedTitle, Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{&Feed{4, "NO URL", feedTitle, []string{}, &noData}, 0},
 	}
 
 	for _, test := range tests {
 		if test.Feed.EpisodeTotal() != test.ExpectedCount {
 			t.Errorf("Expected %s to have %d episodes, but got %d", test.Feed.URL, test.ExpectedCount, test.Feed.EpisodeTotal())
-		}
-	}
-}
-
-func TestTitle(t *testing.T) {
-	var noData gofeed.Feed
-
-	tests := []struct {
-		Feed          *Feed
-		ExpectedTitle string
-	}{
-		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, "Security Now (MP3)"},
-		{&Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, "US-CERT Alerts"},
-		{&Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, "xkcd.com"},
-		{&Feed{4, "NO URL", []string{}, &noData}, "No URL"},
-	}
-
-	for _, test := range tests {
-		if !strings.EqualFold(test.Feed.Title(), test.ExpectedTitle) {
-			t.Errorf("Expected %s, but got %s", test.ExpectedTitle, test.Feed.Title())
 		}
 	}
 }
@@ -204,16 +186,18 @@ func TestNewFeed(t *testing.T) {
 }
 
 func TestGetEpisodeFeed(t *testing.T) {
+	feedTitle := "Title"
+
 	tests := []struct {
 		Feed          *Feed
 		EpisodeNum    int
 		ExpectedTitle string
 		ExpectError   bool
 	}{
-		{&Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 0, "SN 649: Meltdown & Spectre Emerge", false},
-		{&Feed{2, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 5, "SN 644: NSA Fingerprints", false},
-		{&Feed{3, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 12, "None", true},
-		{&Feed{4, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, -3, "None", true},
+		{&Feed{1, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, 0, "SN 649: Meltdown & Spectre Emerge", false},
+		{&Feed{2, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, 5, "SN 644: NSA Fingerprints", false},
+		{&Feed{3, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, 12, "None", true},
+		{&Feed{4, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, -3, "None", true},
 	}
 
 	for _, test := range tests {
@@ -242,16 +226,17 @@ func TestGetEpisodeFeed(t *testing.T) {
 
 func TestGetEpisodes(t *testing.T) {
 	var noData gofeed.Feed
+	feedTitle := "Title"
 
 	tests := []struct {
 		Name        string
 		Feed        *Feed
 		ExpectedNum int
 	}{
-		{"snXML", &Feed{1, URLs[snXML], Tags[snXML], getTestFeed(snXML)}, 10},
-		{"alertXML", &Feed{2, URLs[alertXML], Tags[alertXML], getTestFeed(alertXML)}, 10},
-		{"xkcdXML", &Feed{3, URLs[xkcdXML], Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
-		{"No Url", &Feed{4, "NO URL", []string{}, &noData}, 0},
+		{"snXML", &Feed{1, URLs[snXML], feedTitle, Tags[snXML], getTestFeed(snXML)}, 10},
+		{"alertXML", &Feed{2, URLs[alertXML], feedTitle, Tags[alertXML], getTestFeed(alertXML)}, 10},
+		{"xkcdXML", &Feed{3, URLs[xkcdXML], feedTitle, Tags[xkcdXML], getTestFeed(xkcdXML)}, 4},
+		{"No Url", &Feed{4, "NO URL", feedTitle, []string{}, &noData}, 0},
 	}
 
 	for _, test := range tests {

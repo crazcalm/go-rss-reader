@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"strings"
+	//"strings"
 	"time"
 
 	"github.com/mmcdole/gofeed"
@@ -17,10 +17,11 @@ import (
 
 //Feed -- Data structure used to hold a feed
 type Feed struct {
-	ID   int64
-	URL  string
-	Tags []string
-	Data *gofeed.Feed
+	ID    int64
+	URL   string
+	Title string
+	Tags  []string
+	Data  *gofeed.Feed
 }
 
 //GetFeedDataFromSite -- gets the feed data from the feed url and returns it
@@ -74,22 +75,13 @@ func NewFeed(id int64, fileData file.Data) (*Feed, error) {
 			log.Fatal(err)
 		}
 
-		err = UpdateFeedTitle(db, feed.ID, feed.Title())
+		err = UpdateFeedTitle(db, feed.ID, feed.Title)
 		if err != nil {
 			log.Fatal(err)
 		}
 	}
 
 	return feed, nil
-}
-
-//Title -- returns the title of the feed. If there is no title,
-//Then it returns the url of the feed.
-func (f *Feed) Title() string {
-	if !strings.EqualFold(f.Data.Title, "") {
-		return f.Data.Title
-	}
-	return f.URL
 }
 
 //EpisodeTotal -- Returns the total num of episodes for the feed
@@ -141,7 +133,7 @@ func (f Feed) GetEpisode(num int) (*Episode, error) {
 		return episode, err
 	}
 
-	return &Episode{f.Title(), f.Data.Author, f.Data.Items[num]}, nil
+	return &Episode{f.Title, f.Data.Author, f.Data.Items[num]}, nil
 }
 
 //GetEpisodes -- Gets all episodes
@@ -149,7 +141,7 @@ func (f Feed) GetEpisodes() []*Episode {
 	var episodes []*Episode
 
 	for _, item := range f.Data.Items {
-		episodes = append(episodes, &Episode{f.Title(), f.Data.Author, item})
+		episodes = append(episodes, &Episode{f.Title, f.Data.Author, item})
 	}
 
 	return episodes

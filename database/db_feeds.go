@@ -11,9 +11,19 @@ import (
 
 //LoadFeed -- Loads a feed from the database
 func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
+	var feedData *gofeed.Feed
+
 	url, err := GetFeedURL(db, id)
 	if err != nil {
 		log.Fatal(err)
+	}
+
+	title, err := GetFeedTitle(db, id)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if strings.EqualFold(title, "") {
+		title = url
 	}
 
 	data, err := GetFeedRawData(db, id)
@@ -21,9 +31,11 @@ func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
 		return feed, fmt.Errorf("No data to retrieve: %s", err.Error())
 	}
 
-	//Need to convert the data to a gofeed object
-	feedParser := gofeed.NewParser()
-	feedData, err := feedParser.Parse(strings.NewReader(data))
+	if !strings.EqualFold(data, "") {
+		//Need to convert the data to a gofeed object
+		feedParser := gofeed.NewParser()
+		feedData, err = feedParser.Parse(strings.NewReader(data))
+	}
 
 	var tags []string
 	activeTags := AllActiveFeedTags(db, id)
@@ -32,7 +44,7 @@ func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
 		tags = append(tags, tag)
 	}
 
-	return &Feed{id, url, tags, feedData}, nil
+	return &Feed{id, url, title, tags, feedData}, nil
 }
 
 //GetFeedURL -- returnd the feed's url
