@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0" xml:base="http://www.linuxjournal.com/taxonomy/term/31/0">
+  <channel>
+    <title>Security</title>
+    <link>http://www.linuxjournal.com/taxonomy/term/31/0</link>
+    <description />
+    <language>en</language>
+          <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/LinuxJournalSecurity" /><feedburner:info uri="linuxjournalsecurity" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><item>
+    <title>For Open-Source Software, the Developers Are All of Us</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/zBYQgZjCNpk/open-source-software-developers-are-all-us</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/open-source-software-developers-are-all-us" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/Ostif support.png" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="131" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;
+"We are stronger together than on our own." This is a core principle
+that many people adhere to in their daily lives. Whether we are
+overcoming adversity, fighting the powers that be, protecting our
+livelihoods or advancing our business strategy, this mantra propels
+people and ideas to success.&lt;/em&gt;
+&lt;span class="read-more"&gt;&lt;a href="/content/open-source-software-developers-are-all-us"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/zBYQgZjCNpk" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/taxonomy/term/18">Community</category>
+ <category domain="http://www.linuxjournal.com/tag/foss">FOSS</category>
+ <category domain="http://www.linuxjournal.com/tag/open-source">open source</category>
+ <category domain="http://www.linuxjournal.com/tag/osif">OSIF</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/taxonomy/term/17">Software</category>
+ <pubDate>Wed, 07 Feb 2018 19:06:20 +0000</pubDate>
+ <dc:creator>Derek Zimmer</dc:creator>
+ <guid isPermaLink="false">1339653 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/open-source-software-developers-are-all-us</feedburner:origLink></item>
+  <item>
+    <title>Mozilla Announces Project Things, ZFS Version 0.7.6, Kali Linux New Release and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/SoGr2_Q5U64/mozilla-announces-project-things-zfs-version-076-kali-linux-new-release-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/mozilla-announces-project-things-zfs-version-076-kali-linux-new-release-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/news-426895_640_4.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="142" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates for February 7, 2018.&lt;/em&gt;&lt;span class="read-more"&gt;&lt;a href="/content/mozilla-announces-project-things-zfs-version-076-kali-linux-new-release-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/SoGr2_Q5U64" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/iot">IOT</category>
+ <category domain="http://www.linuxjournal.com/tag/kali-linux">Kali Linux</category>
+ <category domain="http://www.linuxjournal.com/tag/kde">KDE</category>
+ <category domain="http://www.linuxjournal.com/tag/mozilla">Mozilla</category>
+ <category domain="http://www.linuxjournal.com/tag/news">News</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/linux-foundation-0">The Linux Foundation</category>
+ <category domain="http://www.linuxjournal.com/tag/training">Training</category>
+ <category domain="http://www.linuxjournal.com/tag/zfs">ZFS</category>
+ <pubDate>Wed, 07 Feb 2018 14:49:07 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339652 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/mozilla-announces-project-things-zfs-version-076-kali-linux-new-release-and-more</feedburner:origLink></item>
+  <item>
+    <title>OpenWall's LKRG, Hitachi Joins the Open Invention Network, xcp-ng Kickstarter Campaign and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/DHxpsSNGYos/openwalls-lkrg-hitachi-joins-open-invention-network-xcp-ng-kickstarter-campaign-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/openwalls-lkrg-hitachi-joins-open-invention-network-xcp-ng-kickstarter-campaign-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock-News-and-newspaper-headlines-c-178222015_2.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="133" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates for February 6, 2018.&lt;/em&gt;&lt;span class="read-more"&gt;&lt;a href="/content/openwalls-lkrg-hitachi-joins-open-invention-network-xcp-ng-kickstarter-campaign-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/DHxpsSNGYos" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/cloud">Cloud</category>
+ <category domain="http://www.linuxjournal.com/tag/gtk">GTK+</category>
+ <category domain="http://www.linuxjournal.com/tag/kernel">kernel</category>
+ <category domain="http://www.linuxjournal.com/tag/lkrg">LKRG</category>
+ <category domain="http://www.linuxjournal.com/tag/open-source">open source</category>
+ <category domain="http://www.linuxjournal.com/tag/peppermint-os">Peppermint OS</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/xcp">XCP</category>
+ <pubDate>Tue, 06 Feb 2018 14:45:30 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339650 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/openwalls-lkrg-hitachi-joins-open-invention-network-xcp-ng-kickstarter-campaign-and-more</feedburner:origLink></item>
+  <item>
+    <title>Meltdown/Spectre Status for Red Hat and Oracle</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/YQuXcTXagmU/meltdownspectre-status-red-hat-and-oracle</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/meltdownspectre-status-red-hat-and-oracle" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock--221757898.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="150" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;
+The Red Hat family of operating systems addressed Meltdown and Spectre in
+its v3.10 kernel quickly, but relied too much upon Intel's flawed
+microcode and was forced to revert from a complete solution.&lt;/em&gt;&lt;span class="read-more"&gt;&lt;a href="/content/meltdownspectre-status-red-hat-and-oracle"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/YQuXcTXagmU" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/intel">Intel</category>
+ <category domain="http://www.linuxjournal.com/tag/kernel">kernel</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/oracle">Oracle</category>
+ <category domain="http://www.linuxjournal.com/tag/red-hat">Red Hat</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Mon, 05 Feb 2018 20:34:57 +0000</pubDate>
+ <dc:creator>Charles Fisher</dc:creator>
+ <guid isPermaLink="false">1339648 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/meltdownspectre-status-red-hat-and-oracle</feedburner:origLink></item>
+  <item>
+    <title>Spectre/Meltdown Updates, Skype Snap, Red Hat's Open Brand Project and Happy Birthday to the Open Source Initiative!</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/Ko2bycQp4dc/spectremeltdown-updates-skype-snap-red-hats-open-brand-project-and-happy-birthday-osi</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/spectremeltdown-updates-skype-snap-red-hats-open-brand-project-and-happy-birthday-osi" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/news-426895_640_3.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="142" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates for February 2, 2018&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+The AV-TEST Institute &lt;a href="https://twitter.com/avtestorg/status/959015892997861376"&gt;tweeted&lt;/a&gt;
+yesterday
+that it has discovered 139 samples that
+appear to be related to recently reported CPU vulnerabilities due to the
+Meltdown and Spectre exploits.
+&lt;span class="read-more"&gt;&lt;a href="/content/spectremeltdown-updates-skype-snap-red-hats-open-brand-project-and-happy-birthday-osi"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/Ko2bycQp4dc" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/microsoft">Microsoft</category>
+ <category domain="http://www.linuxjournal.com/tag/open-source">open source</category>
+ <category domain="http://www.linuxjournal.com/tag/red-hat">Red Hat</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/skype">skype</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Fri, 02 Feb 2018 14:59:48 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339642 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/spectremeltdown-updates-skype-snap-red-hats-open-brand-project-and-happy-birthday-osi</feedburner:origLink></item>
+  <item>
+    <title>KDE Plasma 5.12, Btrfs Improvement, Linux Support for Wacom SmartPad Devices and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/XoegzxpUvwM/kde-plasma-512-btrfs-improvement-linux-support-wacom-smartpad-devices-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/kde-plasma-512-btrfs-improvement-linux-support-wacom-smartpad-devices-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock--152920607_0.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="133" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates for January 30, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Interested in giving KDE Plasma 5.12 LTS Desktop a spin (currently in beta)?
+Look no further than the latest snapshot releases of &lt;a href="https://news.opensuse.org/2018/01/26/ruby-yast-plasma-5-12-beta-get-updates-in-tumbleweed"&gt;OpenSUSE
+Tumbleweed&lt;/a&gt;.
+&lt;span class="read-more"&gt;&lt;a href="/content/kde-plasma-512-btrfs-improvement-linux-support-wacom-smartpad-devices-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/XoegzxpUvwM" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/btrfs">Btrfs</category>
+ <category domain="http://www.linuxjournal.com/tag/desktop">Desktop</category>
+ <category domain="http://www.linuxjournal.com/tag/kde">KDE</category>
+ <category domain="http://www.linuxjournal.com/tag/kernel">kernel</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <pubDate>Tue, 30 Jan 2018 15:27:37 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339632 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/kde-plasma-512-btrfs-improvement-linux-support-wacom-smartpad-devices-and-more</feedburner:origLink></item>
+  <item>
+    <title>Rapid, Secure Patching: Tools and Methods</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/tBV_3aiVnB0/rapid-secure-patching-tools-and-methods</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/rapid-secure-patching-tools-and-methods" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/security-1202344_640_9.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="113" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;
+&lt;em&gt;
+Generate enterprise-grade SSH keys and load them into an agent for control
+of all kinds of Linux hosts. Script the agent with the Parallel Distributed
+Shell (pdsh) to effect rapid changes over your server farm.
+&lt;/em&gt;
+&lt;span class="read-more"&gt;&lt;a href="/content/rapid-secure-patching-tools-and-methods"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/tBV_3aiVnB0" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/how-tos">HOW-TOs</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/servers">Servers</category>
+ <category domain="http://www.linuxjournal.com/tag/sysadmin">SysAdmin</category>
+ <pubDate>Mon, 29 Jan 2018 16:45:47 +0000</pubDate>
+ <dc:creator>Charles Fisher</dc:creator>
+ <guid isPermaLink="false">1339631 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/rapid-secure-patching-tools-and-methods</feedburner:origLink></item>
+  <item>
+    <title>Linux 4.15 Kernel, GCC, LinuxBoot Project and More Cryptojacking</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/wMEIvMy5Dxk/linux-415-kernel-gcc-linxboot-project-and-more-cryptojacking</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/linux-415-kernel-gcc-linxboot-project-and-more-cryptojacking" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/news-426895_640_2.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="142" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News briefs for January 29, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+The good: the Linux 4.15 kernel officially has been released. View
+the diff &lt;a href="https://git.kernel.org/torvalds/ds/v4.15/v4.14"&gt;here&lt;/a&gt;,
+and
+also see the &lt;a href="https://www.kernel.org"&gt;Linux Kernel Archives&lt;/a&gt; for
+more info.
+&lt;span class="read-more"&gt;&lt;a href="/content/linux-415-kernel-gcc-linxboot-project-and-more-cryptojacking"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/wMEIvMy5Dxk" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/cryptocurrency">Cryptocurrency</category>
+ <category domain="http://www.linuxjournal.com/tag/gcc">GCC</category>
+ <category domain="http://www.linuxjournal.com/tag/kernel">kernel</category>
+ <category domain="http://www.linuxjournal.com/tag/linuxboot">LinuxBoot</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Mon, 29 Jan 2018 15:03:05 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339630 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/linux-415-kernel-gcc-linxboot-project-and-more-cryptojacking</feedburner:origLink></item>
+  <item>
+    <title>Advice for Buying and Setting Up Laptops When You're Traveling or On-Call</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/D_a3VPNidFo/advice-buying-and-setting-laptops-when-youre-traveling-or-call</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/advice-buying-and-setting-laptops-when-youre-traveling-or-call" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock--198909895.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="200" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;
+&lt;em&gt;Why stress over losing that expensive personal or work laptop? Buy a cheap
+one for risky situations.&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+In a &lt;a href="http://www.linuxjournal.com/content/hack-and-preparing-vacation"&gt;previous article&lt;/a&gt;, I wrote about how to prepare for a vacation so you aren't
+disturbed by a work emergency. As part of that article, I described how to
+prepare your computer:
+&lt;span class="read-more"&gt;&lt;a href="/content/advice-buying-and-setting-laptops-when-youre-traveling-or-call"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/D_a3VPNidFo" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/laptops">Laptops</category>
+ <category domain="http://www.linuxjournal.com/tag/qubes">Qubes</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/sysadmin">SysAdmin</category>
+ <pubDate>Sun, 28 Jan 2018 14:08:02 +0000</pubDate>
+ <dc:creator>Kyle Rankin</dc:creator>
+ <guid isPermaLink="false">1339623 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/advice-buying-and-setting-laptops-when-youre-traveling-or-call</feedburner:origLink></item>
+  <item>
+    <title>Mycroft Mark II, Chronicle, Intel and Bionic Beaver</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/z-4OTomZ9_g/mycroft-mark-ii-chronicle-intel-and-bionic-beaver</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/mycroft-mark-ii-chronicle-intel-and-bionic-beaver" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock-News-and-newspaper-headlines-c-178222015_0.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="133" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News briefs for January 26, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+The &lt;a href="https://mycroft.ai"&gt;Mycroft Mark II&lt;/a&gt; Open Source Voice
+Assistant (that doesn't spy on you) just launched on Kickstarter. Mycroft
+source code is available on &lt;a href="https://github.com/MycroftAI"&gt;GitHub&lt;/a&gt;.
+&lt;span class="read-more"&gt;&lt;a href="/content/mycroft-mark-ii-chronicle-intel-and-bionic-beaver"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/z-4OTomZ9_g" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/ai">AI</category>
+ <category domain="http://www.linuxjournal.com/tag/chronicle">Chronicle</category>
+ <category domain="http://www.linuxjournal.com/tag/intel">Intel</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <category domain="http://www.linuxjournal.com/tag/ubuntu">Ubuntu</category>
+ <pubDate>Fri, 26 Jan 2018 13:55:40 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339629 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/mycroft-mark-ii-chronicle-intel-and-bionic-beaver</feedburner:origLink></item>
+  <item>
+    <title>Chrome 64, GCC 7.3, Librem 5 Phone Progress and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/-_KmN9MKMB0/chrome-64-gcc-73-librem-5-phone-progress-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/chrome-64-gcc-73-librem-5-phone-progress-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/bigstock--152920607.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="133" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates for January 25, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Chrome 64 is now available for Linux, Mac and Windows, featuring a stronger
+ad blocker and several security fixes, including mitigations for Spectre
+and Meltdown. See the &lt;a href="https://chromium.googlesource.com/chromium/src/+log/63.0.3239.132..64.0.3282.119?pretty=fuller&amp;amp;n=10000"&gt;release
+updates&lt;/a&gt; for more info.
+&lt;span class="read-more"&gt;&lt;a href="/content/chrome-64-gcc-73-librem-5-phone-progress-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/-_KmN9MKMB0" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/chrome">Chrome</category>
+ <category domain="http://www.linuxjournal.com/tag/gcc">GCC</category>
+ <category domain="http://www.linuxjournal.com/tag/librem-5-phone">Librem 5 Phone</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/mozilla">Mozilla</category>
+ <category domain="http://www.linuxjournal.com/tag/red-hat">Red Hat</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Thu, 25 Jan 2018 13:57:55 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339628 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/chrome-64-gcc-73-librem-5-phone-progress-and-more</feedburner:origLink></item>
+  <item>
+    <title>Linus Rants, Cryptojacking Protection, openSUSE and Games</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/Lf-RkaCsDfQ/linus-rants-cryptojacking-protection-opensuse-and-games</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/linus-rants-cryptojacking-protection-opensuse-and-games" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/maxpixel.freegreatpicture.com-Global-Inform-Read-News-Paper-Newspaper-Policy-1713669_2.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="133" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News updates from January 23, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Linus Torvalds slams Intel's Spectre and Meltdown patches, calling them
+"COMPLETE and UTTER GARBAGE". See &lt;a href="https://lkml.org/lkml/2018/1/21/192"&gt;LKML&lt;/a&gt; for more.
+&lt;span class="read-more"&gt;&lt;a href="/content/linus-rants-cryptojacking-protection-opensuse-and-games"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/Lf-RkaCsDfQ" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/cryptocurrency">Cryptocurrency</category>
+ <category domain="http://www.linuxjournal.com/tag/gaming">gaming</category>
+ <category domain="http://www.linuxjournal.com/tag/meltdown">Meltdown</category>
+ <category domain="http://www.linuxjournal.com/tag/opensuse">openSUSE</category>
+ <category domain="http://www.linuxjournal.com/tag/opera">Opera</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Tue, 23 Jan 2018 16:15:30 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339617 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/linus-rants-cryptojacking-protection-opensuse-and-games</feedburner:origLink></item>
+  <item>
+    <title>Spectre Patches, Snap, Happy Birthday LWN and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/Ds_Bl09MfFw/spectre-patches-snap-happy-birthday-lwn-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/spectre-patches-snap-happy-birthday-lwn-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/news-426895_640_1.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="142" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;
+&lt;em&gt;News updates for January 22, 2018.&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+Are you using protection? Longtime kernel developer, Greg  Kroah-Hartman, just
+&lt;a href="http://kroah.com/log/blog/2018/01/19/meltdown-status-2"&gt;posted a simple 
+recipe&lt;/a&gt; for users to verify whether they are running a Spectre/Meltdown
+patched version of the Linux kernel.
+&lt;span class="read-more"&gt;&lt;a href="/content/spectre-patches-snap-happy-birthday-lwn-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/Ds_Bl09MfFw" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/kernel">kernel</category>
+ <category domain="http://www.linuxjournal.com/tag/lwn">LWN</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/slack">Slack</category>
+ <category domain="http://www.linuxjournal.com/tag/snap">Snap</category>
+ <category domain="http://www.linuxjournal.com/tag/spectre">Spectre</category>
+ <pubDate>Mon, 22 Jan 2018 18:54:25 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339614 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/spectre-patches-snap-happy-birthday-lwn-and-more</feedburner:origLink></item>
+  <item>
+    <title>Purism Progress Report, Spectre Mitigation for Ubuntu, Malicious Chrome Extensions and More</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/1BhT54cRrw0/purism-progress-report-spectre-mitigation-ubuntu-malicious-chrome-extensions-and-more</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/purism-progress-report-spectre-mitigation-ubuntu-malicious-chrome-extensions-and-more" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/news-426895_640.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="142" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;&lt;em&gt;News briefs for January 18, 2018.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Purism, the group behind the security and privacy-focused Librem 5 phone just recently published a &lt;a href="https://puri.sm/posts/librem5-progress-report-1"&gt;progress report&lt;/a&gt; highlighting the latest developments and design decisions to its crowdfunded project. Changes include an even faster processor. 
+&lt;span class="read-more"&gt;&lt;a href="/content/purism-progress-report-spectre-mitigation-ubuntu-malicious-chrome-extensions-and-more"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/1BhT54cRrw0" height="1" width="1" alt=""/&gt;</description>
+     <category domain="http://www.linuxjournal.com/tag/azure">Azure</category>
+ <category domain="http://www.linuxjournal.com/tag/chrome">Chrome</category>
+ <category domain="http://www.linuxjournal.com/tag/gaming">gaming</category>
+ <category domain="http://www.linuxjournal.com/tag/purism">Purism</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/training">Training</category>
+ <category domain="http://www.linuxjournal.com/tag/ubuntu">Ubuntu</category>
+ <pubDate>Thu, 18 Jan 2018 16:20:19 +0000</pubDate>
+ <dc:creator>Jill Franklin</dc:creator>
+ <guid isPermaLink="false">1339606 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/purism-progress-report-spectre-mitigation-ubuntu-malicious-chrome-extensions-and-more</feedburner:origLink></item>
+  <item>
+    <title>Linux Filesystem Events with inotify</title>
+    <link>http://feedproxy.google.com/~r/LinuxJournalSecurity/~3/PfezCUViwqA/linux-filesystem-events-inotify</link>
+    <description>&lt;div class="field field-type-filefield field-field-node-image"&gt;
+    &lt;div class="field-items"&gt;
+            &lt;div class="field-item odd"&gt;
+                    &lt;a href="/content/linux-filesystem-events-inotify" class="imagecache imagecache-node-page imagecache-linked imagecache-node-page_linked"&gt;&lt;img src="http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/node-page/nodeimage/story/security-1202344_640_8.jpg" alt="" title=""  class="imagecache imagecache-node-page" width="200" height="113" /&gt;&lt;/a&gt;        &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--paging_filter--&gt;&lt;p&gt;
+&lt;cite&gt;Triggering scripts with incron and systemd.&lt;/cite&gt;
+&lt;span class="read-more"&gt;&lt;a href="/content/linux-filesystem-events-inotify"&gt; more&gt;&gt;&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;img src="http://feeds.feedburner.com/~r/LinuxJournalSecurity/~4/PfezCUViwqA" height="1" width="1" alt=""/&gt;</description>
+     <comments>http://www.linuxjournal.com/content/linux-filesystem-events-inotify#comments</comments>
+ <category domain="http://www.linuxjournal.com/tag/how-tos">HOW-TOs</category>
+ <category domain="http://www.linuxjournal.com/tag/security">Security</category>
+ <category domain="http://www.linuxjournal.com/tag/systemd">systemd</category>
+ <pubDate>Mon, 08 Jan 2018 15:38:34 +0000</pubDate>
+ <dc:creator>Charles Fisher</dc:creator>
+ <guid isPermaLink="false">1339561 at http://www.linuxjournal.com</guid>
+  <feedburner:origLink>http://www.linuxjournal.com/content/linux-filesystem-events-inotify</feedburner:origLink></item>
+  </channel>
+</rss>

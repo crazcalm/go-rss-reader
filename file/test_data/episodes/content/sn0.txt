@@ -1,0 +1,41 @@
+Feed: Security Now (MP3)
+Title: SN 649: Meltdown & Spectre Emerge
+Author: leo@twit.tv (Leo Laporte)
+Link: https://twit.tv/shows/security-now/episodes/649
+Date: Tue, 06 Feb 2018 16:56:36 PST
+Podcast Download URL: http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0649/sn0649.mp3 (type: audio/mpeg)
+
+[image 1: Security Now (Audio)]
+
+This week we observe that the Net Neutrality battle is actually FAR from lost, ComputerWorld's Woody Leonard enumerates a crazy January of updates, "EternalBlue" is turning out to be far more eternal than we'd wish, will Flash EVER die? A new 0-day Flash exploit in the wild, what happens when you combine Shodan with Metasploit?, Firefox 59 takes another privacy enhancing step forward, a questionable means of sneaking data between systems, another fun SpinRite report from the field, some closing the loop feedback from our listeners, and a look at the early emergence of Meltdown and Spectre exploits appearing in the wild.
+
+We invite you to read our show notes[2]. 
+
+Hosts:Steve Gibson[3] and Leo Laporte[4]
+
+Download or subscribe to this show at https://twit.tv/shows/security-now[5].
+
+You can submit a question to Security Now! at the GRC Feedback Page[6].
+
+For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: grc.com[7], also the home of the best disk maintenance and recovery utility ever written Spinrite 6[8].
+
+Bandwidth for Security Now is provided by CacheFly[9].
+
+Sponsors:
+  * RING.COM/SecurityNow[10]
+  * RocketMortgage.com/SecurityNow[11]
+  * FreshBooks.com/securitynow[12]
+
+Links:
+[1]: https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN
+[2]: https://www.grc.com/sn/SN-649-Notes.pdf
+[3]: https://twit.tv/people/steve-gibson
+[4]: https://twit.tv/people/leo-laporte
+[5]: https://twit.tv/shows/security-now
+[6]: https://www.grc.com/feedback.htm
+[7]: https://www.grc.com/securitynow.htm
+[8]: https://www.grc.com/sr/spinrite.htm
+[9]: https://www.cachefly.com/
+[10]: http://RING.COM/SecurityNow
+[11]: http://RocketMortgage.com/SecurityNow
+[12]: http://FreshBooks.com/securitynow

@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+	<channel>
+		<title>Security Now (MP3)</title>
+		<link>https://twit.tv/shows/security-now</link>
+		<generator>TWiT Feed Generator v3.5.1</generator>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<language>en-US</language>
+		<copyright>This work is licensed under a Creative Commons License - Attribution-NonCommercial-NoDerivatives 4.0 International - http://creativecommons.org/licenses/by-nc-nd/4.0/</copyright>
+		<creativeCommons:license>http://creativecommons.org/licenses/by-nc-nd/4.0/</creativeCommons:license>
+		<managingEditor>leo@twit.tv (Leo Laporte)</managingEditor>
+		<webMaster>distro@twit.tv (TWiT Engineering)</webMaster>
+		<ttl>720</ttl>
+		<sy:updatePeriod>weekly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<lastBuildDate>Tue, 06 Feb 2018 19:40:47 PST</lastBuildDate>
+		<pubDate>Tue, 06 Feb 2018 19:40:47 PST</pubDate>
+		<itunes:type>episodic</itunes:type>
+		<itunes:author>TWiT</itunes:author>
+		<itunes:subtitle>Steve Gibson discusses the hot topics in security today with Leo Laporte.</itunes:subtitle>
+		<itunes:summary>Steve Gibson, the man who coined the term spyware and created the first anti-spyware program, creator of Spinrite and ShieldsUP, discusses the hot topics in security today with Leo Laporte.
+
+Records live every Tuesday at 4:30pm Eastern / 1:30pm Pacific / 21:30 UTC.</itunes:summary>
+		<description>Steve Gibson, the man who coined the term spyware and created the first anti-spyware program, creator of Spinrite and ShieldsUP, discusses the hot topics in security today with Leo Laporte.
+
+Records live every Tuesday at 4:30pm Eastern / 1:30pm Pacific / 21:30 UTC.</description>
+<itunes:keywords>TWiT, Technology, Steve Gibson, Leo Laporte, security, spyware, malware, hacking, cyber crime, emcryption</itunes:keywords>
+	<itunes:explicit>clean</itunes:explicit>
+	<itunes:block>no</itunes:block>
+	<itunes:owner>
+		<itunes:name>Leo Laporte</itunes:name>
+		<itunes:email>leo@twit.tv</itunes:email>
+	</itunes:owner>
+		<itunes:category text="Technology">
+			<itunes:category text="Tech News"/>
+</itunes:category>
+		<itunes:category text="News &amp; Politics" />
+		<itunes:category text="Technology">
+			<itunes:category text="Software How-To"/>
+</itunes:category>
+	<image>
+		<title>Security Now (Audio)</title>
+		<url>https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN</url>
+		<link>https://twit.tv/shows/security-now</link>
+		<width>144</width>
+		<height>144</height>
+	</image>
+	<itunes:image href="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_2048x2048/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=WZIaoXS4" />
+	<atom:link href="http://feeds.twit.tv/sn.xml" type="application/rss+xml" rel="self"/>
+		<item>
+			<title>SN 649: Meltdown &amp; Spectre Emerge</title>
+			<itunes:title>Meltdown &amp; Spectre Emerge</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 06 Feb 2018 16:56:36 PST</pubDate>
+			<itunes:episode>649</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/649</link>
+			<comments>https://twit.tv/shows/security-now/episodes/649</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Meltdown &amp; Spectre in the Wild</itunes:subtitle>
+			<itunes:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, net neutrality, Windows, updates, cryptocurrency, malware, NSA, exploit, flash, 0-day, SHODAN, Metasploit, firefox, meltdown, spectre, intel</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we observe that the Net Neutrality battle is actually FAR from lost, ComputerWorld's Woody Leonard enumerates a crazy January of updates, "EternalBlue" is turning out to be far more eternal than we'd wish, will Flash EVER die? A new 0-day Flash exploit in the wild, what happens when you combine Shodan with Metasploit?, Firefox 59 takes another privacy enhancing step forward, a questionable means of sneaking data between systems, another fun SpinRite report from the field, some closing the loop feedback from our listeners, and a look at the early emergence of Meltdown and Spectre exploits appearing in the wild.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-649-Notes.pdf">show notes</a>. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we observe that the Net Neutrality battle is actually FAR from lost, ComputerWorld's Woody Leonard enumerates a crazy January of updates, "EternalBlue" is turning out to be far more eternal than we'd wish, will Flash EVER die? A new 0-day Flash exploit in the wild, what happens when you combine Shodan with Metasploit?, Firefox 59 takes another privacy enhancing step forward, a questionable means of sneaking data between systems, another fun SpinRite report from the field, some closing the loop feedback from our listeners, and a look at the early emergence of Meltdown and Spectre exploits appearing in the wild.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-649-Notes.pdf">show notes</a>. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we observe that the Net Neutrality battle is actually FAR from lost, ComputerWorld's Woody Leonard enumerates a crazy January of updates, "EternalBlue" is turning out to be far more eternal than we'd wish, will Flash EVER die? A new 0-day Flash exploit in the wild, what happens when you combine Shodan with Metasploit?, Firefox 59 takes another privacy enhancing step forward, a questionable means of sneaking data between systems, another fun SpinRite report from the field, some closing the loop feedback from our listeners, and a look at the early emergence of Meltdown and Spectre exploits appearing in the wild.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-649-Notes.pdf">show notes</a>. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0649/sn0649.mp3</guid>
+			<itunes:duration>1:40:47</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0649/sn0649.mp3" length="48632959" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0649/sn0649.mp3" fileSize="48632959" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 649: Meltdown &amp; Spectre Emerge</media:title>
+				<media:description type="plain">Meltdown &amp; Spectre in the Wild</media:description>
+				<media:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, net neutrality, Windows, updates, cryptocurrency, malware, NSA, exploit, flash, 0-day, SHODAN, Metasploit, firefox, meltdown, spectre, intel</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/587121/hero/sn0649.jpg?itok=NqSf61Zp" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 648: Post Spectre?</title>
+			<itunes:title>Post Spectre?</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 30 Jan 2018 15:52:04 PST</pubDate>
+			<itunes:episode>648</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/648</link>
+			<comments>https://twit.tv/shows/security-now/episodes/648</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Spectre Keeps on Giving</itunes:subtitle>
+			<itunes:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, Spectre. Tavis Ormandy, HTTPS, strava, voting machines, cryptocurrency, BSD, Dark Caracal, CrossRAT, trojan, net neutrality, InSpectre, Microsoft</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we discuss continuing Spectre updates, how not to treat Tavis Ormandy, a popular dating app where you'd really hope for HTTPS but be surprised to find it missing, the unintended consequences of global posting of fitness tracking data, gearing up (or not) for this year's voting machine hack'fest, another record broken by a cryptocurrency exchange heist, bad ads and fake ads, the unclear fate of the BSD operating systems, a caution about Dark Caracal's CrossRAT Trojan, another way to skin the Net Neutrality cat, a bit of errata and miscellany, one of the best SpinRite testimonials in a long time, and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-648-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we discuss continuing Spectre updates, how not to treat Tavis Ormandy, a popular dating app where you'd really hope for HTTPS but be surprised to find it missing, the unintended consequences of global posting of fitness tracking data, gearing up (or not) for this year's voting machine hack'fest, another record broken by a cryptocurrency exchange heist, bad ads and fake ads, the unclear fate of the BSD operating systems, a caution about Dark Caracal's CrossRAT Trojan, another way to skin the Net Neutrality cat, a bit of errata and miscellany, one of the best SpinRite testimonials in a long time, and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-648-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we discuss continuing Spectre updates, how not to treat Tavis Ormandy, a popular dating app where you'd really hope for HTTPS but be surprised to find it missing, the unintended consequences of global posting of fitness tracking data, gearing up (or not) for this year's voting machine hack'fest, another record broken by a cryptocurrency exchange heist, bad ads and fake ads, the unclear fate of the BSD operating systems, a caution about Dark Caracal's CrossRAT Trojan, another way to skin the Net Neutrality cat, a bit of errata and miscellany, one of the best SpinRite testimonials in a long time, and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-648-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0648/sn0648.mp3</guid>
+			<itunes:duration>1:55:54</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0648/sn0648.mp3" length="55887267" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0648/sn0648.mp3" fileSize="55887267" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 648: Post Spectre?</media:title>
+				<media:description type="plain">Spectre Keeps on Giving</media:description>
+				<media:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, Spectre. Tavis Ormandy, HTTPS, strava, voting machines, cryptocurrency, BSD, Dark Caracal, CrossRAT, trojan, net neutrality, InSpectre, Microsoft</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/584511/hero/sn0648_h264.00_01_46_48.still001.jpg?itok=F4hK-k0X" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 647: The Dark Caracal</title>
+			<itunes:title>The Dark Caracal</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 23 Jan 2018 16:32:16 PST</pubDate>
+			<itunes:episode>647</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/647</link>
+			<comments>https://twit.tv/shows/security-now/episodes/647</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>State-sponsored Cyber Espionage</itunes:subtitle>
+			<itunes:keywords>Security, Security Now, TWiT, leo laporte, steve gibson, SpinRite, intel, spectre, firmware, reboot, Linus Torvalds, net neutrality, duckduckgo, Apple, tim cook, iPhone, iOS, battery, EFF, Lookout, Dark Caracal</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>The Meltdown and Spectre vulnerabilities continue to dominate the week's news. So we'll first catch up with what's new there, then discuss the new Net Neutrality violation detection apps that are starting to appear, a new app and browser plug from the search privacy provider DuckDuckGo, a bit of welcome news from Apple's Tim Cook about their planned response to the iPhone battery-life and performance debacle, a bit of errata and some feedback from our terrific listeners. Then we take a look into a state-level, state-sponsored, worldwide, decade-long cyber espionage campaign which the EFF and Lookout Security have dubbed: Dark Caracal.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-647-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>The Meltdown and Spectre vulnerabilities continue to dominate the week's news. So we'll first catch up with what's new there, then discuss the new Net Neutrality violation detection apps that are starting to appear, a new app and browser plug from the search privacy provider DuckDuckGo, a bit of welcome news from Apple's Tim Cook about their planned response to the iPhone battery-life and performance debacle, a bit of errata and some feedback from our terrific listeners. Then we take a look into a state-level, state-sponsored, worldwide, decade-long cyber espionage campaign which the EFF and Lookout Security have dubbed: Dark Caracal.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-647-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>The Meltdown and Spectre vulnerabilities continue to dominate the week's news. So we'll first catch up with what's new there, then discuss the new Net Neutrality violation detection apps that are starting to appear, a new app and browser plug from the search privacy provider DuckDuckGo, a bit of welcome news from Apple's Tim Cook about their planned response to the iPhone battery-life and performance debacle, a bit of errata and some feedback from our terrific listeners. Then we take a look into a state-level, state-sponsored, worldwide, decade-long cyber espionage campaign which the EFF and Lookout Security have dubbed: Dark Caracal.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-647-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0647/sn0647.mp3</guid>
+			<itunes:duration>1:48:32</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0647/sn0647.mp3" length="52351541" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0647/sn0647.mp3" fileSize="52351541" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 647: The Dark Caracal</media:title>
+				<media:description type="plain">State-sponsored Cyber Espionage</media:description>
+				<media:keywords>Security, Security Now, TWiT, leo laporte, steve gibson, SpinRite, intel, spectre, firmware, reboot, Linus Torvalds, net neutrality, duckduckgo, Apple, tim cook, iPhone, iOS, battery, EFF, Lookout, Dark Caracal</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/581851/hero/sn0647.jpg?itok=uWIu7yOk" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 646: The InSpectre</title>
+			<itunes:title>The InSpectre</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 16 Jan 2018 19:26:46 PST</pubDate>
+			<itunes:episode>646</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/646</link>
+			<comments>https://twit.tv/shows/security-now/episodes/646</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Steve Gibson explains his "Inspectre" utility for Meltdown and Spectre.</itunes:subtitle>
+			<itunes:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, meltdown, spectre, InSpectre, Intel AMT, skype, signal, UK data protection legislation</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we discuss more trouble with Intel's AMT, what does Skype's use of Signal really mean, the UK's data protection legislation gives researchers a bit of relief, the continuing winding down of HTTP, "progress" on the development of Meltdown attacks, Google successfully tackles the hardest-to-fix Spectre concern with a Return Trampoline, some closing the loop feedback with our terrific listeners, and the evolving landscape of Meltdown and Spectre, including Steve's just completed "InSpectre" test &amp; explanation utility.<br> </p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-646-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://redhat.com/commandlineheroes">redhat.com/commandlineheroes</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we discuss more trouble with Intel's AMT, what does Skype's use of Signal really mean, the UK's data protection legislation gives researchers a bit of relief, the continuing winding down of HTTP, "progress" on the development of Meltdown attacks, Google successfully tackles the hardest-to-fix Spectre concern with a Return Trampoline, some closing the loop feedback with our terrific listeners, and the evolving landscape of Meltdown and Spectre, including Steve's just completed "InSpectre" test &amp; explanation utility.<br> </p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-646-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://redhat.com/commandlineheroes">redhat.com/commandlineheroes</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we discuss more trouble with Intel's AMT, what does Skype's use of Signal really mean, the UK's data protection legislation gives researchers a bit of relief, the continuing winding down of HTTP, "progress" on the development of Meltdown attacks, Google successfully tackles the hardest-to-fix Spectre concern with a Return Trampoline, some closing the loop feedback with our terrific listeners, and the evolving landscape of Meltdown and Spectre, including Steve's just completed "InSpectre" test &amp; explanation utility.<br> </p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-646-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://redhat.com/commandlineheroes">redhat.com/commandlineheroes</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0646/sn0646.mp3</guid>
+			<itunes:duration>1:39:33</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0646/sn0646.mp3" length="48039248" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0646/sn0646.mp3" fileSize="48039248" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 646: The InSpectre</media:title>
+				<media:description type="plain">Steve Gibson explains his "Inspectre" utility for Meltdown and Spectre.</media:description>
+				<media:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, meltdown, spectre, InSpectre, Intel AMT, skype, signal, UK data protection legislation</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/579331/hero/sn0646.jpg?itok=bzljMyP2" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 645: The Speculation Meltdown</title>
+			<itunes:title>The Speculation Meltdown</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 09 Jan 2018 18:14:46 PST</pubDate>
+			<itunes:episode>645</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/645</link>
+			<comments>https://twit.tv/shows/security-now/episodes/645</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Meltdown and Spectre Explained</itunes:subtitle>
+			<itunes:keywords>SecuritySecurity Now, TWiT, leo laporte, steve gibson, SpinRite, meltdown, spectre, Epic, Fortnight, Microsoft, anti-virus, Firefox Quantum, western digital, MyCloud, WPA3</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week, before we focus upon the industry-wide catastrophe enabled by precisely timing the instructed execution of all contemporary high-performance processor architectures... we examine a change in Microsoft's policy regarding non-Microsoft A/V systems, Firefox Quantum's performance when tracking protections are enabled, the very worrisome hard-coding backdoors in ten of Western Digital's MyCloud drives, and if at first (WEP) and at second (WPA) and at third (WPA2) and at forth (WPS), you don't succeed... try, try, try, try, try yet again... with WPA3... another crucial cryptographic system being developed by a closed, members-only, committee.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-645-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://ZipRecruiter.com/securitynow">ZipRecruiter.com/securitynow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week, before we focus upon the industry-wide catastrophe enabled by precisely timing the instructed execution of all contemporary high-performance processor architectures... we examine a change in Microsoft's policy regarding non-Microsoft A/V systems, Firefox Quantum's performance when tracking protections are enabled, the very worrisome hard-coding backdoors in ten of Western Digital's MyCloud drives, and if at first (WEP) and at second (WPA) and at third (WPA2) and at forth (WPS), you don't succeed... try, try, try, try, try yet again... with WPA3... another crucial cryptographic system being developed by a closed, members-only, committee.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-645-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://ZipRecruiter.com/securitynow">ZipRecruiter.com/securitynow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week, before we focus upon the industry-wide catastrophe enabled by precisely timing the instructed execution of all contemporary high-performance processor architectures... we examine a change in Microsoft's policy regarding non-Microsoft A/V systems, Firefox Quantum's performance when tracking protections are enabled, the very worrisome hard-coding backdoors in ten of Western Digital's MyCloud drives, and if at first (WEP) and at second (WPA) and at third (WPA2) and at forth (WPS), you don't succeed... try, try, try, try, try yet again... with WPA3... another crucial cryptographic system being developed by a closed, members-only, committee.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-645-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://ZipRecruiter.com/securitynow">ZipRecruiter.com/securitynow</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0645/sn0645.mp3</guid>
+			<itunes:duration>2:09:09</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0645/sn0645.mp3" length="62243381" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0645/sn0645.mp3" fileSize="62243381" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 645: The Speculation Meltdown</media:title>
+				<media:description type="plain">Meltdown and Spectre Explained</media:description>
+				<media:keywords>SecuritySecurity Now, TWiT, leo laporte, steve gibson, SpinRite, meltdown, spectre, Epic, Fortnight, Microsoft, anti-virus, Firefox Quantum, western digital, MyCloud, WPA3</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/576541/hero/sn0645_h264.00_09_01_40.still001.jpg?itok=BuFbmRB3" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 644: NSA Fingerprints</title>
+			<itunes:title>NSA Fingerprints</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 02 Jan 2018 17:36:34 PST</pubDate>
+			<itunes:episode>644</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/644</link>
+			<comments>https://twit.tv/shows/security-now/episodes/644</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Betrayed by Our Browser's AutoFill.</itunes:subtitle>
+			<itunes:keywords>Security</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we discuss a new clever and disheartening abuse of our browser's handy-dandy username and password autofill, some recent and frantic scurrying around by many OS kernel developers, a just-released MacOS 0 day allowing full local system compromise, another massively popular router falls to the IoT botnets, even high-quality IoT devices have problems, the evolution of adblocking and countermeasures, an important update for Mozilla's Thunderbird, a bit of miscellany, listener feedback, and an update on the NSA's possible intervention into secure encryption standards.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-644-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we discuss a new clever and disheartening abuse of our browser's handy-dandy username and password autofill, some recent and frantic scurrying around by many OS kernel developers, a just-released MacOS 0 day allowing full local system compromise, another massively popular router falls to the IoT botnets, even high-quality IoT devices have problems, the evolution of adblocking and countermeasures, an important update for Mozilla's Thunderbird, a bit of miscellany, listener feedback, and an update on the NSA's possible intervention into secure encryption standards.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-644-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we discuss a new clever and disheartening abuse of our browser's handy-dandy username and password autofill, some recent and frantic scurrying around by many OS kernel developers, a just-released MacOS 0 day allowing full local system compromise, another massively popular router falls to the IoT botnets, even high-quality IoT devices have problems, the evolution of adblocking and countermeasures, an important update for Mozilla's Thunderbird, a bit of miscellany, listener feedback, and an update on the NSA's possible intervention into secure encryption standards.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-644-Notes.pdf">show notes</a>.</p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0644/sn0644.mp3</guid>
+			<itunes:duration>2:07:49</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0644/sn0644.mp3" length="61606621" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0644/sn0644.mp3" fileSize="61606621" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 644: NSA Fingerprints</media:title>
+				<media:description type="plain">Betrayed by Our Browser's AutoFill.</media:description>
+				<media:keywords>Security</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/573971/hero/sn0644_h264.00_58_12_09.still001.jpg?itok=yeIyVpif" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 643: The Story of Bitcoin</title>
+			<itunes:title>The Story of Bitcoin</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 26 Dec 2017 10:00:00 PST</pubDate>
+			<itunes:episode>643</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/643</link>
+			<comments>https://twit.tv/shows/security-now/episodes/643</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>How Bitcoin works</itunes:subtitle>
+			<itunes:keywords>Security, bitcoin, cryptocurrency, mining</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>In this special rebroadcast of Security Now from February 9, 2011, Steve Gibson explains, in detail, exactly how Bitcoin works. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p><strong>Guest:</strong> <a href="https://twitter.com/acedtect" target="_blank">Tom Merritt</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://GoToWebinar.com/podcast">GoToWebinar.com/podcast</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>In this special rebroadcast of Security Now from February 9, 2011, Steve Gibson explains, in detail, exactly how Bitcoin works. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p><strong>Guest:</strong> <a href="https://twitter.com/acedtect" target="_blank">Tom Merritt</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://GoToWebinar.com/podcast">GoToWebinar.com/podcast</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>In this special rebroadcast of Security Now from February 9, 2011, Steve Gibson explains, in detail, exactly how Bitcoin works. </p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p><strong>Guest:</strong> <a href="https://twitter.com/acedtect" target="_blank">Tom Merritt</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsor:</strong><ul>
+<li><a href="http://GoToWebinar.com/podcast">GoToWebinar.com/podcast</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0643/sn0643.mp3</guid>
+			<itunes:duration>57:34</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0643/sn0643.mp3" length="27884838" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0643/sn0643.mp3" fileSize="27884838" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 643: The Story of Bitcoin</media:title>
+				<media:description type="plain">How Bitcoin works</media:description>
+				<media:keywords>Security, bitcoin, cryptocurrency, mining</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/571271/hero/ppsrecord-studioa-4770.mov_.00_02_23_44.still001.jpg?itok=BEyiPeWC" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+		<media:credit role="reporter">Tom Merritt</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 642: BGP</title>
+			<itunes:title>BGP</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 19 Dec 2017 18:47:35 PST</pubDate>
+			<itunes:episode>642</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/642</link>
+			<comments>https://twit.tv/shows/security-now/episodes/642</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Border Gateway Protocol Security</itunes:subtitle>
+			<itunes:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, mirai, Minecraft, iot, Krebs, botnet, akamai, Estonia, infineon, 0-day, vBulletin, mozilla, Mr. Robot, windows 10, chrome, bgp</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we examine how Estonia handled the Infineon crypto bug, two additional consequences of the pressure to maliciously mine cryptocurrency, 0-day exploits in the popular vBulletin forum system, Mozilla in the doghouse over Mr. Robot, Win10's insecure password manager mistake, when legacy protocol comes back to bite us, hole to bulk-steal any Chrome user's entire stored password vault... and we finally know where and why the uber-potent Mirai botnet was created, and by whom. We also have a bit of errata and some fun miscellany.. then we're going to take a look at BGP, another creaky yet crucial -- and vulnerable -- protocol that glues the global Internet together.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-642-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we examine how Estonia handled the Infineon crypto bug, two additional consequences of the pressure to maliciously mine cryptocurrency, 0-day exploits in the popular vBulletin forum system, Mozilla in the doghouse over Mr. Robot, Win10's insecure password manager mistake, when legacy protocol comes back to bite us, hole to bulk-steal any Chrome user's entire stored password vault... and we finally know where and why the uber-potent Mirai botnet was created, and by whom. We also have a bit of errata and some fun miscellany.. then we're going to take a look at BGP, another creaky yet crucial -- and vulnerable -- protocol that glues the global Internet together.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-642-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we examine how Estonia handled the Infineon crypto bug, two additional consequences of the pressure to maliciously mine cryptocurrency, 0-day exploits in the popular vBulletin forum system, Mozilla in the doghouse over Mr. Robot, Win10's insecure password manager mistake, when legacy protocol comes back to bite us, hole to bulk-steal any Chrome user's entire stored password vault... and we finally know where and why the uber-potent Mirai botnet was created, and by whom. We also have a bit of errata and some fun miscellany.. then we're going to take a look at BGP, another creaky yet crucial -- and vulnerable -- protocol that glues the global Internet together.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-642-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://WordPress.com/securitynow">WordPress.com/securitynow</a></li>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0642/sn0642.mp3</guid>
+			<itunes:duration>2:11:34</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0642/sn0642.mp3" length="63404681" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0642/sn0642.mp3" fileSize="63404681" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 642: BGP</media:title>
+				<media:description type="plain">Border Gateway Protocol Security</media:description>
+				<media:keywords>Security Now, TWiT, leo laporte, steve gibson, SpinRite, mirai, Minecraft, iot, Krebs, botnet, akamai, Estonia, infineon, 0-day, vBulletin, mozilla, Mr. Robot, windows 10, chrome, bgp</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/570611/hero/sn0642_h264.01_09_57_32.still001.jpg?itok=8NWUaZj9" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 641: The iOS Security Trade-off</title>
+			<itunes:title>The iOS Security Trade-off</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 12 Dec 2017 18:14:51 PST</pubDate>
+			<itunes:episode>641</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/641</link>
+			<comments>https://twit.tv/shows/security-now/episodes/641</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>iOS Jailbreak, Cryptocurrency Woes</itunes:subtitle>
+			<itunes:keywords>Security</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we discuss the details behind the "USB / JTAG takeover" of Intel's Management Engine, a rare Project Zero discovery, Microsoft's well-meaning but ill-tested IoT security project, troubles with EV certs, various Cryptocurrency woes, a clever DNS spoofing detection system, a terrific guide to setting up the EdgeRouterX for network segmentation, last week's emergency out-of-cycle patch from Microsoft, a mitigated vulnerability in Apple's Homekit, Valve's ending of Bitcoin for Steam purchases, finally some REALLY GOOD news in the elusive quest for encrypted eMail, a bit of miscellany, some closing the loop feedback with our listeners, and a look at the security sacrifice Apple made in the name of convenience... and what it means.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-641-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://BLUEAPRON.COM/SECURITYNOW">BLUEAPRON.COM/SECURITYNOW</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we discuss the details behind the "USB / JTAG takeover" of Intel's Management Engine, a rare Project Zero discovery, Microsoft's well-meaning but ill-tested IoT security project, troubles with EV certs, various Cryptocurrency woes, a clever DNS spoofing detection system, a terrific guide to setting up the EdgeRouterX for network segmentation, last week's emergency out-of-cycle patch from Microsoft, a mitigated vulnerability in Apple's Homekit, Valve's ending of Bitcoin for Steam purchases, finally some REALLY GOOD news in the elusive quest for encrypted eMail, a bit of miscellany, some closing the loop feedback with our listeners, and a look at the security sacrifice Apple made in the name of convenience... and what it means.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-641-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://BLUEAPRON.COM/SECURITYNOW">BLUEAPRON.COM/SECURITYNOW</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we discuss the details behind the "USB / JTAG takeover" of Intel's Management Engine, a rare Project Zero discovery, Microsoft's well-meaning but ill-tested IoT security project, troubles with EV certs, various Cryptocurrency woes, a clever DNS spoofing detection system, a terrific guide to setting up the EdgeRouterX for network segmentation, last week's emergency out-of-cycle patch from Microsoft, a mitigated vulnerability in Apple's Homekit, Valve's ending of Bitcoin for Steam purchases, finally some REALLY GOOD news in the elusive quest for encrypted eMail, a bit of miscellany, some closing the loop feedback with our listeners, and a look at the security sacrifice Apple made in the name of convenience... and what it means.</p> 
+<p>We invite you to read our <a href="https://www.grc.com/sn/SN-641-Notes.pdf">show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://RING.COM/SecurityNow">RING.COM/SecurityNow</a></li>
+<li><a href="http://BLUEAPRON.COM/SECURITYNOW">BLUEAPRON.COM/SECURITYNOW</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0641/sn0641.mp3</guid>
+			<itunes:duration>2:12:44</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0641/sn0641.mp3" length="63966000" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0641/sn0641.mp3" fileSize="63966000" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 641: The iOS Security Trade-off</media:title>
+				<media:description type="plain">iOS Jailbreak, Cryptocurrency Woes</media:description>
+				<media:keywords>Security</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/568251/hero/sn0641_h264.00_49_33_08.still001.jpg?itok=grwoeOWh" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+		<item>
+			<title>SN 640: More News &amp; Feedback</title>
+			<itunes:title>More News &amp; Feedback</itunes:title>
+			<itunes:episodeType>full</itunes:episodeType>
+			<pubDate>Tue, 05 Dec 2017 18:33:55 PST</pubDate>
+			<itunes:episode>640</itunes:episode>
+			<link>https://twit.tv/shows/security-now/episodes/640</link>
+			<comments>https://twit.tv/shows/security-now/episodes/640</comments>
+			<itunes:author>TWiT</itunes:author>
+			<category>Technology</category>
+			<category>Security</category>
+			<itunes:explicit>clean</itunes:explicit>
+			<itunes:subtitle>Apple Snafu, FB Wants Your Pix</itunes:subtitle>
+			<itunes:keywords>Security, Security Now, TWiT, leo laporte, steve gibson, SpinRite, StartCom, StartSSL, macos, High Sierra, root, Apple, FaceID, facebook, Windows, unicode, email, Google, Android, mirai, dongle, ZyXEL, Humble Bundle</itunes:keywords>
+			<description>
+<![CDATA[
+<p><img src="https://elroycdn.twit.tv/sites/default/files/styles/twit_album_art_144x144/public/images/shows/security_now/album_art/audio/sn1400audio.jpg?itok=NVY4RFyN" align="right" hspace="20" vspace="20" border="0" title="Security Now (Audio)" alt="Security Now (Audio)"/></p><p>This week we discuss the long-awaited end of StartCom &amp; StartSSL, inside last week's macOS passwordless root account access and problems with Apple's patches, the question of Apple allowing 3D facial data access to apps, Facebook's new and controversial use of camera images, in-the-wild exploitation of one of last month's patched Windows vulnerabilities, an annoying evolution in browser-based cryptocurrency mining, exploitation of Unicode in email headers, Google's advancing protection for Android users, a terrific list of authentication dongle-supporting sites and services, Mirai finds another 100,000 exposed ZyXEL routers, Google moves to reduce system crashes, a bit of miscellany including another security-related Humble Bundle offering and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read <a href="https://www.grc.com/sn/SN-640-Notes.pdf">the show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]>
+			</description>
+			<itunes:summary><![CDATA[
+<p>This week we discuss the long-awaited end of StartCom &amp; StartSSL, inside last week's macOS passwordless root account access and problems with Apple's patches, the question of Apple allowing 3D facial data access to apps, Facebook's new and controversial use of camera images, in-the-wild exploitation of one of last month's patched Windows vulnerabilities, an annoying evolution in browser-based cryptocurrency mining, exploitation of Unicode in email headers, Google's advancing protection for Android users, a terrific list of authentication dongle-supporting sites and services, Mirai finds another 100,000 exposed ZyXEL routers, Google moves to reduce system crashes, a bit of miscellany including another security-related Humble Bundle offering and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read <a href="https://www.grc.com/sn/SN-640-Notes.pdf">the show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></itunes:summary>
+			<content:encoded><![CDATA[
+<p>This week we discuss the long-awaited end of StartCom &amp; StartSSL, inside last week's macOS passwordless root account access and problems with Apple's patches, the question of Apple allowing 3D facial data access to apps, Facebook's new and controversial use of camera images, in-the-wild exploitation of one of last month's patched Windows vulnerabilities, an annoying evolution in browser-based cryptocurrency mining, exploitation of Unicode in email headers, Google's advancing protection for Android users, a terrific list of authentication dongle-supporting sites and services, Mirai finds another 100,000 exposed ZyXEL routers, Google moves to reduce system crashes, a bit of miscellany including another security-related Humble Bundle offering and some closing the loop feedback from our terrific listeners.</p> 
+<p>We invite you to read <a href="https://www.grc.com/sn/SN-640-Notes.pdf">the show notes.</a></p> 
+<p><strong>Hosts:</strong> <a href="https://twit.tv/people/steve-gibson">Steve Gibson</a> and <a href="https://twit.tv/people/leo-laporte">Leo Laporte</a></p> 
+<p>Download or subscribe to this show at <a href="https://twit.tv/shows/security-now">https://twit.tv/shows/security-now</a>.</p> 
+<p>You can submit a question to Security Now! at the <a href="https://www.grc.com/feedback.htm" target="_blank">GRC Feedback Page</a>.</p> 
+<p>For 16kbps versions, transcripts, and notes (including fixes), visit Steve's site: <a href="https://www.grc.com/securitynow.htm" target="_blank">grc.com</a>, also the home of the best disk maintenance and recovery utility ever written <a href="https://www.grc.com/sr/spinrite.htm" target="_blank">Spinrite 6</a>.</p> 
+<p>Bandwidth for Security Now is provided by <a href="https://www.cachefly.com/" target="_blank">CacheFly</a>.</p>
+<p><strong>Sponsors:</strong><ul>
+<li><a href="http://ITPro.TV/securitynow">ITPro.TV/securitynow - use code: SN30</a></li>
+<li><a href="http://RocketMortgage.com/SecurityNow">RocketMortgage.com/SecurityNow</a></li>
+<li><a href="http://FreshBooks.com/securitynow">FreshBooks.com/securitynow</a></li>
+</ul></p>
+]]></content:encoded>
+			<guid isPermaLink="false">http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0640/sn0640.mp3</guid>
+			<itunes:duration>1:56:42</itunes:duration>
+			<enclosure url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0640/sn0640.mp3" length="56270536" type="audio/mpeg"/>
+			<media:content url="http://www.podtrac.com/pts/redirect.mp3/cdn.twit.tv/audio/sn/sn0640/sn0640.mp3" fileSize="56270536" type="audio/mpeg" medium="audio">
+				<media:title type="plain">SN 640: More News &amp; Feedback</media:title>
+				<media:description type="plain">Apple Snafu, FB Wants Your Pix</media:description>
+				<media:keywords>Security, Security Now, TWiT, leo laporte, steve gibson, SpinRite, StartCom, StartSSL, macos, High Sierra, root, Apple, FaceID, facebook, Windows, unicode, email, Google, Android, mirai, dongle, ZyXEL, Humble Bundle</media:keywords>
+				<media:thumbnail url="https://elroycdn.twit.tv/sites/default/files/styles/twit_slideshow_400x300/public/images/episodes/565521/hero/sn0640_h264.00_46_57_50.still001.jpg?itok=6IUkn8vs" width="400" height="225" />
+				<media:rating scheme="urn:simple">nonadult</media:rating>
+				<media:rating scheme="urn:v-chip">tv-g</media:rating>
+				<media:category scheme="urn:iab:categories" label="Technology &amp; Computing">IAB19</media:category>		<media:credit role="anchor person">Steve Gibson</media:credit>
+		<media:credit role="anchor person">Leo Laporte</media:credit>
+			</media:content>
+		</item>
+	</channel>
+</rss>

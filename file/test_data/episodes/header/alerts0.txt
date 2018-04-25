@@ -1,0 +1,5 @@
+Feed: US-CERT Alerts
+Title: TA18-004A: Meltdown and Spectre Side-Channel Vulnerability Guidance
+Author: US-CERT
+Link: https://www.us-cert.gov/ncas/alerts/TA18-004A
+Date: Thu, 04 Jan 2018 18:47:21 +0000

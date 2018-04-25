@@ -44,11 +44,11 @@ func TestExtractFileContent(t *testing.T) {
 
 	//files
 	dir := "test_data"
-	empty := filepath.Join("..", dir, "empty_rss")
-	oneRss := filepath.Join("..", dir, "one_rss")
-	oneRssWithTags := filepath.Join("..", dir, "one_rss_with_tags")
-	multipleRss := filepath.Join("..", dir, "multiple_rss")
-	multipleRssWithTags := filepath.Join("..", dir, "multiple_rss_with_tags")
+	empty := filepath.Join(dir, "empty_rss")
+	oneRss := filepath.Join(dir, "one_rss")
+	oneRssWithTags := filepath.Join(dir, "one_rss_with_tags")
+	multipleRss := filepath.Join(dir, "multiple_rss")
+	multipleRssWithTags := filepath.Join(dir, "multiple_rss_with_tags")
 
 	tests := []struct {
 		File string
@@ -98,9 +98,9 @@ the file exist, which includes
 - making sure that the file path is not a directory
 */
 func TestCheckFile(t *testing.T) {
-	file := filepath.Join("..", "test_data", "one_rss")
-	dir := filepath.Join("..", "test_data")
-	notAFile := filepath.Join("..", "test_data", "not_a_file")
+	file := filepath.Join("test_data", "one_rss")
+	dir := filepath.Join("test_data")
+	notAFile := filepath.Join("test_data", "not_a_file")
 
 	tests := []struct {
 		File      string
@@ -108,9 +108,9 @@ func TestCheckFile(t *testing.T) {
 		Err       string
 	}{
 		{"", true, "file cannot be an empty string"},
-		{dir, true, "../test_data is not a file"},
+		{dir, true, "test_data is not a file"},
 		{file, false, "none"},
-		{notAFile, true, "file ../test_data/not_a_file does not exist"},
+		{notAFile, true, "file test_data/not_a_file does not exist"},
 	}
 
 	for _, test := range tests {

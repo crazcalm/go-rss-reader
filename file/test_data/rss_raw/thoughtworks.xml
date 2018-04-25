@@ -1,0 +1,676 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+      <channel>
+        <atom:link href="http://feeds.soundcloud.com/users/soundcloud:users:94605026/sounds.rss" rel="self" type="application/rss+xml"/>
+        <atom:link href="http://feeds.soundcloud.com/users/soundcloud:users:94605026/sounds.rss?before=150338277" rel="next" type="application/rss+xml"/>
+        <title>ThoughtWorks</title>
+        <link>https://www.thoughtworks.com</link>
+        <pubDate>Thu, 30 Nov 2017 10:28:16 +0000</pubDate>
+        <lastBuildDate>Thu, 30 Nov 2017 10:28:16 +0000</lastBuildDate>
+        <ttl>60</ttl>
+        <language>en</language>
+        <copyright>All rights reserved</copyright>
+        <webMaster>feeds@soundcloud.com (SoundCloud Feeds)</webMaster>
+        <description>A community of passionate individuals whose purpose is to revolutionize software design, creation and delivery, while advocating for positive social change.</description>
+        <itunes:subtitle>A community of passionate individuals whose purpo…</itunes:subtitle>
+        <itunes:owner>
+          <itunes:name>ThoughtWorks</itunes:name>
+          <itunes:email>feeds@soundcloud.com</itunes:email>
+        </itunes:owner>
+        <itunes:author>ThoughtWorks</itunes:author>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:image href="http://i1.sndcdn.com/avatars-000358071716-t57y22-original.jpg"/>
+        <image>
+          <url>http://i1.sndcdn.com/avatars-000358071716-t57y22-original.jpg</url>
+          <title>ThoughtWorks</title>
+          <link>https://www.thoughtworks.com</link>
+        </image>
+        <itunes:category text="Technology"/>
+        <item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/308177357</guid>
+      <title>Open Source Myths</title>
+      <pubDate>Fri, 17 Feb 2017 08:14:29 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/open-source-myths</link>
+      <itunes:duration>00:32:46</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this podcast, ThoughtWorks' Karl Brown and Gurpreet Luthra discuss the benefits, challenges, costs and common myths associated with open source technology. They talk about the suitability of open source software for specific needs, especially in global health. 
+
+Karl Brown is the Director of Technology for the Office of Social Change Initiatives (OSCI). Gurpreet Luthra is the Product Manager for Bahmni, an Open Source Hospital Management System for low resource environments.</itunes:summary>
+      <itunes:subtitle>In this podcast, ThoughtWorks' Karl Brown and Gur…</itunes:subtitle>
+      <description>In this podcast, ThoughtWorks' Karl Brown and Gurpreet Luthra discuss the benefits, challenges, costs and common myths associated with open source technology. They talk about the suitability of open source software for specific needs, especially in global health. 
+
+Karl Brown is the Director of Technology for the Office of Social Change Initiatives (OSCI). Gurpreet Luthra is the Product Manager for Bahmni, an Open Source Hospital Management System for low resource environments.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/308177357-thoughtworks-open-source-myths.mp3" length="0"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000208230768-2cbpap-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/291149642</guid>
+      <title>Evolutionary Architecture  |  ThoughtWorks Beacon</title>
+      <pubDate>Fri, 04 Nov 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/thoughtworks-beacon-evolutionary-architecture-vo</link>
+      <itunes:duration>00:15:55</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this edition of the Beacon Podcast, Software Architect Neal Ford and CTO Rebecca Parsons go deeper into the definition of evolutionary architecture and discuss fitness functions. Learn more by visiting the Technology Radar: https://www.thoughtworks.com/radar</itunes:summary>
+      <itunes:subtitle>In this edition of the Beacon Podcast, Software A…</itunes:subtitle>
+      <description>In this edition of the Beacon Podcast, Software Architect Neal Ford and CTO Rebecca Parsons go deeper into the definition of evolutionary architecture and discuss fitness functions. Learn more by visiting the Technology Radar: https://www.thoughtworks.com/radar</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/291149642-thoughtworks-thoughtworks-beacon-evolutionary-architecture-vo.mp3" length="0"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000194882050-7qflj7-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/291149645</guid>
+      <title>Build Your Own Radar | ThoughtWorks Beacon</title>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/thoughtworks-beacon-build-your-own-radar-vo</link>
+      <itunes:duration>00:20:57</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this edition of the Beacon podcast, ThoughtWorkers Neal Ford, Rachel Laycock and Jonny LeRoy discuss why and how to build your own tech radar. Learn more in this blog article: https://www.thoughtworks.com/insights/blog/build-your-own-technology-radar or by visiting the Tech Radar https://www.thoughtworks.com/radar</itunes:summary>
+      <itunes:subtitle>In this edition of the Beacon podcast, ThoughtWor…</itunes:subtitle>
+      <description>In this edition of the Beacon podcast, ThoughtWorkers Neal Ford, Rachel Laycock and Jonny LeRoy discuss why and how to build your own tech radar. Learn more in this blog article: https://www.thoughtworks.com/insights/blog/build-your-own-technology-radar or by visiting the Tech Radar https://www.thoughtworks.com/radar</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/291149645-thoughtworks-thoughtworks-beacon-build-your-own-radar-vo.mp3" length="0"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000194882249-9h9h41-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/271746782</guid>
+      <title>Incorporating Security Best Practices into Agile Teams</title>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/incorporating-security-best-practices-into-agile-teams</link>
+      <itunes:duration>00:22:28</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode of the ThoughtWorks Beacon Podcast, ThoughtWorkers Jonny LeRoy and Chelsea Komlo talk about security and specifically how it fits into the development process of an agile team.
+
+Jonny and Chelsea begin by talking about the &quot;Security Sandwich&quot; - a concept first coined in ThoughtWorks' Technology Radar. https://www.thoughtworks.com/radar
+
+&quot;We called it the security sandwich because the meat of your delivery was in the middle, but then security came on either side like the two pieces of bread, &quot; Jonny explained. &quot;And there would be some upfront security planning and documentation, and then some penetration testing and certification at the end. We are really on a mission to work out how to bake security processes into continuous delivery approaches.&quot;
+
+The podcast continues with Chelsea and Jonny providing next steps for tech leaders who want to incorporate a security culture within their respective teams.
+
+&quot;One thing that's important to remember is that you're never going to completely be 100% secure, but you also want to be able to know if something is happening and react. So when we think about security, we think about both hardening our systems and also reacting,&quot; Chelsea reminds listeners. 
+
+You can follow us on Twitter @thoughtworks. For more information on ThoughtWorks and our podcast, visit www.thoughtworks.com. 
+</itunes:summary>
+      <itunes:subtitle>In this episode of the ThoughtWorks Beacon Podcas…</itunes:subtitle>
+      <description>In this episode of the ThoughtWorks Beacon Podcast, ThoughtWorkers Jonny LeRoy and Chelsea Komlo talk about security and specifically how it fits into the development process of an agile team.
+
+Jonny and Chelsea begin by talking about the &quot;Security Sandwich&quot; - a concept first coined in ThoughtWorks' Technology Radar. https://www.thoughtworks.com/radar
+
+&quot;We called it the security sandwich because the meat of your delivery was in the middle, but then security came on either side like the two pieces of bread, &quot; Jonny explained. &quot;And there would be some upfront security planning and documentation, and then some penetration testing and certification at the end. We are really on a mission to work out how to bake security processes into continuous delivery approaches.&quot;
+
+The podcast continues with Chelsea and Jonny providing next steps for tech leaders who want to incorporate a security culture within their respective teams.
+
+&quot;One thing that's important to remember is that you're never going to completely be 100% secure, but you also want to be able to know if something is happening and react. So when we think about security, we think about both hardening our systems and also reacting,&quot; Chelsea reminds listeners. 
+
+You can follow us on Twitter @thoughtworks. For more information on ThoughtWorks and our podcast, visit www.thoughtworks.com. 
+</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/271746782-thoughtworks-incorporating-security-best-practices-into-agile-teams.mp3" length="18878345"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000169747145-eqi4pl-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/265550177</guid>
+      <title>Build Pipelines as Code with LambdaCD</title>
+      <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/build-pipelines-as-code-with-lambdacd</link>
+      <itunes:duration>00:28:44</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, we talk to ThoughtWorks developer Florian Sellmayr about LambdaCD, an open source library for building build pipelines as code, written in Clojure. Florian shares with us the problems he has faced with traditional continuous integration systems, for example Jenkins. He makes a passionate case for LambdaCD’s approach of building your pipelines like you build your microservices - using such powerful tools like a functional programming language, version control, tests and refactoring. Finally, Florian outlines how the project evolved from a thought experiment into a library under active use and development and gives hints for upcoming contributors that want to help in shaping LambdaCD’s future.  http://www.lambda.cd/</itunes:summary>
+      <itunes:subtitle>In this episode, we talk to ThoughtWorks develope…</itunes:subtitle>
+      <description>In this episode, we talk to ThoughtWorks developer Florian Sellmayr about LambdaCD, an open source library for building build pipelines as code, written in Clojure. Florian shares with us the problems he has faced with traditional continuous integration systems, for example Jenkins. He makes a passionate case for LambdaCD’s approach of building your pipelines like you build your microservices - using such powerful tools like a functional programming language, version control, tests and refactoring. Finally, Florian outlines how the project evolved from a thought experiment into a library under active use and development and gives hints for upcoming contributors that want to help in shaping LambdaCD’s future.  http://www.lambda.cd/</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/265550177-thoughtworks-build-pipelines-as-code-with-lambdacd.mp3" length="38086128"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000164126386-6iwold-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/263340855</guid>
+      <title>Defining Evolutionary Architecture with Neal Ford</title>
+      <pubDate>Fri, 06 May 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/defining-evolutionary-architecture-with-neal-ford</link>
+      <itunes:duration>00:13:24</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this 13-minutes long ThoughtWorks Beacon podcast, Neal Ford, a software architect and meme wrangler at ThoughtWorks, shares his working definition of &quot;evolutionary architecture.&quot;  
+
+&quot;Here is our working definition of evolutionary architecture,&quot; Neal says. &quot;An evolutionary architecture supports incremental guided change as a first principle along multiple dimensions.&quot;
+
+He also talks about the upcoming book on the topic he is co-authoring with ThoughtWorks CTO Rebecca Parsons and Lead Developer and Agile Coach Patrick Kua. 
+
+Stay tuned. You'll hear much more about this topic from Neal, Rebecca, and Pat as time goes on. </itunes:summary>
+      <itunes:subtitle>In this 13-minutes long ThoughtWorks Beacon podca…</itunes:subtitle>
+      <description>In this 13-minutes long ThoughtWorks Beacon podcast, Neal Ford, a software architect and meme wrangler at ThoughtWorks, shares his working definition of &quot;evolutionary architecture.&quot;  
+
+&quot;Here is our working definition of evolutionary architecture,&quot; Neal says. &quot;An evolutionary architecture supports incremental guided change as a first principle along multiple dimensions.&quot;
+
+He also talks about the upcoming book on the topic he is co-authoring with ThoughtWorks CTO Rebecca Parsons and Lead Developer and Agile Coach Patrick Kua. 
+
+Stay tuned. You'll hear much more about this topic from Neal, Rebecca, and Pat as time goes on. </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/263340855-thoughtworks-defining-evolutionary-architecture-with-neal-ford.mp3" length="11269996"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000162120901-h3xlxt-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/261183894</guid>
+      <title>Open Source as a Virtuous Byproduct</title>
+      <pubDate>Thu, 28 Apr 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/open-source-as-a-virtuous-byproduct</link>
+      <itunes:duration>00:30:59</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>One of the themes we highlighted in the April 2016 edition of the ThoughtWorks Technology Radar was “open source as a virtuous byproduct.”
+
+That’s a fairly high-minded phrase. In this 30-minute podcast, ThoughtWorks' Technology Advisory Board Members Badri Janakiraman, Martin Fowler, Mike Mason and Rebecca Parsons discuss this theme and the general state of open source in the industry. The lively roundtable discussion touches on product development, security, technical culture, and machine learning as they relate to open source.
+
+The podcast ends with a gentle reminder from Badri: &quot;The availability of tools and source code out there does not mean that we take away the responsibility of development teams in organizations to have discipline and rigor in their development processes.&quot;
+
+Check out the Technology Radar for more on the trends and technology that is shaping our future: https://www.thoughtworks.com/radar</itunes:summary>
+      <itunes:subtitle>One of the themes we highlighted in the April 201…</itunes:subtitle>
+      <description>One of the themes we highlighted in the April 2016 edition of the ThoughtWorks Technology Radar was “open source as a virtuous byproduct.”
+
+That’s a fairly high-minded phrase. In this 30-minute podcast, ThoughtWorks' Technology Advisory Board Members Badri Janakiraman, Martin Fowler, Mike Mason and Rebecca Parsons discuss this theme and the general state of open source in the industry. The lively roundtable discussion touches on product development, security, technical culture, and machine learning as they relate to open source.
+
+The podcast ends with a gentle reminder from Badri: &quot;The availability of tools and source code out there does not mean that we take away the responsibility of development teams in organizations to have discipline and rigor in their development processes.&quot;
+
+Check out the Technology Radar for more on the trends and technology that is shaping our future: https://www.thoughtworks.com/radar</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/261183894-thoughtworks-open-source-as-a-virtuous-byproduct.mp3" length="44641913"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000160150459-2rynvj-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/260994960</guid>
+      <title>Decoding the Zika Virus - Dr. David Walton</title>
+      <pubDate>Mon, 25 Apr 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/decoding-the-zika-virus</link>
+      <itunes:duration>00:24:22</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>With the recent rise of the Zika epidemic across countries around the world, we interviewed ThoughtWorks' Director of Global Health Dr. David Walton to understand more about the Zika virus— its origin, its various symptoms and manifestations, possible remedial measures that we can take as citizens of the world and also the limited role that technology can play in containing this deadly virus. </itunes:summary>
+      <itunes:subtitle>With the recent rise of the Zika epidemic across …</itunes:subtitle>
+      <description>With the recent rise of the Zika epidemic across countries around the world, we interviewed ThoughtWorks' Director of Global Health Dr. David Walton to understand more about the Zika virus— its origin, its various symptoms and manifestations, possible remedial measures that we can take as citizens of the world and also the limited role that technology can play in containing this deadly virus. </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/260994960-thoughtworks-decoding-the-zika-virus.mp3" length="0"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000159969799-4lpexw-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/254286829</guid>
+      <title>The Future for Blockchain?</title>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/the-future-for-blockchain</link>
+      <itunes:duration>00:20:27</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode of the ThoughtWorks Beacon Podcast, Software Architect Neal Ford, Prasanna Pendse, Tech Principal,  and Jonny LeRoy, Head of Technology, North America, discuss blockchain, how it differs from Bitcoin and what the future holds for the technology. 
+
+[Disclaimer: This podcast isn't an introduction to blockchain.  To the get the most out of it, you should have some knowledge of the technology.]
+
+During the conversation, Neal cautions that the current problems with Bitcoin have nothing to do with the viability of blockchain as a technology, “but has everything to do with all the non-technical aspects of currency and how messy that is in the real world.”
+
+The podcast closes with advice from Jonny on peeling back some of the underlying technologies to answer some key questions for technologists. How might you use blockchain? What types of problems could be solved with blockchain? 
+
+These are really good questions to ask. The answer isn't always blockchain.
+
+Enjoy this episode of the ThoughtWorks podcast and, as always, please share your feedback and ideas with us @thoughtworks.
+</itunes:summary>
+      <itunes:subtitle>In this episode of the ThoughtWorks Beacon Podcas…</itunes:subtitle>
+      <description>In this episode of the ThoughtWorks Beacon Podcast, Software Architect Neal Ford, Prasanna Pendse, Tech Principal,  and Jonny LeRoy, Head of Technology, North America, discuss blockchain, how it differs from Bitcoin and what the future holds for the technology. 
+
+[Disclaimer: This podcast isn't an introduction to blockchain.  To the get the most out of it, you should have some knowledge of the technology.]
+
+During the conversation, Neal cautions that the current problems with Bitcoin have nothing to do with the viability of blockchain as a technology, “but has everything to do with all the non-technical aspects of currency and how messy that is in the real world.”
+
+The podcast closes with advice from Jonny on peeling back some of the underlying technologies to answer some key questions for technologists. How might you use blockchain? What types of problems could be solved with blockchain? 
+
+These are really good questions to ask. The answer isn't always blockchain.
+
+Enjoy this episode of the ThoughtWorks podcast and, as always, please share your feedback and ideas with us @thoughtworks.
+</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/254286829-thoughtworks-the-future-for-blockchain.mp3" length="17179224"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000153283167-0vsy4a-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/247896089</guid>
+      <title>BFF @ SoundCloud</title>
+      <pubDate>Thu, 18 Feb 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/bff-soundcloud</link>
+      <itunes:duration>00:24:01</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, Johannes Thönes, a ThoughtWorks developer based in Hamburg, interviews Lukasz Plotnicki, also a developer and ThoughtWorker, on the Backend for Frontend microservices pattern. Lukasz is the author of BFF @ SoundCloud, an article about the backend for frontends pattern which he looked into with Sam Newman at SoundCloud. This pattern describes the creation of one specific backend to provide functionality specifically to the need of a single client.
+
+Johannes talks with Lukasz about the BFF pattern rooted in a Microservices environment. First, they explain the difference between UI fragment composition and the backend for frontends approach as two alternatives. Then they discuss how backend for frontends fit into a microservices architecture and how it can be structured organizationally. We close the episode by discussing how many backend for frontends are already out there.</itunes:summary>
+      <itunes:subtitle>In this episode, Johannes Thönes, a ThoughtWorks …</itunes:subtitle>
+      <description>In this episode, Johannes Thönes, a ThoughtWorks developer based in Hamburg, interviews Lukasz Plotnicki, also a developer and ThoughtWorker, on the Backend for Frontend microservices pattern. Lukasz is the author of BFF @ SoundCloud, an article about the backend for frontends pattern which he looked into with Sam Newman at SoundCloud. This pattern describes the creation of one specific backend to provide functionality specifically to the need of a single client.
+
+Johannes talks with Lukasz about the BFF pattern rooted in a Microservices environment. First, they explain the difference between UI fragment composition and the backend for frontends approach as two alternatives. Then they discuss how backend for frontends fit into a microservices architecture and how it can be structured organizationally. We close the episode by discussing how many backend for frontends are already out there.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/247896089-thoughtworks-bff-soundcloud.mp3" length="20184183"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000147818174-kwucxc-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/245290388</guid>
+      <title>Evolutionary Architecture with Rebecca Parsons and Neal Ford</title>
+      <pubDate>Tue, 02 Feb 2016 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/evolutionary-architecture-with-rebecca-parsons-and-neal-ford</link>
+      <itunes:duration>00:18:00</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode of the ThoughtWorks Tech Leaders Podcast, ThoughtWorks CTO Rebecca Parsons and Author and Software Architect Neal Ford discuss the meaning of evolutionary architecture and how organizations can use it as a business advantage.
+
+Neal explains, &quot;When you introduce things like DevOps and continuous delivery, all of a sudden you change the level of granularity in which you can make changes in your architecture and that becomes a really huge enabler for being able to make decisions at a higher level...&quot;
+
+Rebecca adds, &quot;What you need to do on Day One is think about what are the critical success factors for your architecture? Does it need to be highly available? Does it need to be highly scalable? Is security your major driving concern? Is it data loss? Those are all possible outcomes for architectures and all systems don't display the same kind of characteristics. That's what we mean when we're talking about evolutionary architecture.&quot;</itunes:summary>
+      <itunes:subtitle>In this episode of the ThoughtWorks Tech Leaders …</itunes:subtitle>
+      <description>In this episode of the ThoughtWorks Tech Leaders Podcast, ThoughtWorks CTO Rebecca Parsons and Author and Software Architect Neal Ford discuss the meaning of evolutionary architecture and how organizations can use it as a business advantage.
+
+Neal explains, &quot;When you introduce things like DevOps and continuous delivery, all of a sudden you change the level of granularity in which you can make changes in your architecture and that becomes a really huge enabler for being able to make decisions at a higher level...&quot;
+
+Rebecca adds, &quot;What you need to do on Day One is think about what are the critical success factors for your architecture? Does it need to be highly available? Does it need to be highly scalable? Is security your major driving concern? Is it data loss? Those are all possible outcomes for architectures and all systems don't display the same kind of characteristics. That's what we mean when we're talking about evolutionary architecture.&quot;</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/245290388-thoughtworks-evolutionary-architecture-with-rebecca-parsons-and-neal-ford.mp3" length="15124372"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000145757835-vh8559-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/236993165</guid>
+      <title>Data-Driven Architectures for Digital Business</title>
+      <pubDate>Tue, 08 Dec 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/data-driven-architectures-for-digital-business</link>
+      <itunes:duration>00:18:25</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Companies of all sizes, and across all industries, are struggling with digital transformation. A data-driven architecture that enables getting the right data, to the right place, at the right time positions an organization to create and deliver exceptional digital experiences. 
+
+This podcast, a conversation between Scott Shaw, director of technology, Australia and Evan Bottcher, technical principal, provides insight into the challenges companies face when embarking on the digital journey.</itunes:summary>
+      <itunes:subtitle>Companies of all sizes, and across all industries…</itunes:subtitle>
+      <description>Companies of all sizes, and across all industries, are struggling with digital transformation. A data-driven architecture that enables getting the right data, to the right place, at the right time positions an organization to create and deliver exceptional digital experiences. 
+
+This podcast, a conversation between Scott Shaw, director of technology, Australia and Evan Bottcher, technical principal, provides insight into the challenges companies face when embarking on the digital journey.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/236993165-thoughtworks-data-driven-architectures-for-digital-business.mp3" length="26554812"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000139120192-daz21a-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/231433047</guid>
+      <title>Securing the Pipeline with Tom Duckering and Pat Downey</title>
+      <pubDate>Mon, 02 Nov 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/securing-the-pipeline</link>
+      <itunes:duration>00:26:39</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this interview with ThoughtWorkers Tom Duckering and Pat Downey, we first introduce the threats coming out of the pipeline. We establish the continuous delivery pipeline as a production system because it will create what is in production. 
+
+We also give an example on how easy it can be to get root access with an anonymous user - and of course we discuss strategies to make a pipeline secure enough for the attack trees a customer might face.</itunes:summary>
+      <itunes:subtitle>In this interview with ThoughtWorkers Tom Duckeri…</itunes:subtitle>
+      <description>In this interview with ThoughtWorkers Tom Duckering and Pat Downey, we first introduce the threats coming out of the pipeline. We establish the continuous delivery pipeline as a production system because it will create what is in production. 
+
+We also give an example on how easy it can be to get root access with an anonymous user - and of course we discuss strategies to make a pipeline secure enough for the attack trees a customer might face.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/231433047-thoughtworks-securing-the-pipeline.mp3" length="22432362"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000134948255-v0ja5z-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/229455676</guid>
+      <title>No Silver Bullets: Real-world Techniques for Implementing Microservices and Cloud</title>
+      <pubDate>Tue, 20 Oct 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/no-silver-bullets-real-world-techniques-for-implementing-microservices-and-cloud</link>
+      <itunes:duration>00:17:30</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Our newest ThoughtWorks podcast is a thought provoking discussion between Sam Newman, consultant, and Erik Doernenburg, head of technology, ThoughtWorks Europe, in which they contemplate the advantages and disadvantages of microservices and cloud computing.
+
+During the conversation, Erik advises listeners that the focus should be on the implementation of the actual services and not on the &quot;glue&quot; in between the services. 
+
+Sam offers up an analogy, saying implementing an architecture based on microservices is like working with marble. You must chip away gradually. “It’s an incremental thing, not an upfront exercise,” he says.
+</itunes:summary>
+      <itunes:subtitle>Our newest ThoughtWorks podcast is a thought prov…</itunes:subtitle>
+      <description>Our newest ThoughtWorks podcast is a thought provoking discussion between Sam Newman, consultant, and Erik Doernenburg, head of technology, ThoughtWorks Europe, in which they contemplate the advantages and disadvantages of microservices and cloud computing.
+
+During the conversation, Erik advises listeners that the focus should be on the implementation of the actual services and not on the &quot;glue&quot; in between the services. 
+
+Sam offers up an analogy, saying implementing an architecture based on microservices is like working with marble. You must chip away gradually. “It’s an incremental thing, not an upfront exercise,” he says.
+</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/229455676-thoughtworks-no-silver-bullets-real-world-techniques-for-implementing-microservices-and-cloud.mp3" length="14712422"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000133578797-ntlb1d-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/223070745</guid>
+      <title>Lenses in Clojure</title>
+      <pubDate>Sat, 05 Sep 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/lenses-in-clojure</link>
+      <itunes:duration>00:23:14</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Functional programming has a lot of concepts which have to be yet discovered by mainstream programming. One, known especially from the Haskell programming language, are Lenses. 
+
+Johannes Thönes met Chris Ford, Software Developer and ThoughtWorker from London, during XConf in Hamburg where he gave a talk on implementing Lenses in Clojure. In this 23 minute interview, Johannes talks with Chris about his experience with Lenses in Clojure. First they define what a Lense is and what you would want to do with it. Then they talk about the specifics of implementing Lenses in a programming language introducing the terms Functor and Function. We close the episode by talking about the possibility to implement lenses in other programming languages such as Java 8 or JavaScript.
+</itunes:summary>
+      <itunes:subtitle>Functional programming has a lot of concepts whic…</itunes:subtitle>
+      <description>Functional programming has a lot of concepts which have to be yet discovered by mainstream programming. One, known especially from the Haskell programming language, are Lenses. 
+
+Johannes Thönes met Chris Ford, Software Developer and ThoughtWorker from London, during XConf in Hamburg where he gave a talk on implementing Lenses in Clojure. In this 23 minute interview, Johannes talks with Chris about his experience with Lenses in Clojure. First they define what a Lense is and what you would want to do with it. Then they talk about the specifics of implementing Lenses in a programming language introducing the terms Functor and Function. We close the episode by talking about the possibility to implement lenses in other programming languages such as Java 8 or JavaScript.
+</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/223070745-thoughtworks-lenses-in-clojure.mp3" length="19528094"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000129742527-fpk58z-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/221166320</guid>
+      <title>Agile IT Organization Design with Sriram Narayan</title>
+      <pubDate>Wed, 26 Aug 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/agile-it-organization-design</link>
+      <itunes:duration>00:18:20</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode of the Tech Leaders Podcast, Vinod Sankaranarayanan, a program manager with ThoughtWorks, interviews colleague Sriram Narayan, who is an IT Management consultant and the author of a new book, Agile IT Organization Design. 
+
+Sriram's book provides a basis for reviewing and reshaping the IT organization to equip it better for the digital age. Over the next 18 minutes, they explore IT reorganization from a structural angle. They discuss how to differentiate between organizational activities and outcomes and forming teams accordingly, how to execute streams of work that cut across different product-centric teams and the role of project and program managers in product-centric IT.</itunes:summary>
+      <itunes:subtitle>In this episode of the Tech Leaders Podcast, Vino…</itunes:subtitle>
+      <description>In this episode of the Tech Leaders Podcast, Vinod Sankaranarayanan, a program manager with ThoughtWorks, interviews colleague Sriram Narayan, who is an IT Management consultant and the author of a new book, Agile IT Organization Design. 
+
+Sriram's book provides a basis for reviewing and reshaping the IT organization to equip it better for the digital age. Over the next 18 minutes, they explore IT reorganization from a structural angle. They discuss how to differentiate between organizational activities and outcomes and forming teams accordingly, how to execute streams of work that cut across different product-centric teams and the role of project and program managers in product-centric IT.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/221166320-thoughtworks-agile-it-organization-design.mp3" length="15411900"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000127691865-nbhwrx-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/212550680</guid>
+      <title>Pixelated: Why Secure Communication is Essential</title>
+      <pubDate>Mon, 29 Jun 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/pixelated-why-secure-communication-is-essential</link>
+      <itunes:duration>00:25:34</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, we speak with Erik Dörnenburg, Head of Technology for Europe, and Folker Bernitt, a lead developer for Pixelated and a security specialist, about Pixelated, an open source  encrypted webmail platform currently in development at ThoughtWorks. We talk about why secure communication is important to a free society and take a dive into Pixelated’s architecture, cryptography, and future development path.
+
+After taking a dive into Pixelated’s architecture and cryptography, we finish by looking at the future of Pixelated and a call to the open­source community for contributions.</itunes:summary>
+      <itunes:subtitle>In this episode, we speak with Erik Dörnenburg, H…</itunes:subtitle>
+      <description>In this episode, we speak with Erik Dörnenburg, Head of Technology for Europe, and Folker Bernitt, a lead developer for Pixelated and a security specialist, about Pixelated, an open source  encrypted webmail platform currently in development at ThoughtWorks. We talk about why secure communication is important to a free society and take a dive into Pixelated’s architecture, cryptography, and future development path.
+
+After taking a dive into Pixelated’s architecture and cryptography, we finish by looking at the future of Pixelated and a call to the open­source community for contributions.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/212550680-thoughtworks-pixelated-why-secure-communication-is-essential.mp3" length="21478253"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000121744122-8s46yk-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/210465512</guid>
+      <title>Microservices: Michael Bryzek, co-founder of Gilt</title>
+      <pubDate>Mon, 15 Jun 2015 18:59:07 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/microservices-michael-bryzek-gilt</link>
+      <itunes:duration>00:19:45</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>[Recorded at the May 12, 2015 Microservices Meetup in NY.] Dealing with a traffic spike amounting to half of Amazon’s traffic each day when new sales are announced is no easy matter. Michael Bryzek, co-founder of retailer Gilt Groupe, talks about the architectural and cultural evolution that took place as Gilt introduced microservices during its growth over the course of the past seven years.
+
+Transitioning from a few monolithic systems to somewhere in the range of 300 to 400 microservices today presented a lot of challenges along the way. First describing how they decided to prioritize which parts of their system to optimize by breaking it into smaller, more optimized services, Bryzek covers some of the challenges that were encountered and how they went about solving them. He also describes some of the steps they took right up until today, when they have begun transitioning to Amazon’s AWS.
+
+Successfully building a microservices architecture typically takes a strong culture of trust with teams that are empowered to do the right thing. Bryzek discusses some of the sources of inspiration they had when faced with the problem of developing trust while growing their engineering capability, and some of the other organizations whose lessons they looked to for ideas.</itunes:summary>
+      <itunes:subtitle>[Recorded at the May 12, 2015 Microservices Meetu…</itunes:subtitle>
+      <description>[Recorded at the May 12, 2015 Microservices Meetup in NY.] Dealing with a traffic spike amounting to half of Amazon’s traffic each day when new sales are announced is no easy matter. Michael Bryzek, co-founder of retailer Gilt Groupe, talks about the architectural and cultural evolution that took place as Gilt introduced microservices during its growth over the course of the past seven years.
+
+Transitioning from a few monolithic systems to somewhere in the range of 300 to 400 microservices today presented a lot of challenges along the way. First describing how they decided to prioritize which parts of their system to optimize by breaking it into smaller, more optimized services, Bryzek covers some of the challenges that were encountered and how they went about solving them. He also describes some of the steps they took right up until today, when they have begun transitioning to Amazon’s AWS.
+
+Successfully building a microservices architecture typically takes a strong culture of trust with teams that are empowered to do the right thing. Bryzek discusses some of the sources of inspiration they had when faced with the problem of developing trust while growing their engineering capability, and some of the other organizations whose lessons they looked to for ideas.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/210465512-thoughtworks-microservices-michael-bryzek-gilt.mp3" length="16602229"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000120331369-xy8j8o-original.png"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/206283659</guid>
+      <title>Are You Infected By Microservice Envy?</title>
+      <pubDate>Mon, 18 May 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/are-you-infected-by-microservice-envy</link>
+      <itunes:duration>00:18:31</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In the most recent Technology Radar, Scott Shaw and his colleagues from the ThoughtWorks Technology Advisory Board have added Microservice Envy to the Hold Ring, because they are concerned people are overdoing it. Start small, start with one Microservice,” is Scott's advice.
+
+In this interview, Johannes Thönes talks to Scott about the prerequisites of being successful with a Microservice style architecture. First, you need to have an automatic deployment pipeline in place so you can deploy effectively and frequently to the cloud. You also need to have good DevOps practices and infrastructure automation around, so spinning up a dedicated server is not something that takes month.
+
+Scott explains, that for being able to do Microservices, you need to have a clear understanding of the domain, which will give your Microservices their bounded context rooted in your domain. 
+
+His advice for green field application, especially when you don’t have the practices in place, is to start with a monolith (or one lonely Microservices) and then split it up, when it makes sense. 
+
+“Services need to evolve,&quot; he says.
+</itunes:summary>
+      <itunes:subtitle>In the most recent Technology Radar, Scott Shaw a…</itunes:subtitle>
+      <description>In the most recent Technology Radar, Scott Shaw and his colleagues from the ThoughtWorks Technology Advisory Board have added Microservice Envy to the Hold Ring, because they are concerned people are overdoing it. Start small, start with one Microservice,” is Scott's advice.
+
+In this interview, Johannes Thönes talks to Scott about the prerequisites of being successful with a Microservice style architecture. First, you need to have an automatic deployment pipeline in place so you can deploy effectively and frequently to the cloud. You also need to have good DevOps practices and infrastructure automation around, so spinning up a dedicated server is not something that takes month.
+
+Scott explains, that for being able to do Microservices, you need to have a clear understanding of the domain, which will give your Microservices their bounded context rooted in your domain. 
+
+His advice for green field application, especially when you don’t have the practices in place, is to start with a monolith (or one lonely Microservices) and then split it up, when it makes sense. 
+
+“Services need to evolve,&quot; he says.
+</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/206283659-thoughtworks-are-you-infected-by-microservice-envy.mp3" length="15574158"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000117444986-ewbn0i-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/204241357</guid>
+      <title>Open Source And Startups In Brazil</title>
+      <pubDate>Wed, 06 May 2015 20:35:36 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/open-source-and-startups-in-brazil</link>
+      <itunes:duration>00:21:09</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, Claudia Melo, head of technology for ThoughtWorks Latin America, talks to Johannes Thönes about Brazil about Open Source Software and the startup scene in Brazil.
+
+As an associate researcher for the University of São Paulo, Claudia has started a research project to compare the startup scenes in the United States, in Israel and in Brazil.</itunes:summary>
+      <itunes:subtitle>In this episode, Claudia Melo, head of technology…</itunes:subtitle>
+      <description>In this episode, Claudia Melo, head of technology for ThoughtWorks Latin America, talks to Johannes Thönes about Brazil about Open Source Software and the startup scene in Brazil.
+
+As an associate researcher for the University of São Paulo, Claudia has started a research project to compare the startup scenes in the United States, in Israel and in Brazil.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/204241357-thoughtworks-open-source-and-startups-in-brazil.mp3" length="17778017"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000115868722-e856ma-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/202238218</guid>
+      <title>How To Break Role Divisions</title>
+      <pubDate>Mon, 20 Apr 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/how-to-break-role-divisions</link>
+      <itunes:duration>00:26:38</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, we speak with Hao Xu, Head of Technology for ThoughtWorks China, about how to break down role divisions within a team and create collaborative environments. We touch on how economic theory and management theory created the divided, hierarchical workplace, and why today’s knowledge work is poorly suited to these structures. We close by discussing various techniques, such as capability radars and onboarding practices, that help to break down role divisions in product teams.</itunes:summary>
+      <itunes:subtitle>In this episode, we speak with Hao Xu, Head of Te…</itunes:subtitle>
+      <description>In this episode, we speak with Hao Xu, Head of Technology for ThoughtWorks China, about how to break down role divisions within a team and create collaborative environments. We touch on how economic theory and management theory created the divided, hierarchical workplace, and why today’s knowledge work is poorly suited to these structures. We close by discussing various techniques, such as capability radars and onboarding practices, that help to break down role divisions in product teams.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/202238218-thoughtworks-how-to-break-role-divisions.mp3" length="22475787"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000114959279-nqnpsd-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/200675301</guid>
+      <title>Growing Technologists</title>
+      <pubDate>Sun, 12 Apr 2015 00:00:00 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/growing-technologists</link>
+      <itunes:duration>00:18:40</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode, we speak with Rachel Laycock, market technology principal for New York, and Jeff Norris, technology principal in San Francisco, about growing the next generation of technologists within your organization. We talk about practices and strategies that technical leaders can use to help their colleagues grow, as well as how to structure a team such that all members can simultaneously teach and learn from others.</itunes:summary>
+      <itunes:subtitle>In this episode, we speak with Rachel Laycock, ma…</itunes:subtitle>
+      <description>In this episode, we speak with Rachel Laycock, market technology principal for New York, and Jeff Norris, technology principal in San Francisco, about growing the next generation of technologists within your organization. We talk about practices and strategies that technical leaders can use to help their colleagues grow, as well as how to structure a team such that all members can simultaneously teach and learn from others.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/200675301-thoughtworks-growing-technologists.mp3" length="15740436"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000113299059-9xd0gk-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/198668812</guid>
+      <title>Growing Technology In Africa</title>
+      <pubDate>Wed, 01 Apr 2015 00:51:25 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/growing-technology-in-africa</link>
+      <itunes:duration>00:12:56</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>This episode of the ThoughtWorks podcast focuses on the advancement of technology across the African continent. The guest in this episode, Brain Leke, head of technology for ThoughtWorks in Pan Africa, shares his thoughts with Johannes Thönes. They discuss the particular challenges Africa has as a technology location, but also how the limits actually encourage innovations. Leke also talk about the efforts ThoughtWorks is making to grow African technologists and the influence of Open Source in the continent.
+
+Because we talked about it in this episode. Africa had 1.1 billion people in 2013.</itunes:summary>
+      <itunes:subtitle>This episode of the ThoughtWorks podcast focuses …</itunes:subtitle>
+      <description>This episode of the ThoughtWorks podcast focuses on the advancement of technology across the African continent. The guest in this episode, Brain Leke, head of technology for ThoughtWorks in Pan Africa, shares his thoughts with Johannes Thönes. They discuss the particular challenges Africa has as a technology location, but also how the limits actually encourage innovations. Leke also talk about the efforts ThoughtWorks is making to grow African technologists and the influence of Open Source in the continent.
+
+Because we talked about it in this episode. Africa had 1.1 billion people in 2013.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/198668812-thoughtworks-growing-technology-in-africa.mp3" length="10890926"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000111930884-slgkhh-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/195216656</guid>
+      <title>DevOps and Microservices: Architectural Considerations</title>
+      <pubDate>Tue, 10 Mar 2015 19:00:10 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/devops-and-microservices-architectural-considerations</link>
+      <itunes:duration>00:21:42</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>In this episode of the ThoughtWorks Podcast, Neal Ford explains to Johannes Thönes what architectural considerations can be derived from the DevOps movement. 
+
+This episode is a quick introduction to what Microservices are, what kind of architectural principles can be used to implement them, what a good test strategy for microservices can can look like. We also explain why you should have a continuous delivery practice running before starting to develop Microservices.  </itunes:summary>
+      <itunes:subtitle>In this episode of the ThoughtWorks Podcast, Neal…</itunes:subtitle>
+      <description>In this episode of the ThoughtWorks Podcast, Neal Ford explains to Johannes Thönes what architectural considerations can be derived from the DevOps movement. 
+
+This episode is a quick introduction to what Microservices are, what kind of architectural principles can be used to implement them, what a good test strategy for microservices can can look like. We also explain why you should have a continuous delivery practice running before starting to develop Microservices.  </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/195216656-thoughtworks-devops-and-microservices-architectural-considerations.mp3" length="18255274"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000109577247-ia377f-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/180450712</guid>
+      <title>Innovation With Dan McClure</title>
+      <pubDate>Sun, 07 Dec 2014 22:41:17 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/innovation-with-dan-mcclure</link>
+      <itunes:duration>00:22:27</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Dan McClure is the Innovation Design Practice Lead at ThoughtWorks. In this interview, by Johannes Thöenes, Dan discusses definitions of and misconceptions about innovation.</itunes:summary>
+      <itunes:subtitle>Dan McClure is the Innovation Design Practice Lea…</itunes:subtitle>
+      <description>Dan McClure is the Innovation Design Practice Lead at ThoughtWorks. In this interview, by Johannes Thöenes, Dan discusses definitions of and misconceptions about innovation.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/180450712-thoughtworks-innovation-with-dan-mcclure.mp3" length="18871471"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000099525044-3vi56d-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/174617238</guid>
+      <title>On Microservices - Johannes Thönes and James Lewis (Recorded for SE Radio)</title>
+      <pubDate>Thu, 30 Oct 2014 21:46:10 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/on-microservices-johannes-thones-and-james-lewis</link>
+      <itunes:duration>01:02:58</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Johannes Thönes talks to James Lewis, principal consultant at ThoughtWorks, about microservices. They discuss microservices’ recent popularity, architectural styles, deployment, size, technical decisions, and consumer-driven contracts. They also compare microservices to service-oriented architecture and wrap up the episode by talking about key figures in the microservice community and standing on the shoulders of giants.
+
+Recording venue: ThoughtWorks North Europe Away Day, Sherwood Forest, Newark, Nottinghamshire, UK
+
+This track also appeared on se-radio.net.</itunes:summary>
+      <itunes:subtitle>Johannes Thönes talks to James Lewis, principal c…</itunes:subtitle>
+      <description>Johannes Thönes talks to James Lewis, principal consultant at ThoughtWorks, about microservices. They discuss microservices’ recent popularity, architectural styles, deployment, size, technical decisions, and consumer-driven contracts. They also compare microservices to service-oriented architecture and wrap up the episode by talking about key figures in the microservice community and standing on the shoulders of giants.
+
+Recording venue: ThoughtWorks North Europe Away Day, Sherwood Forest, Newark, Nottinghamshire, UK
+
+This track also appeared on se-radio.net.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/174617238-thoughtworks-on-microservices-johannes-thones-and-james-lewis.mp3" length="90609035"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000095636639-ub4x0k-original.png"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/171237521</guid>
+      <title>Continuous Delivery On Windows (Recorded for SE Radio)</title>
+      <pubDate>Wed, 08 Oct 2014 19:58:02 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/continuous-delivery-on-windows</link>
+      <itunes:duration>01:03:50</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Johannes of Software Engineering Radio (http://www.se-radio.net) talks with Rachel Laycock and Max Lincoln from ThoughtWorks about continuous delivery on Windows. The outline includes: introduction to continuous delivery; continuous integration; DevOps and ChatOps; decisions to be taken when implementing continuous delivery on windows; build tools on windows; packaging and deploy on windows; infrastructure automation and infrastructure as code with chef, puppet or ansible; snowflake server versus phoenix server; Windows PowerShell; the relation between open source and Microsoft tools; why not to use Linux; current development in the windows DevOps space; licensing and proprietary software in continuous delivery.
+
+This discussion was recorded live at the ThoughtWorks North American Away Day, The Westin Peachtree, Atlanta, Georgia</itunes:summary>
+      <itunes:subtitle>Johannes of Software Engineering Radio (http://ww…</itunes:subtitle>
+      <description>Johannes of Software Engineering Radio (http://www.se-radio.net) talks with Rachel Laycock and Max Lincoln from ThoughtWorks about continuous delivery on Windows. The outline includes: introduction to continuous delivery; continuous integration; DevOps and ChatOps; decisions to be taken when implementing continuous delivery on windows; build tools on windows; packaging and deploy on windows; infrastructure automation and infrastructure as code with chef, puppet or ansible; snowflake server versus phoenix server; Windows PowerShell; the relation between open source and Microsoft tools; why not to use Linux; current development in the windows DevOps space; licensing and proprietary software in continuous delivery.
+
+This discussion was recorded live at the ThoughtWorks North American Away Day, The Westin Peachtree, Atlanta, Georgia</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/171237521-thoughtworks-continuous-delivery-on-windows.mp3" length="23241202"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000093347613-uvb677-original.png"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/164444970</guid>
+      <title>Lean Enterprise - Gary O'Brien and Barry O'Reilly</title>
+      <pubDate>Sat, 23 Aug 2014 18:04:39 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/lean-enterprise</link>
+      <itunes:duration>00:50:03</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Gary O'Brien and Barry O'Reilly presenting Lean Enterprise at ThoughtWorks Live Australia in May 2014.</itunes:summary>
+      <itunes:subtitle>Gary O'Brien and Barry O'Reilly presenting Lean E…</itunes:subtitle>
+      <description>Gary O'Brien and Barry O'Reilly presenting Lean Enterprise at ThoughtWorks Live Australia in May 2014.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/164444970-thoughtworks-lean-enterprise.mp3" length="24029576"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000088919344-1fd4fs-original.png"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/159839865</guid>
+      <title>Software Folklore</title>
+      <pubDate>Tue, 22 Jul 2014 20:14:53 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/software-folklore</link>
+      <itunes:duration>00:06:09</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A talk delivered in Pecha Kucha format by ThoughtWorks consultant Chris Ford. This talk covers how software development culture has been captured in the form of various &quot;laws&quot;.</itunes:summary>
+      <itunes:subtitle>A talk delivered in Pecha Kucha format by Thought…</itunes:subtitle>
+      <description>A talk delivered in Pecha Kucha format by ThoughtWorks consultant Chris Ford. This talk covers how software development culture has been captured in the form of various &quot;laws&quot;.</description>
+      <enclosure type="audio/x-m4a" url="http://feeds.soundcloud.com/stream/159839865-thoughtworks-software-folklore.m4a" length="9731661"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000124089619-1u9k5z-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/156938747</guid>
+      <title>Continuous Design and the #NoPSD Movement</title>
+      <pubDate>Wed, 02 Jul 2014 04:46:13 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/continuous-design-and-the-nopsd-movement</link>
+      <itunes:duration>00:29:00</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Streamed live on Jul 11, 2013
+Andrew Carr and Matt Copeland discussing the #NoPSD movement article from ThoughtWorks P2 Magazine. You can read the full article here: http://bit.ly/14Nh6lj </itunes:summary>
+      <itunes:subtitle>Streamed live on Jul 11, 2013
+Andrew Carr and Ma…</itunes:subtitle>
+      <description>Streamed live on Jul 11, 2013
+Andrew Carr and Matt Copeland discussing the #NoPSD movement article from ThoughtWorks P2 Magazine. You can read the full article here: http://bit.ly/14Nh6lj </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/156938747-thoughtworks-continuous-design-and-the-nopsd-movement.mp3" length="36408046"/>
+      <itunes:image href="http://i1.sndcdn.com/avatars-000358071716-t57y22-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/152810344</guid>
+      <title>Is TDD Dead?- Episode #5 &amp; #6 - Q&amp;A, Final Thoughts</title>
+      <pubDate>Wed, 04 Jun 2014 17:31:23 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/is-tdd-dead-episode-5-6-qa-final-thoughts</link>
+      <itunes:duration>01:06:56</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Martin, Kent and David take questions and wrap up with their final thoughts on TDD.</itunes:summary>
+      <itunes:subtitle>Martin, Kent and David take questions and wrap up…</itunes:subtitle>
+      <description>Martin, Kent and David take questions and wrap up with their final thoughts on TDD.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/152810344-thoughtworks-is-tdd-dead-episode-5-6-qa-final-thoughts.mp3" length="78423775"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000081446946-0zddej-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/151536437</guid>
+      <title>Is TDD Dead? Episode #4 - Costs and downsides of testing and TDD</title>
+      <pubDate>Tue, 27 May 2014 17:57:03 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/is-tdd-dead-episode-4-costs-and-downsides-of-testing-and-tdd</link>
+      <itunes:duration>00:35:18</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Martin, Kent and David discuss costs and other downsides of testing and TDD.</itunes:summary>
+      <itunes:subtitle>Martin, Kent and David discuss costs and other do…</itunes:subtitle>
+      <description>Martin, Kent and David discuss costs and other downsides of testing and TDD.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/151536437-thoughtworks-is-tdd-dead-episode-4-costs-and-downsides-of-testing-and-tdd.mp3" length="41558644"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000080658827-uyzqqi-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/150526349</guid>
+      <title>Is TDD Dead? Episode #3 - Feedback and QA</title>
+      <pubDate>Wed, 21 May 2014 03:58:58 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/is-tdd-dead-episode-3-feedback</link>
+      <itunes:duration>00:28:30</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Martin, Kent and David discuss the various ways in which we get feedback while programming and the role of QA in providing feedback to developers.</itunes:summary>
+      <itunes:subtitle>Martin, Kent and David discuss the various ways i…</itunes:subtitle>
+      <description>Martin, Kent and David discuss the various ways in which we get feedback while programming and the role of QA in providing feedback to developers.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/150526349-thoughtworks-is-tdd-dead-episode-3-feedback.mp3" length="27038310"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000080036956-9katyn-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/150359119</guid>
+      <title>Anti-Patterns of Agile Software Development</title>
+      <pubDate>Tue, 20 May 2014 03:24:05 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/anti-patterns-of-agile-software-development</link>
+      <itunes:duration>00:12:54</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>Sriram Narayan discusses common anti-patterns for teams adopting agile software development.</itunes:summary>
+      <itunes:subtitle>Sriram Narayan discusses common anti-patterns for…</itunes:subtitle>
+      <description>Sriram Narayan discusses common anti-patterns for teams adopting agile software development.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/150359119-thoughtworks-anti-patterns-of-agile-software-development.mp3" length="9298738"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000079936582-7pgira-original.png"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/150338662</guid>
+      <title>Is TDD Dead? Episode #2 - Test-induced design damage</title>
+      <pubDate>Tue, 20 May 2014 00:22:58 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/is-tdd-dead-episode-2-test-induced-design-damage</link>
+      <itunes:duration>00:35:20</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A series of conversations between Kent Beck, David Heinemeier Hansson, and Martin Fowler on the topic of Test-Driven Development (TDD) and its impact upon software design.
+
+Episode 2: David feels that using TDD leads to approaches such as hexagonal rails that is test-induced design damage due to the complexity of excessive indirection. Kent thinks it's less about TDD and more about the quality of design decisions.</itunes:summary>
+      <itunes:subtitle>A series of conversations between Kent Beck, Davi…</itunes:subtitle>
+      <description>A series of conversations between Kent Beck, David Heinemeier Hansson, and Martin Fowler on the topic of Test-Driven Development (TDD) and its impact upon software design.
+
+Episode 2: David feels that using TDD leads to approaches such as hexagonal rails that is test-induced design damage due to the complexity of excessive indirection. Kent thinks it's less about TDD and more about the quality of design decisions.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/150338662-thoughtworks-is-tdd-dead-episode-2-test-induced-design-damage.mp3" length="41684474"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000079924709-jtmoue-original.jpg"/>
+    </item><item>
+      <guid isPermaLink="false">tag:soundcloud,2010:tracks/150338277</guid>
+      <title>Is TDD Dead? Episode #1 - Testing and Confidence</title>
+      <pubDate>Tue, 20 May 2014 00:19:19 +0000</pubDate>
+      <link>https://soundcloud.com/thoughtworks/is-tdd-dead-episode-1-testing-and-confidence</link>
+      <itunes:duration>00:30:26</itunes:duration>
+      <itunes:author>ThoughtWorks</itunes:author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:summary>A series of conversations between Kent Beck, David Heinemeier Hansson, and Martin Fowler on the topic of Test-Driven Development (TDD) and its impact upon software design.
+
+In Episode #1, they talk about our varying experiences with the flow of TDD, and the way TDD and self-testing code are often confused.</itunes:summary>
+      <itunes:subtitle>A series of conversations between Kent Beck, Davi…</itunes:subtitle>
+      <description>A series of conversations between Kent Beck, David Heinemeier Hansson, and Martin Fowler on the topic of Test-Driven Development (TDD) and its impact upon software design.
+
+In Episode #1, they talk about our varying experiences with the flow of TDD, and the way TDD and self-testing code are often confused.</description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/150338277-thoughtworks-is-tdd-dead-episode-1-testing-and-confidence.mp3" length="34918644"/>
+      <itunes:image href="http://i1.sndcdn.com/artworks-000079924462-q5lmis-original.jpg"/>
+    </item>
+      </channel>
+    </rss>
