@@ -3,42 +3,17 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
-	"path/filepath"
 
 	_ "github.com/mattn/go-sqlite3" //Sqlite3 driver
 
 	"github.com/crazcalm/go-rss-reader/file"
 )
 
-const (
-	driver            = "sqlite3"
-	foreignKeySupport = "?_foreign_keys=1"
-	//TestDBPath -- path to test database
-	TestDBPath = "test.db"
-)
-
-var (
-	sqlFiles = [...]string{filepath.Join("sql", "authors.sql"), "sql/tags.sql", "sql/feeds.sql", "sql/episodes.sql", "sql/feeds_and_tags.sql"}
-	//TestDB -- testing database
-	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", TestDBPath)
-)
-
 func createTables(db *sql.DB) error {
-	for _, path := range sqlFiles {
-		file, err := os.Open(path)
-		if err != nil {
-			return err
-		}
-
-		data, err := ioutil.ReadAll(file)
-		if err != nil {
-			return err
-		}
-
-		_, err = db.Exec(string(data))
+	for _, sql := range sqlFiles {
+		_, err := db.Exec(sql)
 		if err != nil {
 			return err
 		}
