@@ -6,13 +6,24 @@ import (
 	"time"
 )
 
+const (
+	testRawData = `<!--                    
+	Description: rss channel link                   
+	-->                     
+	<rss version="2.0">     
+	  <channel>             
+	    <link>http://example.org</link>             
+	  </channel>            
+	</rss> `
+)
+
 func TestMarkEpisodeAsSeen(t *testing.T) {
 	file := "./testing/mark_episode_as_seen.db"
 	db := createTestDB(file)
 	feedURL := "mark_episode_as_seen.com"
 	episodeURL := "mark_episode_as_seen.com/1"
 	title := "Episode title"
-	rawData := "Episode Raw Data"
+	rawData := testRawData
 	date := time.Now()
 
 	feedID, err := AddFeedURL(db, feedURL)
@@ -47,7 +58,7 @@ func TestGetEpisode(t *testing.T) {
 	feedURL := "get_episode.com"
 	episodeURL := "get_episode.com/1"
 	title := "Episode Title"
-	rawData := "Episode RawData"
+	rawData := testRawData
 	date := time.Now()
 
 	feedID, err := AddFeedURL(db, feedURL)
@@ -95,7 +106,7 @@ func TestAddEpisode(t *testing.T) {
 	feedURL := "add_episode.com"
 	episodeURL := "add_episode.com/1"
 	title := "Episode Title"
-	rawData := "Episode Raw Data"
+	rawData := testRawData
 	date := time.Now()
 
 	feedID, err := AddFeedURL(db, feedURL)

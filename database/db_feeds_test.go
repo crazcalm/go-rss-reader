@@ -10,7 +10,7 @@ func TestLoadFeed(t *testing.T) {
 	file := "./testing/load_feed.db"
 	db := createTestDB(file)
 	feedURL := "load_feed.com"
-	rawData := "RawData"
+	rawData := testRawData
 	defer db.Close()
 
 	feedID1, err := AddFeedURL(db, fmt.Sprintf("%s1", feedURL))
@@ -58,7 +58,7 @@ func TestGetFeedRawData(t *testing.T) {
 	file := "./testing/get_feed_raw_data.db"
 	db := createTestDB(file)
 	feedURL := "get_feed_raw_data.com"
-	rawData := "Feed Raw Data"
+	rawData := testRawData
 
 	feedID, err := AddFeedURL(db, feedURL)
 	if err != nil {
@@ -86,7 +86,7 @@ func TestUpdateFeedRawData(t *testing.T) {
 	file := "./testing/update_feed_raw_data.db"
 	db := createTestDB(file)
 	feedURL := "update_feed_raw_data.com"
-	rawData := "Feed Raw Data"
+	rawData := testRawData
 
 	feedID, err := AddFeedURL(db, feedURL)
 	if err != nil {

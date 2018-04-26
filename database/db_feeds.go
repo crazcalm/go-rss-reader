@@ -35,6 +35,9 @@ func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
 		//Need to convert the data to a gofeed object
 		feedParser := gofeed.NewParser()
 		feedData, err = feedParser.Parse(strings.NewReader(data))
+		if err != nil {
+			return feed, fmt.Errorf("gofeed parser was unable to parse data: %s -- %s", data, err.Error())
+		}
 	}
 
 	var tags []string
