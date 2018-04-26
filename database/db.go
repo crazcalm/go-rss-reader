@@ -82,7 +82,6 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 	//fmt.Println("AddFeedFileData: Start")
 
 	db, err := Init(TestDB, false)
-	defer db.Close()
 	if err != nil {
 		log.Fatal(err)
 	}
