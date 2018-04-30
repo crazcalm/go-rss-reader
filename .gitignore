@@ -54,3 +54,4 @@ database/testing/get_feed_episode_ids.db
 database/testing/get_feed_episode_seen_ratio.db
 database/testing/get_feed_url.db
 database/testing/load_feed.db
+database/testing/episode_exist.db

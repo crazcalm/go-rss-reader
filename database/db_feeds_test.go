@@ -226,19 +226,28 @@ func TestGetFeedID(t *testing.T) {
 	file := "./testing/get_feed_id.db"
 	db := createTestDB(file)
 	feedURL := "get_feed_id.com"
+	feedTitle := "Feed Title"
+	tests := []string{feedURL, feedTitle}
 
 	feedID, err := AddFeedURL(db, feedURL)
 	if err != nil {
 		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
 	}
 
-	result, err := GetFeedID(db, feedURL)
+	err = UpdateFeedTitle(db, feedID, feedTitle)
 	if err != nil {
-		t.Errorf("Error while trying to get the feed id for a url: %s", err.Error())
+		t.Errorf("Error while trying to update the feed title")
 	}
 
-	if feedID != result {
-		t.Errorf("Expected the feed id to be %d, but got %d", feedID, result)
+	for _, test := range tests {
+		result, err := GetFeedID(db, test)
+		if err != nil {
+			t.Errorf("Error while trying to get the feed id for a url/title: %s", err.Error())
+		}
+
+		if feedID != result {
+			t.Errorf("Expected the feed id to be %d, but got %d", feedID, result)
+		}
 	}
 }
 

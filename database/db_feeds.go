@@ -111,13 +111,13 @@ func UpdateFeedTitle(db *sql.DB, feedID int64, title string) error {
 	return err
 }
 
-//GetFeedID -- Given a url, it returns the feed id
-func GetFeedID(db *sql.DB, url string) (int64, error) {
+//GetFeedID -- Given a url or title, it returns the feed id
+func GetFeedID(db *sql.DB, item string) (int64, error) {
 	var id int64
-	row := db.QueryRow("SELECT id FROM feeds WHERE uri = $1", url)
+	row := db.QueryRow("SELECT id FROM feeds WHERE uri = $1 OR title = $2", item, item)
 	err := row.Scan(&id)
 	if err != nil {
-		return id, fmt.Errorf("Error occured while trying to find the feed id for url (%s): %s", url, err.Error())
+		return id, fmt.Errorf("Error occured while trying to find the feed id for url/title (%s): %s", item, err.Error())
 	}
 	return id, nil
 }

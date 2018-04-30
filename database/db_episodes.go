@@ -2,8 +2,23 @@ package database
 
 import (
 	"database/sql"
+	"log"
 	"time"
 )
+
+//EpisodeExist -- Based on the title, it checks if that episode already exists
+func EpisodeExist(db *sql.DB, title string) (result bool) {
+	var count int64
+	row := db.QueryRow("SELECT COUNT(*) FROM episodes WHERE title = $1", title)
+	err := row.Scan(&count)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if count != 0 {
+		result = true
+	}
+	return
+}
 
 //MarkEpisodeAsSeen -- marks and episode as seen
 func MarkEpisodeAsSeen(db *sql.DB, episodeID int64) (err error) {

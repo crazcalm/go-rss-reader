@@ -17,6 +17,36 @@ const (
 	</rss> `
 )
 
+func TestEpisodeExist(t *testing.T) {
+	file := "./testing/episode_exist.db"
+	db := createTestDB(file)
+	feedURL := "episode_exist.com"
+	episodeURL := "episode_exist.com/1"
+	episodeTitle := "Episode Title"
+	notEpisodeTitle := "Not the TITLE!!!"
+	rawData := testRawData
+	date := time.Now()
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	_, err = AddEpisode(db, feedID, episodeURL, episodeTitle, date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	//Actual test
+	if !EpisodeExist(db, episodeTitle) {
+		t.Errorf("Expected an episode titled %s to exist in the database", episodeTitle)
+	}
+
+	if EpisodeExist(db, notEpisodeTitle) {
+		t.Errorf("Did not expect an episode titled %s to exist in the database", notEpisodeTitle)
+	}
+}
+
 func TestMarkEpisodeAsSeen(t *testing.T) {
 	file := "./testing/mark_episode_as_seen.db"
 	db := createTestDB(file)
