@@ -9,6 +9,139 @@ import (
 	"github.com/mmcdole/gofeed"
 )
 
+//GetFeedInfo -- Pulls the rss feed from the website and dumps the needed info into the database
+func GetFeedInfo(db *sql.DB, feedID int64) (err error) {
+	var feedData *gofeed.Feed
+
+	//Get the URl
+	url, err := GetFeedURL(db, feedID)
+	if err != nil {
+		return
+	}
+
+	rawData, err := GetFeedDataFromSite(url)
+	if err != nil {
+		return
+	}
+
+	//Add Raw Data to DB
+	err = UpdateFeedRawData(db, feedID, rawData)
+	if err != nil {
+		return
+	}
+
+	if !strings.EqualFold(rawData, "") {
+		//Need to convert the data to a gofeed object
+		feedParser := gofeed.NewParser()
+		feedData, err = feedParser.Parse(strings.NewReader(rawData))
+		if err != nil {
+			return fmt.Errorf("gofeed parser was unable to parse data: %s -- %s", rawData, err.Error())
+		}
+	}
+
+	//Add Title
+	if !strings.EqualFold(feedData.Title, "") {
+		err = UpdateFeedTitle(db, feedID, feedData.Title)
+	}
+
+	//Add author
+	if feedData.Author != nil {
+		//If both the name and the email is not blank
+		if !strings.EqualFold(feedData.Author.Email, "") || !strings.EqualFold(feedData.Author.Name, "") {
+			var authorID int64
+			if !AuthorExist(db, feedData.Author.Name, feedData.Author.Email) {
+				authorID, err = AddAuthor(db, feedData.Author.Name, feedData.Author.Email)
+				if err != nil {
+					return err
+				}
+
+			} else {
+				authorID, err = GetAuthorByNameAndEmail(db, feedData.Author.Name, feedData.Author.Email)
+				if err != nil {
+					return err
+				}
+			}
+			//Updating the feed author
+			err = UpdateFeedAuthor(db, feedID, authorID)
+			if err != nil {
+				return err
+			}
+
+		}
+	}
+
+	//Add Episodes
+	for _, episode := range feedData.Items {
+		var rssHTML string
+		if len(episode.Description) > len(episode.Content) {
+			rssHTML = episode.Description
+		} else {
+			rssHTML = episode.Content
+		}
+
+		//TODO: Check if the episode alread exists
+
+		episodeID, err := AddEpisode(db, feedID, episode.Link, episode.Title, episode.PublishedParsed, rssHTML)
+		if err != nil {
+			return err
+		}
+
+		//Add media content
+		media, ok := episode.Extensions["media"]
+		if ok {
+			content, ok := media["content"]
+			if ok {
+				for i := 0; i < len(content); i++ {
+					var mediaContent string
+
+					url, ok := content[i].Attrs["url"]
+					if ok {
+						mediaContent += url
+
+						itemType, ok := content[i].Attrs["type"]
+						if ok {
+							mediaContent = fmt.Sprintf("%s (type: %s)", mediaContent, itemType)
+
+							err = UpdateEpisodeMediaContent(db, episodeID, mediaContent)
+							if err != nil {
+								return err
+							}
+						}
+					}
+
+				}
+			}
+		}
+
+		//Add author
+		if episode.Author != nil {
+			//If both the name and the email is not blank
+			if !strings.EqualFold(episode.Author.Email, "") || !strings.EqualFold(episode.Author.Name, "") {
+				var authorID int64
+				if !AuthorExist(db, episode.Author.Name, episode.Author.Email) {
+					authorID, err = AddAuthor(db, episode.Author.Name, episode.Author.Email)
+					if err != nil {
+						return err
+					}
+
+				} else {
+					authorID, err = GetAuthorByNameAndEmail(db, episode.Author.Name, episode.Author.Email)
+					if err != nil {
+						return err
+					}
+				}
+
+				//Updating the episode author
+				err = UpdateEpisodeAuthor(db, episodeID, authorID)
+				if err != nil {
+					return err
+				}
+			}
+		}
+	}
+	return
+}
+
 //LoadFeed -- Loads a feed from the database
 func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
 	var feedData *gofeed.Feed
@@ -73,7 +206,7 @@ func GetFeedAuthorID(db *sql.DB, feedID int64) (int64, error) {
 
 //UpdateFeedAuthor -- Updates the feed's author
 func UpdateFeedAuthor(db *sql.DB, feedID, authorID int64) error {
-	_, err := db.Exec("UPDATE feeds SET author_id = $2 WHERE id = $1", feedID, authorID)
+	_, err := db.Exec("UPDATE feeds SET author_id = $1 WHERE id = $2", authorID, feedID)
 	return err
 }
 

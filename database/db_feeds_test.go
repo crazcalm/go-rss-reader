@@ -6,6 +6,29 @@ import (
 	"testing"
 )
 
+func TestGetFeedInfo(t *testing.T) {
+	file := "./testing/get_feed_info.db"
+	db := createTestDB(file)
+
+	tests := []struct {
+		FeedURL string
+	}{
+		{"http://www.leoville.tv/podcasts/sn.xml"},
+	}
+
+	for _, test := range tests {
+		feedID, err := AddFeedURL(db, test.FeedURL)
+		if err != nil {
+			t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+		}
+
+		err = GetFeedInfo(db, feedID)
+		if err != nil {
+			t.Errorf("Error while trying to get the feed info for url (%s): %s", test.FeedURL, err.Error())
+		}
+	}
+}
+
 func TestLoadFeed(t *testing.T) {
 	file := "./testing/load_feed.db"
 	db := createTestDB(file)

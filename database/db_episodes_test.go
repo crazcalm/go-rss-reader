@@ -17,6 +17,66 @@ const (
 	</rss> `
 )
 
+func TestUpdateEpisodeAuthor(t *testing.T) {
+	file := "./testing/update_episode_author.db"
+	db := createTestDB(file)
+	feedURL := "update_episode_author.com"
+	episodeURL := "update_episode_author.com/1"
+	episodeTitle := "Episode Title"
+	rawData := testRawData
+	date := time.Now()
+	authorName := "Jane Doe"
+	authorEmail := "jane.doe@gmail.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add an auhtor to the database: %s", err.Error())
+	}
+
+	//Actual test
+	err = UpdateEpisodeAuthor(db, episodeID, authorID)
+	if err != nil {
+		t.Errorf("Error while trying to update the author of an episode: %s", err.Error())
+	}
+}
+
+func TestUpdateEpisodeMediaContent(t *testing.T) {
+	file := "./testing/update_episode_media_content.db"
+	db := createTestDB(file)
+	feedURL := "update_episode_media_content.com"
+	episodeURL := "update_episode_media_content.com/1"
+	episodeTitle := "Episode Title"
+	rawData := testRawData
+	date := time.Now()
+	mediaContent := "media content"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	//Actual test
+	err = UpdateEpisodeMediaContent(db, episodeID, mediaContent)
+	if err != nil {
+		t.Errorf("Error while trying to update the media content of an episode: %s", err.Error())
+	}
+}
+
 func TestEpisodeExist(t *testing.T) {
 	file := "./testing/episode_exist.db"
 	db := createTestDB(file)
@@ -32,7 +92,7 @@ func TestEpisodeExist(t *testing.T) {
 		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
 	}
 
-	_, err = AddEpisode(db, feedID, episodeURL, episodeTitle, date, rawData)
+	_, err = AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
 	if err != nil {
 		t.Errorf("Failed to add an episode to the database: %s", err.Error())
 	}
@@ -61,7 +121,7 @@ func TestMarkEpisodeAsSeen(t *testing.T) {
 		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
 	}
 
-	episodeID, err := AddEpisode(db, feedID, episodeURL, title, date, rawData)
+	episodeID, err := AddEpisode(db, feedID, episodeURL, title, &date, rawData)
 	if err != nil {
 		t.Errorf("Failed to add an episode to the database: %s", err.Error())
 	}
@@ -96,7 +156,7 @@ func TestGetEpisode(t *testing.T) {
 		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
 	}
 
-	episodeID, err := AddEpisode(db, feedID, episodeURL, title, date, rawData)
+	episodeID, err := AddEpisode(db, feedID, episodeURL, title, &date, rawData)
 	if err != nil {
 		t.Errorf("Failed to add an episode to the database: %s", err.Error())
 	}
@@ -144,7 +204,7 @@ func TestAddEpisode(t *testing.T) {
 		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
 	}
 
-	_, err = AddEpisode(db, feedID, episodeURL, title, date, rawData)
+	_, err = AddEpisode(db, feedID, episodeURL, title, &date, rawData)
 	if err != nil {
 		t.Errorf("Failed to add an episode to the database: %s", err.Error())
 	}

@@ -55,3 +55,8 @@ database/testing/get_feed_episode_seen_ratio.db
 database/testing/get_feed_url.db
 database/testing/load_feed.db
 database/testing/episode_exist.db
+database/testing/author_exist.db
+database/testing/get_author_by_name_and_email.db
+database/testing/get_feed_info.db
+database/testing/update_episode_author.db
+database/testing/update_episode_media_content.db

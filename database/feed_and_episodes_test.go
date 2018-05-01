@@ -10,18 +10,19 @@ func TestGetFeedEpisodeIDs(t *testing.T) {
 	db := createTestDB(file)
 	feedURL := "get_feed_episode_ids.com"
 	totalEpisodes := 2
+	date := time.Now()
 
 	feedID, err := AddFeedURL(db, feedURL)
 	if err != nil {
 		t.Errorf("Failed to add feed to database: %s", err.Error())
 	}
 
-	episodeID1, err := AddEpisode(db, feedID, "ep1.com", "ep1 title", time.Now(), "ep1 raw data")
+	episodeID1, err := AddEpisode(db, feedID, "ep1.com", "ep1 title", &date, "ep1 raw data")
 	if err != nil {
 		t.Errorf("failed to add episode to database: %s", err.Error())
 	}
 
-	episodeID2, err := AddEpisode(db, feedID, "ep2.com", "ep2 title", time.Now(), "ep2 raw data")
+	episodeID2, err := AddEpisode(db, feedID, "ep2.com", "ep2 title", &date, "ep2 raw data")
 	if err != nil {
 		t.Errorf("failed to add episode to database: %s", err.Error())
 	}
@@ -47,18 +48,19 @@ func TestGetFeedEpisodeSeenRatio(t *testing.T) {
 	feedURL := "get_feed_episode_seen_ratio.com"
 	var seen int64 = 1
 	var total int64 = 2
+	date := time.Now()
 
 	feedID, err := AddFeedURL(db, feedURL)
 	if err != nil {
 		t.Errorf("Failed to add feed to database: %s", err.Error())
 	}
 
-	episodeID1, err := AddEpisode(db, feedID, "ep1.com", "ep1 title", time.Now(), "ep1 raw data")
+	episodeID1, err := AddEpisode(db, feedID, "ep1.com", "ep1 title", &date, "ep1 raw data")
 	if err != nil {
 		t.Errorf("failed to add episode to database: %s", err.Error())
 	}
 
-	_, err = AddEpisode(db, feedID, "ep2.com", "ep2 title", time.Now(), "ep2 raw data")
+	_, err = AddEpisode(db, feedID, "ep2.com", "ep2 title", &date, "ep2 raw data")
 	if err != nil {
 		t.Errorf("failed to add episode to database: %s", err.Error())
 	}

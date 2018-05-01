@@ -6,6 +6,18 @@ import (
 	"time"
 )
 
+//UpdateEpisodeAuthor -- Updates the author associated with the episode
+func UpdateEpisodeAuthor(db *sql.DB, episodeID, authorID int64) (err error) {
+	_, err = db.Exec("UPDATE episodes SET author_id = $1 WHERE id = $2", authorID, episodeID)
+	return
+}
+
+//UpdateEpisodeMediaContent -- updates the media content to the database
+func UpdateEpisodeMediaContent(db *sql.DB, episodeID int64, mediaContent string) (err error) {
+	_, err = db.Exec("UPDATE episodes SET media_content = $1 WHERE id = $2", mediaContent, episodeID)
+	return
+}
+
 //EpisodeExist -- Based on the title, it checks if that episode already exists
 func EpisodeExist(db *sql.DB, title string) (result bool) {
 	var count int64
@@ -38,7 +50,7 @@ func GetEpisode(db *sql.DB, episodeID int64) (url, title string, date time.Time,
 }
 
 //AddEpisode -- adds an episode to the database
-func AddEpisode(db *sql.DB, feedID int64, url, title string, date time.Time, rawData string) (int64, error) {
+func AddEpisode(db *sql.DB, feedID int64, url, title string, date *time.Time, rawData string) (int64, error) {
 	stmt := "INSERT INTO episodes (feed_id, uri, title, date, raw_data) VALUES ($1, $2, $3, $4, $5)"
 	var result int64
 
