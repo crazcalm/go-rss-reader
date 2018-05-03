@@ -66,7 +66,6 @@ func GetFeedInfo(db *sql.DB, feedID int64) (err error) {
 			if err != nil {
 				return err
 			}
-
 		}
 	}
 
@@ -79,7 +78,11 @@ func GetFeedInfo(db *sql.DB, feedID int64) (err error) {
 			rssHTML = episode.Content
 		}
 
-		//TODO: Check if the episode alread exists
+		if EpisodeExist(db, episode.Title) {
+			//TODO: need to check if this works...
+			continue
+			//Continue should skipp to the next loop interations
+		}
 
 		episodeID, err := AddEpisode(db, feedID, episode.Link, episode.Title, episode.PublishedParsed, rssHTML)
 		if err != nil {
