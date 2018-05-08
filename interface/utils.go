@@ -1,7 +1,6 @@
 package gui
 
 import (
-	"errors"
 	"strings"
 )
 
@@ -16,7 +15,8 @@ func rightPad(str, pad string, times int) string {
 func leftPadExactLength(str, pad string, length int) (string, error) {
 	count := len(str)
 	if count > length {
-		return str, errors.New("Original string is longer than specified length")
+		str = str[0:length]
+		count = length
 	}
 	return leftPad(str, " ", length-count), nil
 }
@@ -24,7 +24,8 @@ func leftPadExactLength(str, pad string, length int) (string, error) {
 func rightPadExactLength(str, pad string, length int) (string, error) {
 	count := len(str)
 	if count > length {
-		return str, errors.New("Original string is longer than specified length")
+		str = str[0:length]
+		count = length
 	}
 	return rightPad(str, " ", length-count), nil
 }
