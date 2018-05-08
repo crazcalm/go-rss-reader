@@ -106,8 +106,13 @@ func FeedsInit(g *gocui.Gui) error {
 		log.Panic(err)
 	}
 
-	//Refesh a feed
+	//Refresh a feed
 	if err := g.SetKeybinding("", gocui.KeyCtrlR, gocui.ModNone, UpdateFeed); err != nil {
+		log.Panic(err)
+	}
+
+	//Refresh all the feeds
+	if err := g.SetKeybinding("", gocui.KeyCtrlA, gocui.ModNone, UpdateFeeds); err != nil {
 		log.Panic(err)
 	}
 

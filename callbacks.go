@@ -76,6 +76,18 @@ func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
 	return err
 }
 
+//UpdateFeeds -- Update all feeds being shown
+func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
+	for _, feed := range FeedsData {
+		err := database.GetFeedInfo(database.DB, feed.ID)
+		if err != nil {
+			return err
+		}
+		err = FeedsInit(g)
+	}
+	return nil
+}
+
 //SelectEpisode -- Callback used to select an episode
 func SelectEpisode(g *gocui.Gui, v *gocui.View) error {
 	if v != nil {
