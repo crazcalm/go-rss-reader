@@ -84,6 +84,9 @@ func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 			return err
 		}
 		err = FeedsInit(g)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
