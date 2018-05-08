@@ -2,7 +2,6 @@ package rss
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 	"path/filepath"
 
