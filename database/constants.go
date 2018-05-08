@@ -1,6 +1,7 @@
 package database
 
 import (
+	"database/sql"
 	"fmt"
 )
 
@@ -85,4 +86,6 @@ var (
 	sqlFiles = [...]string{AuthorsTable, TagsTable, FeedsTable, EpisodesTable, FeedsAndTagsTable}
 	//TestDB -- testing database
 	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", TestDBPath)
+	//DB -- A global reference to the DB
+	DB *sql.DB
 )

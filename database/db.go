@@ -49,27 +49,29 @@ func Exist(path string) bool {
 
 //Init -- Initializes the database. The reset param allows you to recreate the database.
 func Init(dsn string, reset bool) (*sql.DB, error) {
+	var err error
+
 	//Prep the connection to the database
-	db, err := sql.Open(driver, dsn)
+	DB, err = sql.Open(driver, dsn)
 	if err != nil {
-		return db, err
+		return DB, err
 	}
 
 	//Test connection to the database
-	err = db.Ping()
+	err = DB.Ping()
 	if err != nil {
-		return db, err
+		return DB, err
 	}
 
 	if reset {
 		//Drop all the tables and create all the tables again
-		err = createTables(db)
+		err = createTables(DB)
 		if err != nil {
-			return db, err
+			return DB, err
 		}
 	}
 
-	return db, nil
+	return DB, nil
 }
 
 //AddFeedFileData -- Adds Feed File Data to the database

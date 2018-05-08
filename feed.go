@@ -22,15 +22,18 @@ var (
 
 //FeedsInit -- Feeds Init for the Gui
 func FeedsInit(g *gocui.Gui) error {
-	var db *sql.DB
 	var err error
+	var db *sql.DB
 
-	fmt.Println("Init: Started")
+	//fmt.Println("Init: Started")
 
 	//Get info from file
 	fileData := file.ExtractFileContent(filepath.Join("test_data", "urls"))
 
-	fmt.Println("Init: Extracted file content.")
+	//fmt.Print("FileData: ")
+	//fmt.Println(fileData)
+
+	//fmt.Println("Init: Extracted file content.")
 
 	//Establish the database
 	if database.Exist(database.TestDBPath) {
@@ -38,6 +41,7 @@ func FeedsInit(g *gocui.Gui) error {
 		if err != nil {
 			log.Fatal(err)
 		}
+
 	} else {
 		db, err = database.Create(database.TestDBPath)
 		if err != nil {
@@ -49,16 +53,16 @@ func FeedsInit(g *gocui.Gui) error {
 		}
 	}
 
-	fmt.Println("Init: Established database")
+	//fmt.Println("Init: Established database")
 
 	//Add file data to the database
 	feedIDToFileDataMap, err := database.AddFeedFileData(fileData)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(feedIDToFileDataMap)
+	//fmt.Println(feedIDToFileDataMap)
 
-	fmt.Println("Init: Added feed file data")
+	//fmt.Println("Init: Added feed file data")
 
 	//Create feeds
 	//Note: This needs to be moved the load/refresh feed functionality
@@ -68,13 +72,13 @@ func FeedsInit(g *gocui.Gui) error {
 	//Load the Feeds
 	FeedsData = database.LoadFeeds(db, feedIDToFileDataMap)
 
-	fmt.Println(FeedsData)
+	//fmt.Println(FeedsData)
 
 	//Feed Gui info
 	feedData := FeedsData.GuiData(db)
 
-	fmt.Print("Init: feedData: ")
-	fmt.Println(feedData)
+	//fmt.Print("Init: feedData: ")
+	//fmt.Println(feedData)
 
 	//Components
 	headerGui := gui.NewHeader("title", "Content goes here!")
@@ -83,19 +87,28 @@ func FeedsInit(g *gocui.Gui) error {
 
 	g.SetManager(headerGui, footerGui, feedsGui)
 
+	//Quit
 	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
 		log.Panicln(err)
 	}
 
+	//Scroll up
 	if err := g.SetKeybinding("", gocui.KeyArrowUp, gocui.ModNone, gui.CursorUp); err != nil {
 		log.Panicln(err)
 	}
 
+	//Scroll down
 	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
 		log.Panicln(err)
 	}
 
+	//Select Feed
 	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectFeed); err != nil {
+		log.Panic(err)
+	}
+
+	//Refesh a feed
+	if err := g.SetKeybinding("", gocui.KeyCtrlR, gocui.ModNone, UpdateFeed); err != nil {
 		log.Panic(err)
 	}
 

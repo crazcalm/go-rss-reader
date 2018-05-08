@@ -1,9 +1,11 @@
 package rss
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
+	"github.com/crazcalm/go-rss-reader/database"
 	"github.com/jroimartin/gocui"
 )
 
@@ -28,6 +30,50 @@ func QuitEpisodes(g *gocui.Gui, v *gocui.View) error {
 		}
 	}
 	return nil
+}
+
+//UpdateFeed -- Updates a single feed
+func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
+	var title string
+
+	if v != nil {
+		_, cy := v.Cursor()
+
+		line, err := v.Line(cy)
+		if err != nil {
+			return err
+		}
+
+		parts := strings.Split(strings.TrimSpace(line), " ")
+		if len(parts) <= 0 {
+			return fmt.Errorf("The selected line does not have enough parts to split: %s", line)
+		}
+		lastIndex := len(parts) - 1
+		title = parts[lastIndex]
+	}
+
+	//Get feedID
+	if strings.EqualFold(title, "") {
+		return fmt.Errorf("The title obtained was an empty string")
+	}
+	feedID, err := database.GetFeedID(database.DB, title)
+	if err != nil {
+		return err
+	}
+
+	//UpdateFeed
+	err = database.GetFeedInfo(database.DB, feedID)
+	if err != nil {
+		return err
+	}
+
+	//Refresh screen
+	err = FeedsInit(g)
+	if err != nil {
+		return err
+	}
+
+	return err
 }
 
 //SelectEpisode -- Callback used to select an episode
