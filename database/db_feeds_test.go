@@ -6,6 +6,71 @@ import (
 	"testing"
 )
 
+func TestGetFeedAuthor(t *testing.T) {
+	file := "./testing/get_feed_author.db"
+	db := createTestDB(file)
+	feedURL := "get_feed_author.com"
+	authorName := "Jane Doe"
+	authorEmail := "jane.doe@gmail.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add an auhtor to the database: %s", err.Error())
+	}
+
+	err = UpdateFeedAuthor(db, feedID, authorID)
+	if err != nil {
+		t.Errorf("Error happened while updating the author for a feed: %s", err.Error())
+	}
+
+	//Actual test
+	dbName, dbEmail, err := GetFeedAuthor(db, feedID)
+	if err != nil {
+		t.Errorf("Error happened while trying to get the author's name and email for a feed: %s", err.Error())
+	}
+
+	if !strings.EqualFold(authorName, dbName) || !strings.EqualFold(authorEmail, dbEmail) {
+		t.Errorf("Expected author name and email to be %s, %s, but got %s, %s", authorName, authorEmail, dbName, dbEmail)
+	}
+}
+
+func TestFeedHasAuthor(t *testing.T) {
+	file := "./testing/feed_has_author.db"
+	db := createTestDB(file)
+	feedURL := "feed_has_author.com"
+	authorName := "Jane Doe"
+	authorEmail := "jane.doe@gmail.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error while inserting a feed into the database: %s", err.Error())
+	}
+
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add an auhtor to the database: %s", err.Error())
+	}
+
+	//Actual test
+	if FeedHasAuthor(db, feedID) {
+		t.Errorf("Failed: Didn't expect feed to have an author")
+	}
+
+	err = UpdateFeedAuthor(db, feedID, authorID)
+	if err != nil {
+		t.Errorf("Error happened while updating the author for a feed: %s", err.Error())
+	}
+
+	if !FeedHasAuthor(db, feedID) {
+		t.Errorf("Failed: Expected the feed to have an author")
+	}
+}
+
 func TestGetFeedInfo(t *testing.T) {
 	file := "./testing/get_feed_info.db"
 	db := createTestDB(file)

@@ -62,3 +62,9 @@ database/testing/get_feed_info.db
 database/testing/update_episode_author.db
 database/testing/update_episode_media_content.db
 database/testing/get_episode_id_by_feed_id_and_title.db
+database/testing/episode_has_author.db
+database/testing/episode_has_media_content.db
+database/testing/feed_has_author.db
+database/testing/get_episode_author.db
+database/testing/get_episode_media_content.db
+database/testing/get_feed_author.db

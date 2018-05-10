@@ -186,6 +186,28 @@ func LoadFeed(db *sql.DB, id int64) (feed *Feed, err error) {
 	return &Feed{id, url, title, tags, feedData}, nil
 }
 
+//GetFeedAuthor -- returns the feed author
+func GetFeedAuthor(db *sql.DB, feedID int64) (name, email string, err error) {
+	stmt := "SELECT authors.name, authors.email FROM feeds INNER JOIN authors ON authors.id = feeds.author_id WHERE feeds.id = $1"
+	row := db.QueryRow(stmt, feedID)
+	err = row.Scan(&name, &email)
+	return
+}
+
+//FeedHasAuthor -- returns true is an author id exists and false otherwise
+func FeedHasAuthor(db *sql.DB, feedID int64) (result bool) {
+	var count int64
+	row := db.QueryRow("SELECT COUNT(author_id) FROM feeds WHERE id = $1", feedID)
+	err := row.Scan(&count)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if count > 0 {
+		result = true
+	}
+	return
+}
+
 //GetFeedURL -- returnd the feed's url
 func GetFeedURL(db *sql.DB, feedID int64) (url string, err error) {
 	row := db.QueryRow("SELECT uri FROM feeds WHERE id = $1", feedID)

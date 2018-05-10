@@ -16,6 +16,35 @@ type Episode struct {
 	Data   *gofeed.Item
 }
 
+//FormatEpisodeHeader -- formats the episode header
+func FormatEpisodeHeader(feedName, episodeTitle, author, episodeLink, episodeDate, mediaContent string) (result string) {
+	if !strings.EqualFold(feedName, "") {
+		result += fmt.Sprintf("Feed: %s\n", feedName)
+	}
+
+	if !strings.EqualFold(episodeTitle, "") {
+		result += fmt.Sprintf("Title: %s\n", episodeTitle)
+	}
+
+	if !strings.EqualFold(author, "") {
+		result += fmt.Sprintf("Author: %s\n", author)
+	}
+
+	if !strings.EqualFold(episodeLink, "") {
+		result += fmt.Sprintf("Link: %s\n", episodeLink)
+	}
+
+	if !strings.EqualFold(episodeDate, "") {
+		result += fmt.Sprintf("Date: %s\n", episodeDate)
+	}
+
+	if !strings.EqualFold(mediaContent, "") {
+		result += fmt.Sprintf("Media Link: %s\n", mediaContent)
+	}
+
+	return
+}
+
 //Header -- Returns a string header information important for each episode.
 func (e Episode) Header() string {
 	var author string

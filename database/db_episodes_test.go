@@ -17,6 +17,160 @@ const (
 	</rss> `
 )
 
+func TestGetEpisodeMediaContent(t *testing.T) {
+	file := "./testing/get_episode_media_content.db"
+	db := createTestDB(file)
+	feedURL := "get_episode_media_content.com"
+	episodeURL := "get_episode_media_content.com/1"
+	episodeTitle := "Episode Title"
+	date := time.Now()
+	mediaContent := "Podcast url"
+	rawData := testRawData
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	err = UpdateEpisodeMediaContent(db, episodeID, mediaContent)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the media content to an episode")
+	}
+
+	//Actual test
+	dbMediaContent, err := GetEpisodeMediaContent(db, episodeID)
+	if err != nil {
+		t.Errorf("Error happened when trying to get the media content for an episode")
+	}
+
+	if !strings.EqualFold(mediaContent, dbMediaContent) {
+		t.Errorf("Expected media content to be %s, but got %s", mediaContent, dbMediaContent)
+	}
+}
+
+func TestEpisodeHasMediaContent(t *testing.T) {
+	file := "./testing/episode_has_media_content.db"
+	db := createTestDB(file)
+	feedURL := "episode_has_media_content.com"
+	episodeURL := "episode_has_media_content.com/1"
+	episodeTitle := "Episode Title"
+	date := time.Now()
+	mediaContent := "Podcast url"
+	rawData := testRawData
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	//Actual test
+	if EpisodeHasMediaContent(db, episodeID) {
+		t.Errorf("Failed: Didn't expect media content to exist")
+	}
+
+	err = UpdateEpisodeMediaContent(db, episodeID, mediaContent)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the media content to an episode")
+	}
+
+	if !EpisodeHasMediaContent(db, episodeID) {
+		t.Errorf("Failed: Expected media content to exist")
+	}
+}
+
+func TestGetEpisodeAuthor(t *testing.T) {
+	file := "./testing/get_episode_author.db"
+	db := createTestDB(file)
+	feedURL := "get_episode_author.com"
+	episodeURL := "get_episode_author.com/1"
+	episodeTitle := "Episode Title"
+	rawData := testRawData
+	date := time.Now()
+	authorName := "Jane Doe"
+	authorEmail := "jane.doe@gmail.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add an auhtor to the database: %s", err.Error())
+	}
+
+	err = UpdateEpisodeAuthor(db, episodeID, authorID)
+	if err != nil {
+		t.Errorf("Failed to update author for an episode")
+	}
+
+	//Actual test
+	dbName, dbEmail, err := GetEpisodeAuthor(db, episodeID)
+	if err != nil {
+		t.Errorf("Error happened when trying to get the author's name and email for an episode: %s", err.Error())
+	}
+
+	if !strings.EqualFold(authorName, dbName) || !strings.EqualFold(authorEmail, dbEmail) {
+		t.Errorf("Expected author name and email to be %s, %s, but got %s, %s", authorName, authorEmail, dbName, dbEmail)
+	}
+}
+
+func TestEpisodeHasAuthor(t *testing.T) {
+	file := "./testing/episode_has_author.db"
+	db := createTestDB(file)
+	feedURL := "episode_has_author.com"
+	episodeURL := "episode_has_author.com/1"
+	episodeTitle := "Episode Title"
+	rawData := testRawData
+	date := time.Now()
+	authorName := "Jane Doe"
+	authorEmail := "jane.doe@gmail.com"
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Error happened when adding a feed to the database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, episodeURL, episodeTitle, &date, rawData)
+	if err != nil {
+		t.Errorf("Failed to add an episode to the database: %s", err.Error())
+	}
+
+	authorID, err := AddAuthor(db, authorName, authorEmail)
+	if err != nil {
+		t.Errorf("Failed to add an auhtor to the database: %s", err.Error())
+	}
+
+	//Actual test
+	if EpisodeHasAuthor(db, episodeID) {
+		t.Errorf("Failed: Did not expect episode to have an author")
+	}
+
+	err = UpdateEpisodeAuthor(db, episodeID, authorID)
+	if err != nil {
+		t.Errorf("Error happened while trying to update the author for an episode")
+	}
+
+	if !EpisodeHasAuthor(db, episodeID) {
+		t.Errorf("Failed: Expected episode to have an author")
+	}
+}
+
 func TestUpdateEpisodeAuthor(t *testing.T) {
 	file := "./testing/update_episode_author.db"
 	db := createTestDB(file)

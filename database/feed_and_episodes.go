@@ -2,7 +2,73 @@ package database
 
 import (
 	"database/sql"
+	"fmt"
+	"strings"
+	"time"
 )
+
+//GetEpisodeHeaderData -- Gets the infomation needed to create the episode header
+func GetEpisodeHeaderData(db *sql.DB, feedID, episodeID int64) (feedTitle, episodeTitle, author, episodeLink, dateString, mediaContent string, err error) {
+	//Getting the feed Title
+	feedTitle, err = GetFeedTitle(db, feedID)
+	if err != nil {
+		return
+	}
+
+	//Getting the episodeLink, episodeTitle and dateString
+	var date time.Time
+	episodeLink, episodeTitle, date, _, _, err = GetEpisode(db, episodeID)
+	if err != nil {
+		return
+	}
+	dateString = date.Format(time.RFC1123)
+
+	//Getting Media Content, if exists
+	if EpisodeHasMediaContent(db, episodeID) {
+		mediaContent, err = GetEpisodeMediaContent(db, episodeID)
+		if err != nil {
+			return
+		}
+	}
+
+	//Getting an author, if exists
+	var authorName string
+	var authorEmail string
+	if EpisodeHasAuthor(db, episodeID) {
+		authorName, authorEmail, err = GetEpisodeAuthor(db, episodeID)
+		if err != nil {
+			return
+		}
+
+		if !strings.EqualFold(authorName, "") && !strings.EqualFold(authorEmail, "") {
+			author = fmt.Sprintf("%s (%s)", authorName, authorEmail)
+		} else {
+			if !strings.EqualFold(authorName, "") {
+				author = authorName
+			} else if !strings.EqualFold(authorEmail, "") {
+				author = authorEmail
+			}
+		}
+
+	} else if FeedHasAuthor(db, feedID) {
+		authorName, authorEmail, err = GetFeedAuthor(db, feedID)
+		if err != nil {
+			return
+		}
+
+		if !strings.EqualFold(authorName, "") && !strings.EqualFold(authorEmail, "") {
+			author = fmt.Sprintf("%s (%s)", authorName, authorEmail)
+		} else {
+			if !strings.EqualFold(authorName, "") {
+				author = authorName
+			} else if !strings.EqualFold(authorEmail, "") {
+				author = authorEmail
+			}
+		}
+	}
+
+	return
+}
 
 //GetEpisodeIDByFeedIDAndTitle -- Gets the episodes using feed id and episode title
 func GetEpisodeIDByFeedIDAndTitle(db *sql.DB, feedID int64, episodeTitle string) (id int64, err error) {
