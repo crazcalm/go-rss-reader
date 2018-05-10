@@ -18,6 +18,7 @@
 # Test database
 test.db
 */test.db
+_examples/trying_out_stuff.go
 
 
 # Database Package tests
@@ -60,3 +61,4 @@ database/testing/get_author_by_name_and_email.db
 database/testing/get_feed_info.db
 database/testing/update_episode_author.db
 database/testing/update_episode_media_content.db
+database/testing/get_episode_id_by_feed_id_and_title.db

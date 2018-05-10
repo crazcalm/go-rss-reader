@@ -4,6 +4,17 @@ import (
 	"database/sql"
 )
 
+//GetEpisodeIDByFeedIDAndTitle -- Gets the episodes using feed id and episode title
+func GetEpisodeIDByFeedIDAndTitle(db *sql.DB, feedID int64, episodeTitle string) (id int64, err error) {
+	stmt := "SELECT id FROM episodes WHERE feed_id = $1 AND title = $2"
+	row := db.QueryRow(stmt, feedID, episodeTitle)
+	err = row.Scan(&id)
+	if err != nil {
+		return
+	}
+	return
+}
+
 //GetFeedEpisodeIDs -- return ???
 func GetFeedEpisodeIDs(db *sql.DB, feedID int64) (ids []int64, err error) {
 	rows, err := db.Query("SELECT id FROM episodes WHERE feed_id = $1", feedID)

@@ -5,6 +5,34 @@ import (
 	"time"
 )
 
+func TestGetEpisodeIDByFeedIDAndTitle(t *testing.T) {
+	file := "./testing/get_episode_id_by_feed_id_and_title.db"
+	db := createTestDB(file)
+	feedURL := "get_episode_id_by_feed_id_and_title.com"
+	episodeTitle := "Episode Title"
+	date := time.Now()
+
+	feedID, err := AddFeedURL(db, feedURL)
+	if err != nil {
+		t.Errorf("Failed to add feed to database: %s", err.Error())
+	}
+
+	episodeID, err := AddEpisode(db, feedID, "ep1.com", episodeTitle, &date, "ep raw data")
+	if err != nil {
+		t.Errorf("failed to add episode to database: %s", err.Error())
+	}
+
+	//Actual test
+	dbID, err := GetEpisodeIDByFeedIDAndTitle(db, feedID, episodeTitle)
+	if err != nil {
+		t.Errorf("Error happened while trying to get the episode id by feed id and (episode) title: %s", err.Error())
+	}
+
+	if episodeID != dbID {
+		t.Errorf("Expected episode id to be %d, but got %d", episodeID, dbID)
+	}
+}
+
 func TestGetFeedEpisodeIDs(t *testing.T) {
 	file := "./testing/get_feed_episode_ids.db"
 	db := createTestDB(file)
