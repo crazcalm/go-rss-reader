@@ -15,8 +15,8 @@ import (
 var (
 	//FeedsData -- Global container for the Feeds
 	FeedsData database.Feeds
-	//CurrentFeedIndex -- Global container for the current Feed index
-	CurrentFeedIndex int
+	//CurrentFeedID -- Global container for the current Feed ID
+	CurrentFeedID int64
 )
 
 //FeedsInit -- Feeds Init for the Gui

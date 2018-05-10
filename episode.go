@@ -1,11 +1,11 @@
 package rss
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/jroimartin/gocui"
 
+	"github.com/crazcalm/go-rss-reader/database"
 	"github.com/crazcalm/go-rss-reader/interface"
 )
 
@@ -16,19 +16,26 @@ var (
 
 //EpisodesInit -- Episodes Init for the Gui
 func EpisodesInit(g *gocui.Gui) error {
-	if len(FeedsData) < CurrentFeedIndex {
-		return fmt.Errorf("Index out of range for FeedsData")
+	episodeIDs, err := database.GetFeedEpisodeIDs(database.DB, CurrentFeedID)
+	if err != nil {
+		return err
 	}
 
-	feed := FeedsData[CurrentFeedIndex]
+	//Create data need for the Epsisode screen
+	var guiEpisodeData []gui.Episode
+	for _, id := range episodeIDs {
+		_, title, date, _, _, err := database.GetEpisode(database.DB, id)
+		if err != nil {
+			return err
+		}
 
-	//Episode data for one feed
-	episodeData := feed.GuiItemsData()
+		guiEpisodeData = append(guiEpisodeData, gui.Episode{Date: date.Format("Jan 02"), Title: title})
+	}
 
 	//Components
 	header := gui.NewHeader("title", "Content goes here!")
 	footer := gui.NewFooter("footer", "Footer Content is here!")
-	episodes := gui.NewEpisodes("episodes", episodeData)
+	episodes := gui.NewEpisodes("episodes", guiEpisodeData)
 
 	g.SetManager(header, footer, episodes)
 
@@ -57,21 +64,23 @@ func EpisodesInit(g *gocui.Gui) error {
 
 //EpisodeContentInit -- Initializes the Episode content for the Gui
 func EpisodeContentInit(g *gocui.Gui) error {
-	feed := FeedsData[CurrentFeedIndex]
-	episode, err := feed.GetEpisode(CurrentEpisodeIndex)
-	if err != nil {
-		log.Fatal(err)
-	}
+	/*
+		feed := FeedsData[CurrentFeedIndex]
+		episode, err := feed.GetEpisode(CurrentEpisodeIndex)
+		if err != nil {
+			log.Fatal(err)
+		}
 
-	content, _, err := episode.Content()
-	if err != nil {
-		log.Panicln(err)
-	}
+		content, _, err := episode.Content()
+		if err != nil {
+			log.Panicln(err)
+		}
+	*/
 
 	//Components
 	header := gui.NewHeader("title", "Content goes here")
 	footer := gui.NewFooter("footer", "Content goes here")
-	pager := gui.NewPager("pager", content)
+	pager := gui.NewPager("pager", "pending")
 
 	//Display components
 	g.SetManager(header, footer, pager)
