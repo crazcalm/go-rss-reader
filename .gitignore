@@ -68,3 +68,4 @@ database/testing/feed_has_author.db
 database/testing/get_episode_author.db
 database/testing/get_episode_media_content.db
 database/testing/get_feed_author.db
+database/testing/get_episode_header_data.db
