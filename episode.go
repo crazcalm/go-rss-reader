@@ -1,17 +1,23 @@
 package rss
 
 import (
+	"fmt"
 	"log"
+	"strings"
 
 	"github.com/jroimartin/gocui"
 
 	"github.com/crazcalm/go-rss-reader/database"
 	"github.com/crazcalm/go-rss-reader/interface"
+	"github.com/crazcalm/html-to-text"
 )
 
 var (
 	//CurrentEpisodeIndex -- Global container for the current episode index
-	CurrentEpisodeIndex int
+	CurrentEpisodeIndex int //TODO: remove
+	//CurrentEpisodeID -- Global reference to the episode ID of the currently viewed
+	//or last viewed episode
+	CurrentEpisodeID int64
 )
 
 //EpisodesInit -- Episodes Init for the Gui
@@ -64,23 +70,29 @@ func EpisodesInit(g *gocui.Gui) error {
 
 //EpisodeContentInit -- Initializes the Episode content for the Gui
 func EpisodeContentInit(g *gocui.Gui) error {
-	/*
-		feed := FeedsData[CurrentFeedIndex]
-		episode, err := feed.GetEpisode(CurrentEpisodeIndex)
-		if err != nil {
-			log.Fatal(err)
-		}
+	feedTitle, episodeTitle, author, episodeLink, date, mediaContent, err := database.GetEpisodeHeaderData(database.DB, CurrentFeedID, CurrentEpisodeID)
+	if err != nil {
+		return err
+	}
 
-		content, _, err := episode.Content()
-		if err != nil {
-			log.Panicln(err)
-		}
-	*/
+	episodeHeader := database.FormatEpisodeHeader(feedTitle, episodeTitle, author, episodeLink, date, mediaContent)
+
+	_, _, _, _, rawData, err := database.GetEpisode(database.DB, CurrentEpisodeID)
+	if err != nil {
+		return err
+	}
+
+	content, _, err := htmltotext.Translate(strings.NewReader(rawData))
+	if err != nil {
+		return fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
+	}
+
+	body := fmt.Sprintf("%s\n%s", episodeHeader, strings.TrimSpace(content))
 
 	//Components
 	header := gui.NewHeader("title", "Content goes here")
 	footer := gui.NewFooter("footer", "Content goes here")
-	pager := gui.NewPager("pager", "pending")
+	pager := gui.NewPager("pager", body)
 
 	//Display components
 	g.SetManager(header, footer, pager)

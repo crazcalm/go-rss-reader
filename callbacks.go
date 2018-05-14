@@ -124,6 +124,34 @@ func SelectFeed(g *gocui.Gui, v *gocui.View) (err error) {
 }
 
 //SelectEpisode -- Callback used to select a feed
-func SelectEpisode(g *gocui.Gui, v *gocui.View) error {
+func SelectEpisode(g *gocui.Gui, v *gocui.View) (err error) {
+	var title string
+	titleStartIndex := 13
+
+	if v != nil {
+		_, cy := v.Cursor()
+
+		line, err := v.Line(cy)
+		if err != nil {
+			return err
+		}
+
+		title = strings.TrimSpace(line[titleStartIndex:])
+	}
+
+	//log.Fatalf("title: %s\n", title)
+
+	CurrentEpisodeID, err = database.GetEpisodeIDByFeedIDAndTitle(database.DB, CurrentFeedID, title)
+	if err != nil {
+		return err
+	}
+
+	//log.Fatalf("Ep ID: %d\n", CurrentEpisodeID)
+
+	err = EpisodeContentInit(g)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

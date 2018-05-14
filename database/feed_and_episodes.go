@@ -76,7 +76,17 @@ func GetEpisodeIDByFeedIDAndTitle(db *sql.DB, feedID int64, episodeTitle string)
 	row := db.QueryRow(stmt, feedID, episodeTitle)
 	err = row.Scan(&id)
 	if err != nil {
-		return
+		var title string
+		stmt2 := "SELECT id, title FROM episodes WHERE feed_id = $1"
+		row2 := db.QueryRow(stmt2, feedID)
+		err = row2.Scan(&id, &title)
+		if err != nil {
+			return
+		}
+
+		if strings.Contains(title, episodeTitle) {
+			return
+		}
 	}
 	return
 }

@@ -152,11 +152,21 @@ func TestGetEpisodeIDByFeedIDAndTitle(t *testing.T) {
 	//Actual test
 	dbID, err := GetEpisodeIDByFeedIDAndTitle(db, feedID, episodeTitle)
 	if err != nil {
-		t.Errorf("Error happened while trying to get the episode id by feed id and (episode) title: %s", err.Error())
+		t.Errorf("Error happened while trying to get the episode id by feed id and episode title (%s): %s", episodeTitle, err.Error())
 	}
 
 	if episodeID != dbID {
 		t.Errorf("Expected episode id to be %d, but got %d", episodeID, dbID)
+	}
+
+	//Part 2: partial title
+	dbID2, err := GetEpisodeIDByFeedIDAndTitle(db, feedID, "Ep")
+	if err != nil {
+		t.Errorf("Error happened while trying to get the episode id by feed id and episode title (%s): %s", episodeTitle, err.Error())
+	}
+
+	if episodeID != dbID2 {
+		t.Errorf("Expected episode id to be %d, but got %d", episodeID, dbID2)
 	}
 }
 
