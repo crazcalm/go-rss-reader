@@ -80,8 +80,8 @@ func FeedsInit(g *gocui.Gui) error {
 	//fmt.Println(feedData)
 
 	//Components
-	headerGui := gui.NewHeader("title", "Content goes here!")
-	footerGui := gui.NewFooter("footer", "Footer Content is here!")
+	headerGui := gui.NewHeader("title", Header)
+	footerGui := gui.NewFooter("footer", FeedFooter)
 	feedsGui := gui.NewFeeds("feeds", feedData)
 
 	g.SetManager(headerGui, footerGui, feedsGui)

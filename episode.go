@@ -39,8 +39,8 @@ func EpisodesInit(g *gocui.Gui) error {
 	}
 
 	//Components
-	header := gui.NewHeader("title", "Content goes here!")
-	footer := gui.NewFooter("footer", "Footer Content is here!")
+	header := gui.NewHeader("title", Header)
+	footer := gui.NewFooter("footer", EpisodeFooter)
 	episodes := gui.NewEpisodes("episodes", guiEpisodeData)
 
 	g.SetManager(header, footer, episodes)
@@ -87,6 +87,11 @@ func EpisodeContentInit(g *gocui.Gui) error {
 		return fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
 	}
 
+	//If the rawData was not html, content will have spaces, but no data
+	if strings.EqualFold(strings.TrimSpace(content), "") {
+		content = rawData
+	}
+
 	body := fmt.Sprintf("%s\n%s", episodeHeader, strings.TrimSpace(content))
 
 	//Mark episode as seen
@@ -96,8 +101,8 @@ func EpisodeContentInit(g *gocui.Gui) error {
 	}
 
 	//Components
-	header := gui.NewHeader("title", "Content goes here")
-	footer := gui.NewFooter("footer", "Content goes here")
+	header := gui.NewHeader("title", Header)
+	footer := gui.NewFooter("footer", EpisodeContentFooter)
 	pager := gui.NewPager("pager", body)
 
 	//Display components
