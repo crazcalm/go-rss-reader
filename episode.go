@@ -89,6 +89,12 @@ func EpisodeContentInit(g *gocui.Gui) error {
 
 	body := fmt.Sprintf("%s\n%s", episodeHeader, strings.TrimSpace(content))
 
+	//Mark episode as seen
+	err = database.MarkEpisodeAsSeen(database.DB, CurrentEpisodeID)
+	if err != nil {
+		return err
+	}
+
 	//Components
 	header := gui.NewHeader("title", "Content goes here")
 	footer := gui.NewFooter("footer", "Content goes here")
