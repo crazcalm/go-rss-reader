@@ -100,7 +100,7 @@ func GetEpisodeIDByFeedIDAndTitle(db *sql.DB, feedID int64, episodeTitle string)
 
 //GetFeedEpisodeIDs -- return ???
 func GetFeedEpisodeIDs(db *sql.DB, feedID int64) (ids []int64, err error) {
-	rows, err := db.Query("SELECT id FROM episodes WHERE feed_id = $1", feedID)
+	rows, err := db.Query("SELECT id FROM episodes WHERE feed_id = $1 ORDER BY date DESC;", feedID)
 	if err != nil {
 		return
 	}
