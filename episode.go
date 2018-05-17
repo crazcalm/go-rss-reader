@@ -82,14 +82,21 @@ func EpisodeContentInit(g *gocui.Gui) error {
 		return err
 	}
 
-	content, _, err := htmltotext.Translate(strings.NewReader(rawData))
+	content, links, err := htmltotext.Translate(strings.NewReader(rawData))
 	if err != nil {
 		return fmt.Errorf("Error occurred when parsing raw data: (%s). Returning raw data", err.Error())
 	}
 
+	content = strings.TrimSpace(content)
 	//If the rawData was not html, content will have spaces, but no data
-	if strings.EqualFold(strings.TrimSpace(content), "") {
+	if strings.EqualFold(content, "") {
 		content = rawData
+	}
+
+	//Add the links to the content
+	content += "\n\n\nLinks:\n"
+	for index, link := range links {
+		content += fmt.Sprintf("%d: %s\n", index, link)
 	}
 
 	body := fmt.Sprintf("%s\n%s", episodeHeader, strings.TrimSpace(content))
