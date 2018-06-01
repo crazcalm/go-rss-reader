@@ -100,5 +100,3 @@ func TestContent(t *testing.T) {
 		}
 	}
 }
-
-func TestLinks(t *testing.T) {}

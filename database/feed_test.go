@@ -42,21 +42,6 @@ var (
 	}
 )
 
-func checkForInternet() bool {
-	/*
-		Use: https://stackoverflow.com/questions/10040954/alternative-to-google-finance-api
-
-		That post has a link to a stock market api call that returns json. Given
-		that it is stock market data it will, hopefully, always be online and reachable
-		from all countries.
-
-		I can check the response from that call and decided from that whether or not
-		I have internet.
-	*/
-	//TODO: implement later
-	return true
-}
-
 func getTestFile(path []string) []byte {
 	pathString := strings.Join(path, string(os.PathSeparator))
 	file, err := ioutil.ReadFile(pathString)

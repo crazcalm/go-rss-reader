@@ -25,15 +25,8 @@ func FeedsInit(g *gocui.Gui) error {
 	var err error
 	var db *sql.DB
 
-	//fmt.Println("Init: Started")
-
 	//Get info from file
 	fileData := file.ExtractFileContent(filepath.Join("test_data", "urls"))
-
-	//fmt.Print("FileData: ")
-	//fmt.Println(fileData)
-
-	//fmt.Println("Init: Extracted file content.")
 
 	//Establish the database
 	if database.Exist(database.TestDBPath) {
@@ -53,21 +46,11 @@ func FeedsInit(g *gocui.Gui) error {
 		}
 	}
 
-	//fmt.Println("Init: Established database")
-
 	//Add file data to the database
 	feedIDToFileDataMap, err := database.AddFeedFileData(fileData)
 	if err != nil {
 		log.Fatal(err)
 	}
-	//fmt.Println(feedIDToFileDataMap)
-
-	//fmt.Println("Init: Added feed file data")
-
-	//Create feeds
-	//Note: This needs to be moved the load/refresh feed functionality
-	//that does not exist yet
-	//FeedsData = NewFeeds(feedIDToFileDataMap)
 
 	//Load the Feeds
 	FeedsData = database.LoadFeeds(db, feedIDToFileDataMap)
@@ -75,13 +58,8 @@ func FeedsInit(g *gocui.Gui) error {
 	//Sort FeedsData by Title
 	sort.Sort(FeedsData)
 
-	//fmt.Println(FeedsData)
-
 	//Feed Gui info
 	feedData := FeedsData.GuiData(db)
-
-	//fmt.Print("Init: feedData: ")
-	//fmt.Println(feedData)
 
 	//Components
 	headerGui := gui.NewHeader("title", Header)

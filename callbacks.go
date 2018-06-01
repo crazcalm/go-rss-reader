@@ -139,14 +139,10 @@ func SelectEpisode(g *gocui.Gui, v *gocui.View) (err error) {
 		title = strings.TrimSpace(line[titleStartIndex:])
 	}
 
-	//log.Fatalf("title: %s\n", title)
-
 	CurrentEpisodeID, err = database.GetEpisodeIDByFeedIDAndTitle(database.DB, CurrentFeedID, title)
 	if err != nil {
 		return err
 	}
-
-	//log.Fatalf("Ep ID: %d\n", CurrentEpisodeID)
 
 	err = EpisodeContentInit(g)
 	if err != nil {

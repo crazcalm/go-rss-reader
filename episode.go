@@ -13,8 +13,6 @@ import (
 )
 
 var (
-	//CurrentEpisodeIndex -- Global container for the current episode index
-	CurrentEpisodeIndex int //TODO: remove
 	//CurrentEpisodeID -- Global reference to the episode ID of the currently viewed
 	//or last viewed episode
 	CurrentEpisodeID int64
@@ -45,22 +43,27 @@ func EpisodesInit(g *gocui.Gui) error {
 
 	g.SetManager(header, footer, episodes)
 
+	//Quit
 	if err := g.SetKeybinding("", gocui.KeyCtrlC, gocui.ModNone, gui.Quit); err != nil {
 		log.Panicln(err)
 	}
 
+	//Scroll up
 	if err := g.SetKeybinding("", gocui.KeyArrowUp, gocui.ModNone, gui.CursorUp); err != nil {
 		log.Panicln(err)
 	}
 
+	//Scroll down
 	if err := g.SetKeybinding("", gocui.KeyArrowDown, gocui.ModNone, gui.CursorDown); err != nil {
 		log.Panicln(err)
 	}
 
+	//Select Episode
 	if err := g.SetKeybinding("", gocui.KeyEnter, gocui.ModNone, SelectEpisode); err != nil {
 		log.Panicln(err)
 	}
 
+	//Back
 	if err := g.SetKeybinding("", gocui.KeyCtrlB, gocui.ModNone, QuitEpisodes); err != nil {
 		log.Panicln(err)
 	}
