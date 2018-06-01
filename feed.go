@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"path/filepath"
+	"sort"
 
 	"github.com/jroimartin/gocui"
 
@@ -70,6 +71,9 @@ func FeedsInit(g *gocui.Gui) error {
 
 	//Load the Feeds
 	FeedsData = database.LoadFeeds(db, feedIDToFileDataMap)
+
+	//Sort FeedsData by Title
+	sort.Sort(FeedsData)
 
 	//fmt.Println(FeedsData)
 

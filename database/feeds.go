@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/crazcalm/go-rss-reader/file"
 	"github.com/crazcalm/go-rss-reader/interface"
@@ -11,6 +12,23 @@ import (
 
 //Feeds -- A slice of feeds
 type Feeds []*Feed
+
+//Len -- Returns the number of feeds in the slice.
+//Needed for the sort interface.
+func (f Feeds) Len() int { return len(f) }
+
+//Less -- Does a string comparison on the Title.
+//Needed for the sort interface
+func (f Feeds) Less(i, j int) bool {
+	if strings.Compare(f[i].Title, f[j].Title) == -1 {
+		return true
+	}
+	return false
+}
+
+//Swap -- Definining what it means to swap two feeds
+//Needed for the sort interface
+func (f Feeds) Swap(i, j int) { f[i], f[j] = f[j], f[i] }
 
 //LoadFeeds -- Used to load the feed info from the database
 func LoadFeeds(db *sql.DB, fileData map[int64]file.Data) (feeds Feeds) {
