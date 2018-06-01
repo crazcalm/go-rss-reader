@@ -29,14 +29,14 @@ func FeedsInit(g *gocui.Gui) error {
 	fileData := file.ExtractFileContent(filepath.Join("test_data", "urls"))
 
 	//Establish the database
-	if database.Exist(database.TestDBPath) {
+	if database.Exist(database.DBPath) {
 		db, err = database.Init(database.TestDB, false)
 		if err != nil {
 			log.Fatal(err)
 		}
 
 	} else {
-		db, err = database.Create(database.TestDBPath)
+		db, err = database.Create(database.DBPath)
 		if err != nil {
 			log.Fatal(err)
 		}

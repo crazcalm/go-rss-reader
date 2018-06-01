@@ -8,8 +8,6 @@ import (
 const (
 	driver            = "sqlite3"
 	foreignKeySupport = "?_foreign_keys=1"
-	//TestDBPath -- path to test database
-	TestDBPath = "test.db"
 
 	//AuthorsTable -- author table sql
 	AuthorsTable = `
@@ -85,7 +83,9 @@ const (
 var (
 	sqlFiles = [...]string{AuthorsTable, TagsTable, FeedsTable, EpisodesTable, FeedsAndTagsTable}
 	//TestDB -- testing database
-	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", TestDBPath)
+	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", DBPath)
 	//DB -- A global reference to the DB
 	DB *sql.DB
+	//DBPath -- path to test database
+	DBPath = "test.db"
 )
