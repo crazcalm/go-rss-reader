@@ -96,10 +96,12 @@ func EpisodeContentInit(g *gocui.Gui) error {
 		content = rawData
 	}
 
-	//Add the links to the content
-	content += "\n\n\nLinks:\n"
-	for index, link := range links {
-		content += fmt.Sprintf("%d: %s\n", index, link)
+	if len(links) != 0 {
+		//Add the links to the content
+		content += "\n\n\nLinks:\n"
+		for index, link := range links {
+			content += fmt.Sprintf("%d: %s\n", index, link)
+		}
 	}
 
 	body := fmt.Sprintf("%s\n%s", episodeHeader, strings.TrimSpace(content))
