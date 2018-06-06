@@ -11,6 +11,7 @@ import (
 type Episode struct {
 	Date  string
 	Title string
+	Seen  bool
 }
 
 //Episodes -- Gui component for the Episodes
@@ -37,6 +38,19 @@ func (e *Episodes) format(g *gocui.Gui) (result string) {
 			log.Fatal(err)
 		}
 
+		var seen string
+		if ep.Seen {
+			seen, err = leftPadExactLength("seen", " ", 8)
+			if err != nil {
+				log.Fatal(err)
+			}
+		} else {
+			seen, err = leftPadExactLength("unseen", " ", 8)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+
 		date, err := leftPadExactLength(ep.Date, " ", 8)
 		if err != nil {
 			log.Fatal(err)
@@ -44,7 +58,7 @@ func (e *Episodes) format(g *gocui.Gui) (result string) {
 
 		title := leftPad(ep.Title, " ", 2)
 
-		line, err := rightPadExactLength(index+date+title, " ", maxX)
+		line, err := rightPadExactLength(index+seen+date+title, " ", maxX)
 		if err != nil {
 			log.Fatal(err)
 		}

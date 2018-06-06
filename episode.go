@@ -28,12 +28,18 @@ func EpisodesInit(g *gocui.Gui) error {
 	//Create data need for the Epsisode screen
 	var guiEpisodeData []gui.Episode
 	for _, id := range episodeIDs {
-		_, title, date, _, _, err := database.GetEpisode(database.DB, id)
+		_, title, date, seen, _, err := database.GetEpisode(database.DB, id)
 		if err != nil {
 			return err
 		}
 
-		guiEpisodeData = append(guiEpisodeData, gui.Episode{Date: date.Format("Jan 02"), Title: title})
+		if seen == 1 {
+			guiEpisodeData = append(guiEpisodeData, gui.Episode{Date: date.Format("Jan 02"), Title: title, Seen: true})
+
+		} else {
+			guiEpisodeData = append(guiEpisodeData, gui.Episode{Date: date.Format("Jan 02"), Title: title, Seen: false})
+
+		}
 	}
 
 	//Components

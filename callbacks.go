@@ -126,7 +126,7 @@ func SelectFeed(g *gocui.Gui, v *gocui.View) (err error) {
 //SelectEpisode -- Callback used to select a feed
 func SelectEpisode(g *gocui.Gui, v *gocui.View) (err error) {
 	var title string
-	titleStartIndex := 13
+	titleStartIndex := 21
 
 	if v != nil {
 		_, cy := v.Cursor()
