@@ -25,8 +25,8 @@ func main() {
 	feedData := []gui.Feed{feed1, feed2, feed3, feed4, feed5, feed6, feed7}
 
 	//Components
-	header := gui.NewHeader("title", "Content goes here!")
-	footer := gui.NewFooter("footer", "Footer Content is here!")
+	header := gui.NewHeader("title", gui.HeaderText)
+	footer := gui.NewFooter("footer", gui.FeedsFooterText)
 	feeds := gui.NewFeeds("feeds", feedData)
 
 	g.SetManager(header, footer, feeds)

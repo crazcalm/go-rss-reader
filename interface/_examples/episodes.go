@@ -21,8 +21,8 @@ func main() {
 	ep4 := gui.Episode{"Sep 17", "title", true}
 
 	//Components
-	header := gui.NewHeader("title", "Content goes here!")
-	footer := gui.NewFooter("footer", "Footer Content is here!")
+	header := gui.NewHeader("title", gui.HeaderText)
+	footer := gui.NewFooter("footer", gui.EpisodesFooterText)
 	episodes := gui.NewEpisodes("episodes", []gui.Episode{ep1, ep2, ep3, ep4})
 
 	g.SetManager(header, footer, episodes)

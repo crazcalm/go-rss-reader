@@ -43,8 +43,8 @@ func EpisodesInit(g *gocui.Gui) error {
 	}
 
 	//Components
-	header := gui.NewHeader("title", Header)
-	footer := gui.NewFooter("footer", EpisodeFooter)
+	header := gui.NewHeader("title", gui.HeaderText)
+	footer := gui.NewFooter("footer", gui.EpisodesFooterText)
 	episodes := gui.NewEpisodes("episodes", guiEpisodeData)
 
 	g.SetManager(header, footer, episodes)
@@ -119,8 +119,8 @@ func EpisodeContentInit(g *gocui.Gui) error {
 	}
 
 	//Components
-	header := gui.NewHeader("title", Header)
-	footer := gui.NewFooter("footer", EpisodeContentFooter)
+	header := gui.NewHeader("title", gui.HeaderText)
+	footer := gui.NewFooter("footer", gui.PagerFooterText)
 	pager := gui.NewPager("pager", body)
 
 	//Display components

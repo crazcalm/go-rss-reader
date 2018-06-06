@@ -23,8 +23,8 @@ func main() {
 	defer g.Close()
 
 	//components
-	header := gui.NewHeader("title", "Content goes here")
-	footer := gui.NewFooter("footer", "Content goes here")
+	header := gui.NewHeader("title", gui.HeaderText)
+	footer := gui.NewFooter("footer", gui.PagerFooterText)
 	pager := gui.NewPager("pager", string(b))
 
 	//Display components

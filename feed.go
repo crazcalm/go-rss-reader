@@ -62,8 +62,8 @@ func FeedsInit(g *gocui.Gui) error {
 	feedData := FeedsData.GuiData(db)
 
 	//Components
-	headerGui := gui.NewHeader("title", Header)
-	footerGui := gui.NewFooter("footer", FeedFooter)
+	headerGui := gui.NewHeader("title", gui.HeaderText)
+	footerGui := gui.NewFooter("footer", gui.FeedsFooterText)
 	feedsGui := gui.NewFeeds("feeds", feedData)
 
 	g.SetManager(headerGui, footerGui, feedsGui)
