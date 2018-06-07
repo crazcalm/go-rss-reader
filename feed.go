@@ -3,7 +3,6 @@ package rss
 import (
 	"database/sql"
 	"log"
-	"path/filepath"
 	"sort"
 
 	"github.com/jroimartin/gocui"
@@ -18,6 +17,8 @@ var (
 	FeedsData database.Feeds
 	//CurrentFeedID -- Global container for the current Feed ID
 	CurrentFeedID int64
+	//URLFile -- is the path to the url file
+	URLFile string
 )
 
 //FeedsInit -- Feeds Init for the Gui
@@ -26,7 +27,7 @@ func FeedsInit(g *gocui.Gui) error {
 	var db *sql.DB
 
 	//Get info from file
-	fileData := file.ExtractFileContent(filepath.Join("test_data", "urls"))
+	fileData := file.ExtractFileContent(URLFile)
 
 	//Establish the database
 	if database.Exist(database.DBPath) {

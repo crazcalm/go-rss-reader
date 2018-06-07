@@ -13,14 +13,22 @@ import (
 )
 
 var dbPath string
+var urlPath string
 
 func main() {
-	flag.StringVar(&dbPath, "db", "test.db", "Path the database")
+	//Note: You may set the default paths to your database and urls file here
+	flag.StringVar(&dbPath, "db", "test.db", "Path to the database")
+	flag.StringVar(&urlPath, "url", "test_data/urls", "Path to the url file ")
 	flag.Parse()
 	if len(strings.TrimSpace(dbPath)) == 0 {
 		log.Fatal(fmt.Errorf("Did not pass in a database"))
 	}
 	database.DBPath = dbPath
+
+	if len(strings.TrimSpace(urlPath)) == 0 {
+		log.Fatal(fmt.Errorf("Did not pass in a url file"))
+	}
+	rss.URLFile = urlPath
 
 	g, err := gocui.NewGui(gocui.OutputNormal)
 	if err != nil {
