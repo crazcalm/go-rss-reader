@@ -3,6 +3,8 @@ package rss
 import (
 	"database/sql"
 	"log"
+	"os"
+	"path/filepath"
 	"sort"
 
 	"github.com/jroimartin/gocui"
@@ -18,13 +20,20 @@ var (
 	//CurrentFeedID -- Global container for the current Feed ID
 	CurrentFeedID int64
 	//URLFile -- is the path to the url file
-	URLFile string
+	URLFile = filepath.Join(".go-rss-reader", "urls")
 )
 
 //FeedsInit -- Feeds Init for the Gui
 func FeedsInit(g *gocui.Gui) error {
 	var err error
 	var db *sql.DB
+
+	//Change working directory to user home
+	home := os.Getenv("HOME")
+	err = os.Chdir(home)
+	if err != nil {
+		log.Fatal("Was unable to change the working directory to home directory")
+	}
 
 	//Get info from file
 	fileData := file.ExtractFileContent(URLFile)

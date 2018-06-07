@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"path/filepath"
 )
 
 const (
@@ -87,5 +88,5 @@ var (
 	//DB -- A global reference to the DB
 	DB *sql.DB
 	//DBPath -- path to test database
-	DBPath = "test.db"
+	DBPath = filepath.Join(".go-rss-reader", "feeds.db")
 )
