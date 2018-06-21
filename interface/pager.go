@@ -54,7 +54,7 @@ func (p *Pager) Layout(g *gocui.Gui) error {
 			return err
 		}
 
-		fmt.Fprint(v, p.format())
+		_, err = fmt.Fprint(v, p.format())
 	}
-	return nil
+	return err
 }

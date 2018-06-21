@@ -104,7 +104,12 @@ func GetFeedEpisodeIDs(db *sql.DB, feedID int64) (ids []int64, err error) {
 	if err != nil {
 		return
 	}
-	defer rows.Close()
+	defer func() {
+		if err = rows.Close(); err != nil {
+			err = fmt.Errorf("Error happened while trying to close the row: %s", err.Error())
+		}
+	}()
+
 	for rows.Next() {
 		var id int64
 		err = rows.Scan(&id)

@@ -67,10 +67,6 @@ func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
 
 	//Refresh screen
 	err = FeedsInit(g)
-	if err != nil {
-		return err
-	}
-
 	return err
 }
 
@@ -92,10 +88,12 @@ func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 //SelectFeed -- Callback used to select an episode
 func SelectFeed(g *gocui.Gui, v *gocui.View) (err error) {
 	var title string
+	var line string
+
 	if v != nil {
 		_, cy := v.Cursor()
 
-		line, err := v.Line(cy)
+		line, err = v.Line(cy)
 		if err != nil {
 			return err
 		}
@@ -117,21 +115,19 @@ func SelectFeed(g *gocui.Gui, v *gocui.View) (err error) {
 	}
 
 	err = EpisodesInit(g)
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
 
 //SelectEpisode -- Callback used to select a feed
 func SelectEpisode(g *gocui.Gui, v *gocui.View) (err error) {
 	var title string
+	var line string
 	titleStartIndex := 21
 
 	if v != nil {
 		_, cy := v.Cursor()
 
-		line, err := v.Line(cy)
+		line, err = v.Line(cy)
 		if err != nil {
 			return err
 		}
@@ -145,9 +141,5 @@ func SelectEpisode(g *gocui.Gui, v *gocui.View) (err error) {
 	}
 
 	err = EpisodeContentInit(g)
-	if err != nil {
-		return err
-	}
-
-	return nil
+	return err
 }

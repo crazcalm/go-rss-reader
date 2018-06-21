@@ -41,7 +41,7 @@ func (header *Header) Layout(g *gocui.Gui) error {
 		//testing
 		v.Frame = false
 
-		fmt.Fprintf(v, header.content)
+		_, err = fmt.Fprintf(v, header.content)
 	}
-	return nil
+	return err
 }

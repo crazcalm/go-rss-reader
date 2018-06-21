@@ -93,7 +93,12 @@ func AllActiveFeedTags(db *sql.DB, feedID int64) map[int64]string {
 	if err != nil {
 		log.Fatalf("Error happened while trying to get all tags for feed id (%d): %s", feedID, err.Error())
 	}
-	defer rows.Close()
+	defer func() {
+		if err = rows.Close(); err != nil {
+			log.Fatalf("Error happened while trying to close the rows: %s", err.Error())
+		}
+	}()
+
 	for rows.Next() {
 		var id int64
 		var name string

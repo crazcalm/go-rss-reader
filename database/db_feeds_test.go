@@ -99,7 +99,11 @@ func TestLoadFeed(t *testing.T) {
 	db := createTestDB(file)
 	feedURL := "load_feed.com"
 	rawData := testRawData
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			t.Errorf("Error while trying to close the database: %s", err.Error())
+		}
+	}()
 
 	feedID1, err := AddFeedURL(db, fmt.Sprintf("%s1", feedURL))
 	if err != nil {

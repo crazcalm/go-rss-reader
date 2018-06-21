@@ -288,7 +288,12 @@ func AllActiveFeeds(db *sql.DB) map[int64]string {
 	if err != nil {
 		log.Fatalf("Error happened when trying to get all active feeds: %s", err)
 	}
-	defer rows.Close()
+	defer func() {
+		if err = rows.Close(); err != nil {
+			log.Fatalf("Error happened while trying to close a row: %s", err.Error())
+		}
+	}()
+
 	for rows.Next() {
 		var id int64
 		var url string

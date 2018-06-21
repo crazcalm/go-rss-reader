@@ -351,8 +351,9 @@ func TestDeleteAllTagsFromFeed(t *testing.T) {
 	}
 
 	for i := 1; i < numOfTags; i++ {
+		var tagID int64
 		tag := fmt.Sprintf("tag%d", i)
-		tagID, err := AddTag(db, tag) // Adding tag to the database
+		tagID, err = AddTag(db, tag) // Adding tag to the database
 		if err != nil {
 			t.Errorf("Error happened while adding a tag: %s", err.Error())
 		}

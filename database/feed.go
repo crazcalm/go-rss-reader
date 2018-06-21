@@ -29,12 +29,17 @@ func GetFeedDataFromSite(url string) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("Error trying to get the raw feed data from %s: %s", url, err.Error())
 	}
-	defer resp.Body.Close()
+	defer func() {
+		if err = resp.Body.Close(); err != nil {
+			err = fmt.Errorf("Errorr occurred while closing the response body: %s", err.Error())
+		}
+	}()
+
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
-	return string(body), nil
+	return string(body), err
 }
 
 //NewFeed -- Used to create a new Feed. Id the id is equal to -1, then

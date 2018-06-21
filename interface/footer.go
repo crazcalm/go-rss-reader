@@ -41,7 +41,7 @@ func (f *Footer) Layout(g *gocui.Gui) error {
 		//gocui.View Settings
 		v.Frame = false
 
-		fmt.Fprintf(v, f.content)
+		_, err = fmt.Fprintf(v, f.content)
 	}
-	return nil
+	return err
 }

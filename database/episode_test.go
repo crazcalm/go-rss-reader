@@ -6,12 +6,6 @@ import (
 	"testing"
 )
 
-//getTestAnswer -- Used to fetch locally stored expected results
-func getTestAnswer(path []string) string {
-	file := getTestFile(path)
-	return string(file)
-}
-
 func TestFormatEpisodeHeader(t *testing.T) {
 	feedName := "feedName"
 	epTitle := "Episode Title"

@@ -98,7 +98,7 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 
 			//Need to make sure that the feed is not deleted
 			if IsFeedDeleted(db, feedID) {
-				err := UndeleteFeed(db, feedID)
+				err = UndeleteFeed(db, feedID)
 				if err != nil {
 					log.Fatal(err)
 				}
@@ -148,7 +148,7 @@ func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
 					log.Fatal(err)
 				}
 				if IsFeedTagDeleted(db, feedTagID) {
-					err := UndeleteFeedTag(db, feedTagID)
+					err = UndeleteFeedTag(db, feedTagID)
 					if err != nil {
 						log.Fatal(err)
 					}

@@ -104,9 +104,5 @@ func AddEpisode(db *sql.DB, feedID int64, url, title string, date *time.Time, ra
 	}
 
 	result, err = dbResult.LastInsertId()
-	if err != nil {
-		return result, err
-	}
-
-	return result, nil
+	return result, err
 }

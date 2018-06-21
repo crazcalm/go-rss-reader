@@ -20,10 +20,7 @@ func (f Feeds) Len() int { return len(f) }
 //Less -- Does a string comparison on the Title.
 //Needed for the sort interface
 func (f Feeds) Less(i, j int) bool {
-	if strings.Compare(f[i].Title, f[j].Title) == -1 {
-		return true
-	}
-	return false
+	return strings.Compare(f[i].Title, f[j].Title) == -1
 }
 
 //Swap -- Definining what it means to swap two feeds
