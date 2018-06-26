@@ -1,4 +1,7 @@
 # go-rss-reader
+
+[![Build Status](https://api.travis-ci.org/crazcalm/go-rss-reader.svg?branch=master)](https://travis-ci.org/crazcalm/go-rss-reader)    [![Go Report Card](https://goreportcard.com/badge/github.com/crazcalm/go-rss-reader)](https://goreportcard.com/report/github.com/crazcalm/go-rss-reader)    [![Coverage Status](https://coveralls.io/repos/github/crazcalm/go-rss-reader/badge.svg?branch=master)](https://coveralls.io/github/crazcalm/go-rss-reader?branch=master)
+
 My attempt at making a terminal rss reader (based off newsbeuter)
 
 ![](img/rss1.png)
