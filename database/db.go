@@ -31,10 +31,8 @@ func Create(path string) (*sql.DB, error) {
 
 	//Initialize database and create tables
 	db, err := Init(fmt.Sprintf("file:%s%s", path, foreignKeySupport), true)
-	if err != nil {
-		return db, nil
-	}
-	return db, nil
+
+	return db, err
 }
 
 //Exist -- checks for the existance of a file
