@@ -21,6 +21,10 @@ test.db
 _examples/trying_out_stuff.go
 README.md.backup
 
+# Coverage tools
+profile.coverprofile
+overalls.coverprofile
+
 
 # Database Package tests
 # Note: Must keep at least one database so that the testing directory exist in Travis CI and the tests pass
