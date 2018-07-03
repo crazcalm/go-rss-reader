@@ -4,10 +4,50 @@ import (
 	//"strings"
 	"testing"
 
-	//"github.com/mmcdole/gofeed"
+	"github.com/mmcdole/gofeed"
 
 	"github.com/crazcalm/go-rss-reader/file"
 )
+
+var (
+	testFeed1 = Feed{ID: 1, URL: "1.com", Title: "1", Tags: []string{}, Data: new(gofeed.Feed)}
+	testFeed2 = Feed{ID: 2, URL: "2.com", Title: "2", Tags: []string{}, Data: new(gofeed.Feed)}
+	testFeed3 = Feed{ID: 3, URL: "3.com", Title: "3", Tags: []string{}, Data: new(gofeed.Feed)}
+	testFeed4 = Feed{ID: 4, URL: "4.com", Title: "4", Tags: []string{}, Data: new(gofeed.Feed)}
+	testFeed5 = Feed{ID: 5, URL: "5.com", Title: "5", Tags: []string{}, Data: new(gofeed.Feed)}
+	testFeeds = Feeds{&testFeed5, &testFeed4, &testFeed3, &testFeed2, &testFeed1}
+)
+
+func TestFeedsLen(t *testing.T) {
+	total := 5
+	if testFeeds.Len() != total {
+		t.Errorf("Expected Len to be %d, but got %d", total, testFeeds.Len())
+	}
+}
+
+func TestFeedsLess(t *testing.T) {
+	if testFeeds.Less(1, 2) {
+		t.Errorf("%s should not be less than %s", testFeeds[1].Title, testFeeds[2].Title)
+	}
+	if testFeeds.Less(1, 1) {
+		t.Errorf("%s is not less than %s", testFeeds[1].Title, testFeeds[1].Title)
+	}
+	if !testFeeds.Less(2, 1) {
+		t.Errorf("%s should be less than %s", testFeeds[2].Title, testFeeds[1].Title)
+	}
+
+}
+
+func TestFeedsSwap(t *testing.T) {
+	tempt1 := testFeeds[1]
+	tempt2 := testFeeds[2]
+
+	testFeeds.Swap(1, 2)
+
+	if tempt1 != testFeeds[2] && tempt2 != testFeeds[1] {
+		t.Error("Index 1 and 2 were not swapped")
+	}
+}
 
 func TestNewFeeds(t *testing.T) {
 	//TODO: Rethink how I do tests for the feeds.go file
