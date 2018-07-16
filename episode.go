@@ -106,7 +106,7 @@ func EpisodeContentInit(g *gocui.Gui) error {
 		//Add the links to the content
 		content += "\n\n\nLinks:\n"
 		for index, link := range links {
-			content += fmt.Sprintf("%d: %s\n", index, link)
+			content += fmt.Sprintf("%d: %s\n", index+1, link) //Start count at 1
 		}
 	}
 
