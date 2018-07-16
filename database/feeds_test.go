@@ -1,7 +1,8 @@
 package database
 
 import (
-	//"strings"
+	"fmt"
+	"path/filepath"
 	"testing"
 
 	"github.com/mmcdole/gofeed"
@@ -47,6 +48,47 @@ func TestFeedsSwap(t *testing.T) {
 	if tempt1 != testFeeds[2] && tempt2 != testFeeds[1] {
 		t.Error("Index 1 and 2 were not swapped")
 	}
+}
+
+func TestLoadFeeds(t *testing.T) {
+	//Make sure that the test database exist
+	dbPath := filepath.Join(".", "test_data", "database", "feeds.db")
+	dbPath, err := filepath.Abs(dbPath)
+	if err != nil {
+		t.Errorf("Failed to get the absolute path for database: %s", err.Error())
+	}
+
+	if !Exist(dbPath) {
+		t.Errorf("test database for path (%s) does not exist", dbPath)
+	}
+
+	//Make sure that the urls test file exists
+	urls := filepath.Join(".", "test_data", "urls", "urls")
+	urls, err = filepath.Abs(urls)
+	if err != nil {
+		t.Errorf("Failed to get the absolute path for urls file: %s", err.Error())
+	}
+
+	//Setting the TestDB path and initializing the database
+	TestDB = fmt.Sprintf("file:%s?_foreign_keys=1", dbPath)
+	db, err := Init(TestDB, false)
+	if err != nil {
+		t.Errorf("Failed to initial database: %s", err.Error())
+	}
+
+	//Preparing needed data for LoadFeeds
+	urlFileData := file.ExtractFileContent(urls)
+	urlFileDataMap, err := AddFeedFileData(urlFileData)
+	if err != nil {
+		t.Errorf("failed to add file data to database: %s", err.Error())
+	}
+
+	feeds := LoadFeeds(db, urlFileDataMap)
+
+	if len(feeds) <= 0 {
+		t.Errorf("No feeds were loaded...")
+	}
+
 }
 
 func TestNewFeeds(t *testing.T) {
