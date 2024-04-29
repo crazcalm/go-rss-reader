@@ -21,6 +21,11 @@ test.db
 _examples/trying_out_stuff.go
 README.md.backup
 
+# emacs
+*~
+*#
+*#*.go
+
 # Coverage tools
 profile.coverprofile
 overalls.coverprofile
