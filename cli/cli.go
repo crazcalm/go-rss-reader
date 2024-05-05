@@ -75,8 +75,15 @@ func (c *MyConfig) CliParse() error {
 	// Need to re-set this after parsing flags
 	c.log_level = log_level
 
-	c.SetUrlFile(url_file)
-	c.SetDBPath(db_path)
+	err := c.SetUrlFile(url_file)
+	if err !=nil {
+		return fmt.Errorf("Unable to set url file path: %w", err)
+	}
+
+	err = c.SetDBPath(db_path)
+	if err != nil {
+		return fmt.Errorf("Unable to set db file path: %w", err)
+	}
 
 	return nil
 }
@@ -99,7 +106,7 @@ func (c *MyConfig) SetDBPath(db_path string) error {
 				return fmt.Errorf("Issue validating db path and directory: %w, %w", err, file_err)
 			}
 
-			if file_info.IsDir() == true {
+			if file_info.IsDir() {
 				slog.Info(fmt.Sprintf("Couldn't find DB file, but we have validated the directory: %s", dir))
 				// The directory exists, so, when the time comes, we will create a new database
 				c.db_path = db_path
@@ -112,7 +119,7 @@ func (c *MyConfig) SetDBPath(db_path string) error {
 		return fmt.Errorf("Unable to valid DB file path: %w", err)
 	}
 
-	if file_info.IsDir() == true {
+	if file_info.IsDir() {
 		return fmt.Errorf("%s is a directory and not a path to file", db_path)
 	}
 
