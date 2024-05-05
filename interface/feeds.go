@@ -7,19 +7,19 @@ import (
 	"github.com/jroimartin/gocui"
 )
 
-//Feed -- Data structure used to hold the needed feed data
+// Feed -- Data structure used to hold the needed feed data
 type Feed struct {
 	Episodes string
 	Title    string
 }
 
-//Feeds -- Gui component for the feeds
+// Feeds -- Gui component for the feeds
 type Feeds struct {
 	Name  string
 	Feeds []Feed
 }
 
-//NewFeeds -- Creates a new Feed gui component
+// NewFeeds -- Creates a new Feed gui component
 func NewFeeds(name string, feeds []Feed) *Feeds {
 	return &Feeds{Name: name, Feeds: feeds}
 }
@@ -65,7 +65,7 @@ func (f *Feeds) location(g *gocui.Gui) (x, y, w, h int) {
 	return
 }
 
-//Layout -- Tells gocui.Gui how to display this component
+// Layout -- Tells gocui.Gui how to display this component
 func (f *Feeds) Layout(g *gocui.Gui) error {
 	x, y, w, h := f.location(g)
 	v, err := g.SetView(f.Name, x, y, w, h)
