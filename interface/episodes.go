@@ -104,7 +104,7 @@ func (e *Episodes) Layout(g *gocui.Gui) error {
 			return err
 		}
 
-		fmt.Fprintf(v, e.format(g))
+		fmt.Fprint(v, e.format(g))
 	}
 	return nil
 }

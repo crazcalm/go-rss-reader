@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 
@@ -33,7 +33,7 @@ func GetFeedDataFromSite(url string) (string, error) {
 		}
 	}()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
