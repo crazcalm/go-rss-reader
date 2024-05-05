@@ -8,6 +8,43 @@ import (
 	"testing"
 )
 
+func TestMyConfigSetDBPath(t *testing.T) {
+	t.Parallel()
+
+	config := NewConfigWithValues("db_path", "url_file", "log_level")
+	
+	dir, err := os.Getwd()
+	if err != nil {
+		t.Fatal("Unable to get current working directory")
+	}
+	
+	tcs := []struct {
+		name string
+		db_path string
+		expected error
+	}{
+		{"Empty string", "", errors.New("The db file path cannot be an empty string")},
+		{"File does not exist, and directory does not exist", filepath.Join("Does", "Not","Exist"), errors.New("Issue validating db path and directory: stat Does/Not/: no such file or directory, Database file not found -> stat Does/Not/Exist: no such file or directory")},
+		{"File does not exist, but directory exists", filepath.Join(dir, "does_not_exist"), nil},
+		{"File exists", filepath.Join(dir, "cli_test.go"), nil},
+	}
+
+	for _, tc := range tcs {
+		t.Run(tc.name, func(t *testing.T){
+			err := config.SetDBPath(tc.db_path)
+			if err != nil {
+				if err.Error()[:30] != tc.expected.Error()[:30] {
+					t.Fatalf("Expected %v, but got %v", tc.expected, err)
+				}
+			} else {
+				if config.GetDBPath() != tc.db_path {
+					t.Fatalf("Expected %v, but got %v", tc.db_path, config.GetDBPath())
+				}
+			}
+		})
+	}
+}
+
 func TestMyConfigSetUrlFile(t *testing.T) {
 	t.Parallel()
 

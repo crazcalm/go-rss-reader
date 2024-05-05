@@ -82,16 +82,21 @@ func (c *MyConfig) CliParse() error {
 }
 
 func (c *MyConfig) SetDBPath(db_path string) error {
+	if len(db_path) == 0 {
+		return errors.New("The db file path cannot be an empty string")
+	}
+	
 	file_info, err := os.Stat(db_path)
 	if err != nil {
 		if os.IsNotExist(err) {
-			slog.Warn(fmt.Sprintf("Database file not found -> %v\n", err))
+			file_err := fmt.Errorf("Database file not found -> %v\n", err)
+			slog.Warn(file_err.Error())
 
 			dir, _ := filepath.Split(db_path)
 
 			file_info, err = os.Stat(dir)
 			if err != nil {
-				return fmt.Errorf("Issue validating db path and directory: %w", err)
+				return fmt.Errorf("Issue validating db path and directory: %w, %w", err, file_err)
 			}
 
 			if file_info.IsDir() == true {
