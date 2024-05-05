@@ -2,7 +2,6 @@ package file
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"strings"
@@ -19,7 +18,7 @@ ExtractFileContent is responsible for extracting the
 content from the rss url file. It does not validate this data.
 */
 func ExtractFileContent(f string) (results []Data) {
-	b, err := ioutil.ReadFile(f)
+	b, err := os.ReadFile(f)
 	if err != nil {
 		log.Fatalf("Error when reading file: %s", err.Error())
 	}

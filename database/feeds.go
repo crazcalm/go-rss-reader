@@ -59,7 +59,7 @@ func (f Feeds) GuiData(db *sql.DB) (data []gui.Feed) {
 			log.Fatal(err)
 		}
 		//TODO: fix feed.Title() -- I should be able to call it here!!!
-		data = append(data, gui.Feed{fmt.Sprintf("(%d/%d)", seen, total), feed.Title})
+		data = append(data, gui.Feed{Episodes: fmt.Sprintf("(%d/%d)", seen, total), Title: feed.Title})
 	}
 	return
 }

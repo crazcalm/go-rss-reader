@@ -88,7 +88,7 @@ func (f *Feeds) Layout(g *gocui.Gui) error {
 			return err
 		}
 
-		fmt.Fprintf(v, f.format(g))
+		fmt.Fprint(v, f.format(g))
 	}
 	return nil
 }

@@ -94,7 +94,7 @@ func TestLoadFeeds(t *testing.T) {
 func TestNewFeeds(t *testing.T) {
 	//TODO: Rethink how I do tests for the feeds.go file
 	//file.Data variables
-	goodData := file.Data{"http://www.leoville.tv/podcasts/sn.xml", []string{"security", "favorite", "audio"}}
+	goodData := file.Data{URL: "http://www.leoville.tv/podcasts/sn.xml", Tags: []string{"security", "favorite", "audio"}}
 	//badData := file.Data{"http://www.linux-magazine.com/rs/feed/lmi_full", []string{"error"}}
 	//noData := file.Data{"", []string{}}
 
