@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-
+	"log/slog"
+	
 	"github.com/jroimartin/gocui"
 
 	"github.com/crazcalm/go-rss-reader/database"
@@ -12,23 +13,25 @@ import (
 )
 
 func main() {
-	cli.GlobalConfig = cli.NewConfig()
-	config := cli.GlobalConfig
-	err := config.CliParse()
-	if err != nil {
-		log.Panicln(err)
-	}
+	slog.Debug("Starting the program")
 	
+	cli.GlobalConfig = cli.NewConfig()
+	err := cli.GlobalConfig.CliParse()
+	if err != nil {
+		log.Fatalf("Failed to parse cli args: %s", err.Error())
+	}
 
-	if config.DBExist() {
-		_, err = database.Init(fmt.Sprintf("file:%s?_foreign_keys=1", config.GetDBPath()), false)
+	slog.Debug("Successfully Parsed the Cli Args")
+	
+	if cli.GlobalConfig.DBExist() {
+		_, err = database.Init(fmt.Sprintf("file:%s?_foreign_keys=1", cli.GlobalConfig.GetDBPath()), false)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatalf("Unable to connect to DB at %s: %s", cli.GlobalConfig.GetDBPath(), err.Error())
 		}
 	} else {
-		_, err = database.Create(config.GetDBPath())
+		_, err = database.Create(cli.GlobalConfig.GetDBPath())
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("Unable to create DB at %s: %s", cli.GlobalConfig.GetDBPath(), err)
 		}
 		
 	}
