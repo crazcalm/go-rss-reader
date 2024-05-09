@@ -73,7 +73,7 @@ func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
 }
 
 
-//UpdateFeed -- Update all feeds being shown
+//UpdateFeeds -- Update all feeds being shown
 func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 	for _, feed := range FeedsData {
 		err := database.GetFeedInfo(database.DB, feed.ID)

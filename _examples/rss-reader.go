@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"log/slog"
 	
@@ -24,7 +23,7 @@ func main() {
 	slog.Debug("Successfully Parsed the Cli Args")
 	
 	if cli.GlobalConfig.DBExist() {
-		_, err = database.Init(fmt.Sprintf("file:%s?_foreign_keys=1", cli.GlobalConfig.GetDBPath()), false)
+		_, err = database.Init(database.CreateDBDns(cli.GlobalConfig.GetDBPath()), false)
 		if err != nil {
 			log.Fatalf("Unable to connect to DB at %s: %s", cli.GlobalConfig.GetDBPath(), err.Error())
 		}

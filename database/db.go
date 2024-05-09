@@ -21,6 +21,10 @@ func createTables(db *sql.DB) error {
 	return nil
 }
 
+func CreateDBDns(path string) string {
+	return fmt.Sprintf("file:%s?_foreign_keys=1", path)
+}
+
 //Create -- Created the database
 func Create(path string) (*sql.DB, error) {
 	//Create the database file
