@@ -1,14 +1,13 @@
 package rss
 
 import (
-	"database/sql"
 	"log"
-	"os"
 	"path/filepath"
 	"sort"
 
 	"github.com/jroimartin/gocui"
 
+	"github.com/crazcalm/go-rss-reader/cli"
 	"github.com/crazcalm/go-rss-reader/database"
 	"github.com/crazcalm/go-rss-reader/file"
 	"github.com/crazcalm/go-rss-reader/interface"
@@ -23,41 +22,18 @@ var (
 	URLFile = filepath.Join(".go-rss-reader", "urls")
 )
 
-//FeedsInit -- Feeds Init for the Gui
-func FeedsInit(g *gocui.Gui) error {
+// FeedsInitWithConfig -- Feeds Init for the Gui
+func FeedsInitWithConfig(g *gocui.Gui) error {
 	var err error
-	var db *sql.DB
-
-	//Change working directory to user home
-	home := os.Getenv("HOME")
-	err = os.Chdir(home)
-	if err != nil {
-		log.Fatal("Was unable to change the working directory to home directory")
-	}
 
 	//Get info from file
-	fileData := file.ExtractFileContent(URLFile)
+	fileData := file.ExtractFileContent(cli.GlobalConfig.GetUrlFile())
 
-	//Establish the database
-	if database.Exist(database.DBPath) {
-		db, err = database.Init(database.TestDB, false)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-	} else {
-		db, err = database.Create(database.DBPath)
-		if err != nil {
-			log.Fatal(err)
-		}
-		_, err = database.Init(database.TestDB, true)
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
-
+	// TODO: refactor this properly
+	db := database.DB
+	
 	//Add file data to the database
-	feedIDToFileDataMap, err := database.AddFeedFileData(fileData)
+	feedIDToFileDataMap, err := database.AddFeedFileData2(fileData, db)
 	if err != nil {
 		log.Fatal(err)
 	}
