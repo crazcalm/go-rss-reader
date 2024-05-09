@@ -78,7 +78,7 @@ func TestLoadFeeds(t *testing.T) {
 
 	//Preparing needed data for LoadFeeds
 	urlFileData := file.ExtractFileContent(urls)
-	urlFileDataMap, err := AddFeedFileData(urlFileData)
+	urlFileDataMap, err := AddFeedFileData(db, urlFileData)
 	if err != nil {
 		t.Errorf("failed to add file data to database: %s", err.Error())
 	}

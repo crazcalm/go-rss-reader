@@ -21,6 +21,10 @@ func createTables(db *sql.DB) error {
 	return nil
 }
 
+func CreateDBDns(path string) string {
+	return fmt.Sprintf("file:%s?_foreign_keys=1", path)
+}
+
 //Create -- Created the database
 func Create(path string) (*sql.DB, error) {
 	//Create the database file
@@ -48,11 +52,11 @@ func Exist(path string) bool {
 //Init -- Initializes the database. The reset param allows you to recreate the database.
 func Init(dsn string, reset bool) (*sql.DB, error) {
 	var err error
-
+	
 	//Prep the connection to the database
 	DB, err = sql.Open(driver, dsn)
 	if err != nil {
-		return DB, err
+		return DB, fmt.Errorf("Unable to Open Database: %w", err)
 	}
 
 	//Test connection to the database
@@ -72,17 +76,14 @@ func Init(dsn string, reset bool) (*sql.DB, error) {
 	return DB, nil
 }
 
+
 //AddFeedFileData -- Adds Feed File Data to the database
-func AddFeedFileData(fileData []file.Data) (map[int64]file.Data, error) {
+func AddFeedFileData(db *sql.DB, fileData []file.Data) (map[int64]file.Data, error) {
 	var feedID int64
 	var tagID int64
+	var err error
 	var feedsFromFile = make(map[int64]string)
 	var feedIDAndFileData = make(map[int64]file.Data)
-
-	db, err := Init(TestDB, false)
-	if err != nil {
-		log.Fatal(err)
-	}
 
 	//This section ensures that all feeds are in the database
 	for _, fd := range fileData {

@@ -13,6 +13,7 @@ import (
 var db_path string
 var url_file string
 var log_level string
+var GlobalConfig Config
 
 func init() {
 	home_dir, err := os.UserHomeDir()

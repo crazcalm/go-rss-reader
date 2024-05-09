@@ -20,6 +20,7 @@ func QuitPager(g *gocui.Gui, v *gocui.View) error {
 	return nil
 }
 
+
 //QuitEpisodes -- Callback used to quit the Episodes view and return to the feeds view
 func QuitEpisodes(g *gocui.Gui, v *gocui.View) error {
 	if v != nil {
@@ -30,6 +31,7 @@ func QuitEpisodes(g *gocui.Gui, v *gocui.View) error {
 	}
 	return nil
 }
+
 
 //UpdateFeed -- Updates a single feed
 func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
@@ -70,6 +72,7 @@ func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
 	return err
 }
 
+
 //UpdateFeeds -- Update all feeds being shown
 func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 	for _, feed := range FeedsData {
@@ -84,6 +87,7 @@ func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 	}
 	return nil
 }
+
 
 //SelectFeed -- Callback used to select an episode
 func SelectFeed(g *gocui.Gui, v *gocui.View) (err error) {
