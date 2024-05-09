@@ -39,7 +39,7 @@ func main() {
 	}
 	defer g.Close()
 
-	err = rss.FeedsInitWithConfig(g)
+	err = rss.FeedsInit(g)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -24,7 +24,7 @@ func QuitPager(g *gocui.Gui, v *gocui.View) error {
 //QuitEpisodes -- Callback used to quit the Episodes view and return to the feeds view
 func QuitEpisodes(g *gocui.Gui, v *gocui.View) error {
 	if v != nil {
-		err := FeedsInitWithConfig(g)
+		err := FeedsInit(g)
 		if err != nil {
 			return err
 		}
@@ -68,7 +68,7 @@ func UpdateFeed(g *gocui.Gui, v *gocui.View) error {
 	}
 
 	//Refresh screen
-	err = FeedsInitWithConfig(g)
+	err = FeedsInit(g)
 	return err
 }
 
@@ -80,7 +80,7 @@ func UpdateFeeds(g *gocui.Gui, v *gocui.View) error {
 		if err != nil {
 			return err
 		}
-		err = FeedsInitWithConfig(g)
+		err = FeedsInit(g)
 		if err != nil {
 			return err
 		}

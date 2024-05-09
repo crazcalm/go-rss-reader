@@ -22,30 +22,27 @@ var (
 	URLFile = filepath.Join(".go-rss-reader", "urls")
 )
 
-// FeedsInitWithConfig -- Feeds Init for the Gui
-func FeedsInitWithConfig(g *gocui.Gui) error {
+// FeedsInit -- Feeds Init for the Gui
+func FeedsInit(g *gocui.Gui) error {
 	var err error
 
 	//Get info from file
 	fileData := file.ExtractFileContent(cli.GlobalConfig.GetUrlFile())
 
-	// TODO: refactor this properly
-	db := database.DB
-	
 	//Add file data to the database
-	feedIDToFileDataMap, err := database.AddFeedFileData2(fileData, db)
+	feedIDToFileDataMap, err := database.AddFeedFileData(database.DB, fileData)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	//Load the Feeds
-	FeedsData = database.LoadFeeds(db, feedIDToFileDataMap)
+	FeedsData = database.LoadFeeds(database.DB, feedIDToFileDataMap)
 
 	//Sort FeedsData by Title
 	sort.Sort(FeedsData)
 
 	//Feed Gui info
-	feedData := FeedsData.GuiData(db)
+	feedData := FeedsData.GuiData(database.DB)
 
 	//Components
 	headerGui := gui.NewHeader("title", gui.HeaderText)
