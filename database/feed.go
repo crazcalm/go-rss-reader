@@ -12,7 +12,7 @@ import (
 	"github.com/crazcalm/go-rss-reader/file"
 )
 
-//Feed -- Data structure used to hold a feed
+// Feed -- Data structure used to hold a feed
 type Feed struct {
 	ID    int64
 	URL   string
@@ -21,7 +21,32 @@ type Feed struct {
 	Data  *gofeed.Feed
 }
 
-//GetFeedDataFromSite -- gets the feed data from the feed url and returns it
+
+// GetFeedDataFromSiteV2 -- gets the feed data from the feed url and returns it
+func GetFeedDataFromSiteV2(url string, reader func(io.Reader) ([]byte, error)) (string, error) {
+	resp, err := http.Get(url)
+	if err != nil {
+		return "", fmt.Errorf("Error trying to get the raw feed data from %s: %s", url, err.Error())
+	}
+	defer func() {
+		if err = resp.Body.Close(); err != nil {
+			err = fmt.Errorf("Errorr occurred while closing the response body: %s", err.Error())
+		}
+	}()
+
+	if resp.StatusCode >= 300 {
+		return "", fmt.Errorf("url %q returned a status code of %v", url, resp.StatusCode)
+	}
+
+	body, err := reader(resp.Body)
+	if err != nil {
+		return "", fmt.Errorf("Unable to read response body: %w", err)
+	}
+	return string(body), err
+}
+
+
+// GetFeedDataFromSite -- gets the feed data from the feed url and returns it
 func GetFeedDataFromSite(url string) (string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
@@ -40,8 +65,8 @@ func GetFeedDataFromSite(url string) (string, error) {
 	return string(body), err
 }
 
-//NewFeed -- Used to create a new Feed. Id the id is equal to -1, then
-//all of the database interactions will not happen
+// NewFeed -- Used to create a new Feed. Id the id is equal to -1, then
+// all of the database interactions will not happen
 func NewFeed(id int64, fileData file.Data) (*Feed, error) {
 	var db *sql.DB
 	var err error
