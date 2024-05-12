@@ -12,12 +12,6 @@ import (
 	_ "github.com/mattn/go-sqlite3" //Sqlite3 driver
 )
 
-type rowErr struct{}
-
-func (r rowErr) Scan(dest any) error {
-	return errors.New("Row Scan Error")
-}
-
 type connectorErr struct{}
 
 func (c connectorErr) Exec(query string, args ...any) (sql.Result, error) {
