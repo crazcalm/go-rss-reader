@@ -21,11 +21,14 @@ func createTables(db *sql.DB) error {
 	return nil
 }
 
-func CreateDBDns(path string) string {
+func CreateDBDsn(path string, inMemory bool) string {
+	if inMemory {
+		return fmt.Sprintf("file:%s?_foreign_keys=1&mode=memory", path)
+	}
 	return fmt.Sprintf("file:%s?_foreign_keys=1", path)
 }
 
-//Create -- Created the database
+// Create -- Created the database
 func Create(path string) (*sql.DB, error) {
 	//Create the database file
 	_, err := os.Create(path)
@@ -39,7 +42,7 @@ func Create(path string) (*sql.DB, error) {
 	return db, err
 }
 
-//Exist -- checks for the existance of a file
+// Exist -- checks for the existance of a file
 func Exist(path string) bool {
 	if _, err := os.Stat(path); err != nil {
 		if os.IsNotExist(err) {
@@ -49,10 +52,54 @@ func Exist(path string) bool {
 	return true
 }
 
-//Init -- Initializes the database. The reset param allows you to recreate the database.
+type Connector interface {
+	Exec(string, ...any) (sql.Result, error)
+	Ping() error
+	QueryRow(query string, args ...any) *sql.Row
+	Close() error
+}
+
+type Driver interface {
+	Open(string, string) (Connector, error)
+}
+
+func createTablesV2(db Connector) error {
+	for _, sql := range sqlFiles {
+		_, err := db.Exec(sql)
+		if err != nil {
+			return fmt.Errorf("Creating tables failed with the following error: %w", err)
+		}
+	}
+	return nil
+}
+
+// InitV2 -- Initializes the database. The reset param allows you to recreate the database.
+func InitV2(driverName, dataSourceName string, reset bool, open func(string, string) (Connector, error)) (Connector, error) {
+	DB, err := open(driverName, dataSourceName)
+	if err != nil {
+		return DB, fmt.Errorf("Unable to Open Database: %w", err)
+	}
+
+	err = DB.Ping()
+	if err != nil {
+		return DB, fmt.Errorf("Unable to ping the Database: %w", err)
+	}
+
+	if reset {
+		//Drop all the tables and create all the tables again
+		err = createTablesV2(DB)
+		if err != nil {
+			return DB, err
+		}
+	}
+
+	return DB, err
+}
+
+// Init -- Initializes the database. The reset param allows you to recreate the database.
 func Init(dsn string, reset bool) (*sql.DB, error) {
 	var err error
-	
+
 	//Prep the connection to the database
 	DB, err = sql.Open(driver, dsn)
 	if err != nil {
@@ -76,8 +123,7 @@ func Init(dsn string, reset bool) (*sql.DB, error) {
 	return DB, nil
 }
 
-
-//AddFeedFileData -- Adds Feed File Data to the database
+// AddFeedFileData -- Adds Feed File Data to the database
 func AddFeedFileData(db *sql.DB, fileData []file.Data) (map[int64]file.Data, error) {
 	var feedID int64
 	var tagID int64
